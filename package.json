@@ -1,0 +1,15 @@
+{
+  "name": "immortality-project",
+  "description": "Immortality project",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sashaqred/sashaqred.git"
+  },
+  "author": "Sasha Verbilo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sashaqred/sashaqred/issues"
+  },
+  "homepage": "https://sashaqred.com",
+  "private": true
+}
