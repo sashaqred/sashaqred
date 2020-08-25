@@ -1,6 +1,10 @@
 {
   "name": "immortality-project",
   "description": "Immortality project",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sashaqred/sashaqred.git"
@@ -11,5 +15,8 @@
     "url": "https://github.com/sashaqred/sashaqred/issues"
   },
   "homepage": "https://sashaqred.com",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@11ty/eleventy": "~0.11"
+  }
 }
