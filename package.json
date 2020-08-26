@@ -22,7 +22,8 @@
   "homepage": "https://sashaqred.com",
   "private": true,
   "dependencies": {
-    "@11ty/eleventy": "~0.11"
+    "@11ty/eleventy": "~0.11",
+    "eleventy-plugin-helmet": "~0.2"
   },
   "devDependencies": {
     "@commitlint/cli": "~9.1",
