@@ -21,8 +21,8 @@
 }
 
 .block-list li {
-  padding-left: var(--adaptive-md);
   padding-right: var(--adaptive-md);
+  padding-left: var(--adaptive-md);
 }
 
 .block-list li:not(:first-child) {

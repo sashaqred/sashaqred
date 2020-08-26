@@ -38,6 +38,7 @@
 
 @media print {
   :root {
+    /* stylelint-disable-next-line plugin/stylelint-no-indistinguishable-colors */
     --secondary-color: white;
     --primary-color: black;
   }

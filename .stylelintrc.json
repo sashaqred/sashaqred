@@ -1,0 +1,31 @@
+{
+  "extends": ["stylelint-config-idiomatic-order", "stylelint-a11y/recommended"],
+  "plugins": [
+    "stylelint-high-performance-animation",
+    "stylelint-declaration-block-no-ignored-properties",
+    "stylelint-no-browser-hacks/lib",
+    "stylelint-no-indistinguishable-colors",
+    "stylelint-selector-no-empty",
+    "stylelint-value-no-unknown-custom-properties",
+    "stylelint-no-unused-selectors",
+    "stylelint-no-unsupported-browser-features",
+    "stylelint-a11y",
+    "stylelint-prettier"
+  ],
+  "rules": {
+    "prettier/prettier": true,
+    "plugin/no-low-performance-animation-properties": true,
+    "plugin/declaration-block-no-ignored-properties": true,
+    "plugin/no-browser-hacks": true,
+    "plugin/stylelint-no-indistinguishable-colors": true,
+    "plugin/stylelint-selector-no-empty": true,
+    "csstools/value-no-unknown-custom-properties": [
+      true,
+      {
+        "importFrom": ["src/assets/styles/theme.css"]
+      }
+    ],
+    "plugin/no-unused-selectors": true,
+    "plugin/no-unsupported-browser-features": true
+  }
+}
