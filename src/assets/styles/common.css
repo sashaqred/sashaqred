@@ -6,90 +6,12 @@ html {
 
 @media screen {
   html {
-    background-color: var(--primary-color);
-  }
-}
-
-@media screen {
-  body {
-    margin: auto;
-    padding: var(--adaptive-lg) var(--adaptive-xl);
-    max-width: 900px;
     background-color: var(--secondary-color);
-  }
-}
-
-@media screen and (min-width: 900px) {
-  body {
-    margin-top: calc(50vw - 28.125rem);
-    margin-bottom: calc(50vw - 28.125rem);
-  }
-}
-
-@media screen and (min-width: 964px) {
-  body {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
   }
 }
 
 * {
   box-sizing: border-box;
-}
-
-section {
-  margin: var(--adaptive-lg) auto;
-  padding: 0 var(--adaptive-md);
-}
-
-h1,
-h2,
-h3 {
-  font-weight: normal;
-  margin: var(--adaptive-sm) 0;
-}
-
-h1 {
-  font-size: 1.6rem;
-}
-
-h2 {
-  font-size: 1.4rem;
-  margin: var(--adaptive-sm) 0;
-}
-
-h3 {
-  font-size: 1.2rem;
-  margin: 0;
-  margin-bottom: var(--adaptive-sm);
-}
-
-ul,
-p,
-dl {
-  margin-right: 0;
-  margin-left: 0;
-}
-
-dd {
-  margin-left: var(--adaptive-lg);
-}
-
-ul,
-p,
-dl,
-dd,
-dt {
-  margin-top: 0.3rem;
-  margin-bottom: 0.3rem;
-}
-
-ul:last-child,
-p:last-child,
-dl:last-child,
-dd:last-child,
-dt:last-child {
-  margin-bottom: 0;
 }
 
 a {
@@ -105,13 +27,6 @@ a:focus {
 
 a:focus {
   outline-color: var(--alt-accent-color);
-}
-
-@media print {
-  a[href^='http']:after,
-  a[href^='mailto:']:after {
-    content: ' (' attr(href) ')';
-  }
 }
 
 img {
