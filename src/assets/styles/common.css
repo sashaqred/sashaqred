@@ -108,9 +108,9 @@ a:focus {
 }
 
 @media print {
-  a[href^="http"]:after,
-  a[href^="mailto:"]:after {
-    content: " (" attr(href) ")";
+  a[href^='http']:after,
+  a[href^='mailto:']:after {
+    content: ' (' attr(href) ')';
   }
 }
 

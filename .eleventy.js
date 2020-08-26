@@ -1,4 +1,4 @@
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/assets': '.' });
 
   return {
@@ -6,5 +6,5 @@ module.exports = function(eleventyConfig) {
       input: 'src',
       output: 'dist',
     },
-  }
+  };
 };
