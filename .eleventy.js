@@ -2,11 +2,12 @@ const eleventyHelmetPlugin = require('eleventy-plugin-helmet');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyHelmetPlugin);
-  eleventyConfig.addPassthroughCopy({ 'src/public': '.' });
+  eleventyConfig.addPassthroughCopy({ '_eleventy/public': '.' });
+  eleventyConfig.setUseGitIgnore(false);
 
   return {
     dir: {
-      input: 'src',
+      input: '_eleventy',
       output: 'dist',
     },
   };

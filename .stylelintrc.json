@@ -22,7 +22,7 @@
     "csstools/value-no-unknown-custom-properties": [
       true,
       {
-        "importFrom": ["src/public/styles/theme.css"]
+        "importFrom": ["src/styles/theme.css"]
       }
     ],
     "plugin/no-unused-selectors": true,
