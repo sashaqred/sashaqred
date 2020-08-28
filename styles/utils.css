@@ -8,11 +8,11 @@
 }
 
 .linear-list li::after {
-  content: ",";
+  content: ',';
 }
 
 .linear-list li:last-child::after {
-  content: ".";
+  content: '.';
 }
 
 .block-list {
@@ -21,8 +21,8 @@
 }
 
 .block-list li {
-  padding-left: var(--adaptive-md);
   padding-right: var(--adaptive-md);
+  padding-left: var(--adaptive-md);
 }
 
 .block-list li:not(:first-child) {
