@@ -9,6 +9,9 @@
   --adaptive-md: 1rem;
   --adaptive-lg: 2rem;
   --adaptive-xl: 3rem;
+
+  --page-width: 60rem;
+  --readable-line-width: 32rem;
 }
 
 @media screen and (prefers-color-scheme: dark) {

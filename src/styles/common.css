@@ -33,3 +33,12 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.page {
+  max-width: var(--page-width);
+  margin: auto;
+}
+
+.post p {
+  max-width: var(--readable-line-width);
+}
