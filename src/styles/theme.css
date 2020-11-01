@@ -14,6 +14,15 @@
   --readable-line-width: 32rem;
 }
 
+pre,
+code {
+  filter: invert(100%);
+}
+
+pre code {
+  filter: none;
+}
+
 @media screen and (prefers-color-scheme: dark) {
   :root,
   img {
