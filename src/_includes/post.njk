@@ -1,9 +1,12 @@
 ---
 layout: page
-title: Blog. Sashaqred "Immortality project"
 tags: post
 ---
 
+
 <div class="post">
+  <h1>{{ title }}</h1>
+  <p>{{ description }}</p>
+  {{ content | toc | safe }}
   {{ content | safe }}
 </div>
