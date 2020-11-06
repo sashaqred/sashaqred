@@ -4,6 +4,7 @@ const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const eleventyPluginToc = require('eleventy-plugin-toc');
 const eleventyPluginReadingTime = require('eleventy-plugin-reading-time');
+const date = require('./src/_filters/date');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary('md', markdownIt({ html: true }).use(markdownItAnchor));
@@ -13,6 +14,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyPluginReadingTime);
   eleventyConfig.addPassthroughCopy({ '_eleventy/public': '.' });
   eleventyConfig.setUseGitIgnore(false);
+  eleventyConfig.addFilter('date', date);
 
   return {
     dir: {
