@@ -11,7 +11,7 @@ tags: post
     •
     <span>{{ content | readingTime }}</span>
   </span>
-  <p>{{ description }}</p>
+  <p>{{ description | safe }}</p>
   {{ content | toc | safe }}
   {{ content | safe }}
 </div>
