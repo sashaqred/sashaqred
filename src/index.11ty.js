@@ -4,7 +4,7 @@ const { readFileSync } = require('fs');
 class Index {
   data() {
     return {
-      layout: 'base',
+      layout: 'page',
       templateEngineOverride: '11ty.js,md',
     };
   }
