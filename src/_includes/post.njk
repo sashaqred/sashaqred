@@ -7,7 +7,7 @@ tags: post
 <div class="post">
   <h1>{{ title }}</h1>
   <span>
-    <date datetime="{{ page.date }}">{{ page.date | date }}</date>
+    <time datetime="{{ page.date }}">{{ page.date | date }}</time>
     •
     <span>{{ content | readingTime }}</span>
   </span>
