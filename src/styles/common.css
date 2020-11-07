@@ -4,6 +4,10 @@ html {
   font-size: 1.125rem;
 }
 
+body {
+  margin: 0;
+}
+
 @media screen {
   html {
     background-color: var(--secondary-color);
@@ -36,9 +40,37 @@ img {
 
 .page {
   max-width: var(--page-width);
+  padding-right: var(--page-horisontal-padding);
+  padding-left: var(--page-horisontal-padding);
   margin: auto;
 }
 
 .post p {
   max-width: var(--readable-line-width);
+}
+
+.nav-wrapper {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  background-color: #e3e3e3;
+}
+
+.nav-wrapper ul {
+  max-width: var(--page-width);
+  padding: 0;
+  margin: auto;
+}
+
+.nav-wrapper li {
+  display: inline-block;
+}
+
+.nav-wrapper li:not(:last-child) {
+  marging-right: 1rem;
+}
+
+.nav-wrapper a {
+  display: inline-block;
+  padding: 0.5rem var(--page-horisontal-padding);
 }
