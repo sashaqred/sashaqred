@@ -1,13 +1,26 @@
 ---
 layout: base
 title: Blog. Sashaqred "Immortality project"
+pageMap:
+  '/': 'Home'
+  '/blog/': 'Blog'
 ---
 
 <div class="nav-wrapper">
   <nav>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/blog">Blog</a></li>
+      {%- for link, title in pageMap %}
+        <li>
+          <a
+            href="{{ link }}"
+            {% if link === '/' and link === page.url or link !== '/' and page.url.includes(link) %}
+              aria-current="page"
+            {% endif %}
+          >
+            {{ title }}
+          </a>
+        </li>
+      {%- endfor %}
     </ul>
   </nav>
 </div>
