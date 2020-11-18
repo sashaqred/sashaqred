@@ -74,3 +74,7 @@ img {
   display: inline-block;
   padding: 0.5rem var(--page-horisontal-padding);
 }
+
+.nav-wrapper a[aria-current='page'] {
+  background-color: var(--secondary-color);
+}
