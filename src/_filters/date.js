@@ -1,6 +1,6 @@
 const { format } = require('date-fns');
 
-module.exports = function (value) {
-  const formatted = format(value, 'd MMM u');
+module.exports = function (value, dateFormat = 'd MMM u') {
+  const formatted = format(value, dateFormat);
   return formatted;
 };
