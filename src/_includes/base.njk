@@ -11,7 +11,7 @@ description: Immortality project,
     <title>{{ title }}</title>
     <meta
       name="Description"
-      content="{{ description }}"
+      content="{{ description | striptags | truncate(120) }}"
     />
 
     <meta name="viewport" content="width=device-width" />
