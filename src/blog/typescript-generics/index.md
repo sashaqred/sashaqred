@@ -2,28 +2,34 @@
 layout: post
 lang: en
 title: Mastering types with TypeScript generics
-description: Have you ever tried to improve TypeScript type coverage? Make everything autocompleted with IntelliSense? Probably, tried to implement a single interface for objects with some similar shape, but <code class="language-">any</code> was the only solution. Like I do. But the only one interface for the same objects isn't enough. Let's improve our code with some generics.
+description: Have you ever tried to improve TypeScript type coverage? Make everything autocomplete with IntelliSense? Probably tried to implement a single interface for objects with some similar shape, but `any` was the only solution. Like I did. However, the only one interface for the same objects isn't enough. Let's improve our code with some generics.
 ---
 
 ## Context
 
-Let's imagine that we are working on some component library. We have a ton of them: text, link, button, image, tabs, tab, table, table-row, table-header, table-cell, and many others... We didn't cover it with types properly, used a lot of <code class="language-">any</code>, due it each refactoring, bug fixing, or even property rename starts being a big issue and generate new bugs.
+Imagine that we are working on a component library. There're tons of components inside: text, link, button, image, tabs, tab, table, table-row, table-header, table-cell, and others... We didn't cover the library with types properly, used a lot of `any`.
+Because of that each refactoring, bug fixing, or even property rename starts being a big issue and generates tons of problems.
+
+Let's take a look at how you can build a completely typed component library in typescript step by step.
 
 ## Initial typings
 
-At the beginning we started with something simple:
+In the beginning we start with something simple:
 
 ```typescript
 interface LibComponent {
+
+  // напиши что такое id, и нахер оно тту вообще надо. Если оно не нужно для понимания контекста прямо сейчас, то удаляй. То же самое для остальных компонентов.
   id: string;
   definition: string;
   properties: Record<string, any>;
 }
 ```
 
-We have type covered all the interface properties. But there is still some <code class="language-">any</code> here. Let's look on component creation function:
+We have type covered all the interface properties. But there is still some `any` here. Let's look at the component creation function:
 
 ```typescript
+// Когда ты вначале говоришьь про библиотеку компонентов, я начинаю думать, что ты про ui kit типо material/nebular. И только тут я понял, что вообще нет и я опять нихуя не понимаю :D Что это за компоненты такие?)
 function createTextComponent(properties: Record<string, any>): LibComponent {
   return {
     id: generateId(),
@@ -35,7 +41,10 @@ function createTextComponent(properties: Record<string, any>): LibComponent {
 const text = createTextComponent({ text: 'The text component' });
 ```
 
-Is everything fine with that? Can we be sure that we have passed all the required data or have forgotten some props? Does the <code class="language-">text</code> field exist or have <code class="language-">string</code> type? We can't definitely answer those questions.
+Is everything fine with that? Can we be sure that we have passed all the required data or have forgotten some props? Does the `text` field exist or have `string` type? We can't definitely answer those questions.
+
+
+## короче я так и не понял, почему вместо ковычек для кода ты html пишешь) Дальше лень исправлять
 
 ## Single interface problem
 
@@ -47,7 +56,7 @@ The first step will be creating the separate interface for <code class="language
 interface LibComponentProperties {}
 ```
 
-But what should be inside of that? We can add <code class="language-">value</code> field, all components have some kind of value, haven't they? Text has some text inside, button also has some text, input have value itself:
+But what should be inside of that? We can add <code class="language-">value</code> field, all components have some kind of value, haven't they? The text has some text inside, the button also has some text, input has value itself:
 
 ```typescript
 interface LibComponentProperties {
@@ -55,7 +64,7 @@ interface LibComponentProperties {
 }
 ```
 
-But what type here should be? <code class="language-">string</code>? Not really, we have checkbox component with <code class="language-">boolean</code>, date component with <code class="language-">Date</code> type, in some cases it could be even array of some data, like table component with array of rows. <code class="language-">any</code> is not a solution. Our goal is remove any <code class="language-">any</code> in our code.
+But what type should be here? <code class="language-">string</code>? Not really, we have checkbox component with <code class="language-">boolean</code>, date-picker component with <code class="language-">Date</code> type, in some cases it could be even array, like table component with array of rows. <code class="language-">any</code> is not a solution. Our goal is to remove any <code class="language-">any</code> from our code.
 
 Also, what about other component properties? How should we add rest of them? For example our Link component in addition has <code class="language-">href</code> property, which definitely has <code class="language-">string</code> type.
 
@@ -66,11 +75,11 @@ interface LibComponentProperties {
 }
 ```
 
-But it's not ok for Button or Image component, which doesn't contain <code class="language-">href</code> property, but they contain their own properties. So here we can't use single interface for improve our types.
+But it's not ok for the Button or Image component, which doesn't contain <code class="language-">href</code> property, but they contain their own properties. So here we can't use a single interface to improve our types.
 
 ## Splitting type
 
-The main issue of our current <code class="language-">LibComponent</code> type implementation is that it's definitely typed and we can't extend or clarify this type for each component purposes. Let's split the one single type for all components into individual type for each component. Since we have finite variation of components, it won't be a big deal:
+The main issue of our current <code class="language-">LibComponent</code> type implementation is that it's definitely typed and we can't extend or clarify this type for each component's purposes. Let's split the one single type for all components into individual types for each component. Since we have a finite variety of components, it won't be a big deal:
 
 ```typescript
 interface LibTextComponent {
@@ -211,7 +220,7 @@ Here TypeScript can't see any difference in <code class="language-">definition</
 +type LibCheckboxComponent = BaseLibComponent<'checkbox', LibCheckboxComponentProperties>;
 ```
 
-Now our <code class="language-">definition</code> is not some abstract string, but it always has exact value as type. And here TypeScript will show us an error, that our passed properties is not compatible with text properties:
+Now our <code class="language-">definition</code> is not an abstract string, but it always has exact value as type. And here TypeScript will show us an error, that our passed properties are not compatible with text properties:
 
 ```typescript
 const component: LibComponent = {
@@ -228,7 +237,7 @@ const component: LibComponent = {
 
 - Don't create a big complex interface with <code class="language-">any</code> for everything;
 - Instead of that, create a lot of small types with exact shape;
-- Generics would help with reducing repeating same fields over and over again;
+- Generics would help with reducing repeating the same fields over and over again;
 - Instead of one complex type use union type which consisted of small ones;
 - Sometimes for proper union type work it's required to define the pair of unique values. Like <code class="language-">definition</code> and <code class="language-">properties</code> in our example.
 - Be careful, generics aren't a solution for everything. Overengineering of it could bring even more pain. Use it smartly.
