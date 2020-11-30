@@ -1,13 +1,12 @@
 const eleventyHelmetPlugin = require('eleventy-plugin-helmet');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const markdownIt = require('markdown-it');
-const markdownItAnchor = require('markdown-it-anchor');
 const eleventyPluginToc = require('eleventy-plugin-toc');
 const eleventyPluginReadingTime = require('eleventy-plugin-reading-time');
 const date = require('./src/_filters/date');
+const md = require('./src/_markdown-it');
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.setLibrary('md', markdownIt({ html: true }).use(markdownItAnchor));
+  eleventyConfig.setLibrary('md', md);
   eleventyConfig.addPlugin(eleventyHelmetPlugin);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(eleventyPluginToc);
