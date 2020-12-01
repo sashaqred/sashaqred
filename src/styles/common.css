@@ -33,6 +33,13 @@ a:focus {
   outline-color: var(--alt-accent-color);
 }
 
+:target:before {
+  display: block;
+  height: 3rem;
+  margin: -3rem 0 0;
+  content: '';
+}
+
 img {
   max-width: 100%;
   height: auto;
