@@ -9,6 +9,19 @@
   --adaptive-md: 1rem;
   --adaptive-lg: 2rem;
   --adaptive-xl: 3rem;
+
+  --page-width: 60rem;
+  --page-horisontal-padding: 1rem;
+  --readable-line-width: 32rem;
+}
+
+pre,
+code {
+  filter: invert(100%);
+}
+
+pre code {
+  filter: none;
 }
 
 @media screen and (prefers-color-scheme: dark) {

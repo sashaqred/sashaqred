@@ -1,3 +1,7 @@
+:root {
+  font-size: 1rem;
+}
+
 @media screen {
   html {
     background-color: var(--primary-color);
