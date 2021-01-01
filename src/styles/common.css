@@ -85,3 +85,18 @@ img {
 .nav-wrapper a[aria-current='page'] {
   background-color: var(--secondary-color);
 }
+
+.toc ol {
+  padding-left: 0;
+  counter-reset: section;
+  list-style-type: none;
+}
+
+.toc ol ol {
+  padding-left: 0.835rem;
+}
+
+.toc li::before {
+  content: counters(section, '.') ' ';
+  counter-increment: section;
+}
