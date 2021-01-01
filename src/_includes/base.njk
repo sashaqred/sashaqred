@@ -7,7 +7,7 @@ description: Immortality project
 <html lang="{{ lang }}" dir="{{ dir }}">
   <head>
     <meta charset="utf-8" />
-    <title>{{ title }}</title>
+    <title>{{ title | i18n }}</title>
     <meta
       name="Description"
       content="{{ description | striptags | truncate(120) }}"

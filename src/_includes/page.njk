@@ -2,8 +2,8 @@
 layout: base
 title: Blog. Sashaqred "Immortality project"
 pageMap:
-  '': 'Home'
-  'blog/': 'Blog'
+  '': 'menu.home'
+  'blog/': 'menu.blog'
 ---
 
 <div class="nav-wrapper">
@@ -19,7 +19,7 @@ pageMap:
               aria-current="page"
             {% endif %}
           >
-            {{ title }}
+            {{ title | i18n }}
           </a>
         </li>
       {%- endfor %}

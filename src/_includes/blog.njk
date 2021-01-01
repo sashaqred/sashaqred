@@ -1,9 +1,9 @@
 ---
 layout: page
-title: All posts
+title: blog.all_posts
 ---
 
-<h1>{{ title }}</h1>
+<h1>{{ title | i18n }}</h1>
 
 {% if collections.post.length %}
   {%- for post in collections.post | reverse -%}
@@ -20,5 +20,5 @@ title: All posts
     </section>
   {%- endfor -%}
 {% else %}
-  <p>Posts will be soon...</p>
+  <p>{{ 'blog.will_be_soon' | i18n }}</p>
 {% endif %}

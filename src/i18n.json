@@ -1,0 +1,22 @@
+{
+  "menu": {
+    "home": {
+      "en": "Home",
+      "ru": "Главная"
+    },
+    "blog": {
+      "en": "Blog",
+      "ru": "Блог"
+    }
+  },
+  "blog": {
+    "all_posts": {
+      "en": "All posts",
+      "ru": "Все посты"
+    },
+    "will_be_soon": {
+      "en": "Posts will be soon...",
+      "ru": "Посты скоро будут..."
+    }
+  }
+}
