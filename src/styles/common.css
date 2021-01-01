@@ -73,10 +73,6 @@ img {
   display: inline-block;
 }
 
-.nav-wrapper li:not(:last-child) {
-  marging-right: 1rem;
-}
-
 .nav-wrapper a {
   display: inline-block;
   padding: 0.5rem var(--page-horisontal-padding);
