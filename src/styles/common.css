@@ -104,3 +104,11 @@ img {
   content: counters(section, '.') ' ';
   counter-increment: section;
 }
+
+.lang-switcher li {
+  text-transform: uppercase;
+}
+
+.lang-switcher li:not(:last-child)::after {
+  content: ' | ';
+}

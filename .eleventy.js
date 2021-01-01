@@ -5,6 +5,7 @@ const eleventyPluginReadingTime = require('eleventy-plugin-reading-time');
 const i18n = require('eleventy-plugin-i18n');
 const date = require('./src/_filters/date');
 const linkToSectionInstall = require('./src/_filters/link-to-section');
+const langLink = require('./src/_filters/lang-link');
 const md = require('./src/_markdown-it');
 const translations = require('./src/i18n');
 
@@ -24,6 +25,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addFilter('date', date);
   eleventyConfig.addFilter('linkToSection', linkToSectionInstall(eleventyConfig));
+  eleventyConfig.addFilter('langLink', langLink);
 
   return {
     dir: {
