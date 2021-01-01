@@ -6,25 +6,27 @@ pageMap:
   'blog/': 'menu.blog'
 ---
 
-<div class="nav-wrapper">
-  <nav>
-    <ul>
-      {%- for link, title in pageMap %}
-        {% set langLink = '/' + lang + '/' + link %}
-        {% set blankLangLink = '/' + lang + '/' %}
-        <li>
-          <a
-            href="{{ langLink }}"
-            {% if langLink === blankLangLink and langLink === page.url or langLink !== blankLangLink and page.url.startsWith(langLink) %}
-              aria-current="page"
-            {% endif %}
-          >
-            {{ title | i18n }}
-          </a>
-        </li>
-      {%- endfor %}
-    </ul>
-  </nav>
+<div class="header">
+  <div class="header-wrapper">
+    <nav class="header-nav">
+      <ul>
+        {%- for link, title in pageMap %}
+          {% set langLink = '/' + lang + '/' + link %}
+          {% set blankLangLink = '/' + lang + '/' %}
+          <li>
+            <a
+              href="{{ langLink }}"
+              {% if langLink === blankLangLink and langLink === page.url or langLink !== blankLangLink and page.url.startsWith(langLink) %}
+                aria-current="page"
+              {% endif %}
+            >
+              {{ title | i18n }}
+            </a>
+          </li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  </div>
 </div>
 
 <main class="page">
