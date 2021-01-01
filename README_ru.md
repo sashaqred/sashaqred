@@ -8,7 +8,7 @@
 
 ## Обо мне
 
-Разрабатываю интерфейсы в [Akveo](https://github.com/akveo). Работаю над [UI Bakery](https://uibakery.io). Интересуюсь фронтендом и его окружением. Больше в [моем резюме](https://sashaqred.com/cv).
+Разрабатываю интерфейсы в [Akveo](https://github.com/akveo). Работаю над [UI Bakery](https://uibakery.io). Интересуюсь фронтендом и его окружением. Больше в [моем резюме](https://sashaqred.com/ru/cv).
 
 ## Contacts
 

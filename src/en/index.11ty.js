@@ -10,7 +10,7 @@ class Index {
   }
 
   render() {
-    return readFileSync(join(__dirname, '../README.md'));
+    return readFileSync(join(__dirname, '../../README.md'));
   }
 }
 
