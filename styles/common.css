@@ -33,6 +33,13 @@ a:focus {
   outline-color: var(--alt-accent-color);
 }
 
+:target:before {
+  display: block;
+  height: 3rem;
+  margin: -3rem 0 0;
+  content: '';
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -66,10 +73,6 @@ img {
   display: inline-block;
 }
 
-.nav-wrapper li:not(:last-child) {
-  marging-right: 1rem;
-}
-
 .nav-wrapper a {
   display: inline-block;
   padding: 0.5rem var(--page-horisontal-padding);
@@ -77,4 +80,19 @@ img {
 
 .nav-wrapper a[aria-current='page'] {
   background-color: var(--secondary-color);
+}
+
+.toc ol {
+  padding-left: 0;
+  counter-reset: section;
+  list-style-type: none;
+}
+
+.toc ol ol {
+  padding-left: 0.835rem;
+}
+
+.toc li::before {
+  content: counters(section, '.') ' ';
+  counter-increment: section;
 }
