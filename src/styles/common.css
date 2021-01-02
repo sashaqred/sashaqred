@@ -124,3 +124,13 @@ img {
 .lang-switcher li:not(:last-child)::after {
   content: ' | ';
 }
+
+.system-switchers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.system-switchers > *:not(:last-child) {
+  margin-right: 1rem;
+}
