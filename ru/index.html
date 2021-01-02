@@ -40,16 +40,29 @@
       </ul>
     </nav>
 
-    <ul class="lang-switcher">
-      
-      
-      <li>
-        <span> ru </span></li>
-      
-      
-      <li>
-        <a href="/en/"> en </a></li>
-    </ul>
+    <div class="system-switchers">
+      <ul class="lang-switcher">
+        
+        
+        <li>
+          <span> ru </span></li>
+        
+        
+        <li>
+          <a href="/en/"> en </a></li>
+      </ul>
+
+      <form class="theme-switcher" id="theme-form">
+        <label>
+          Theme
+          <select disabled="">
+            <option value="">Auto</option>
+            <option value="theme-light">Light</option>
+            <option value="theme-dark">Dark</option>
+          </select>
+        </label>
+      </form>
+    </div>
   </div>
 </div>
 
@@ -69,6 +82,38 @@
 </ul>
 
 </main>
+
+<script>
+  const possibleThemes = ['theme-light', 'theme-dark'];
+
+  const control = document.querySelector('#theme-form select');
+  control.disabled = false;
+  control.addEventListener('change', changeEvent);
+
+  initTheme();
+
+  function changeEvent({ srcElement }) {
+    setTheme(srcElement.value);
+  }
+
+  function setTheme(nextTheme) {
+    possibleThemes.forEach((theme) => {
+      if (theme === nextTheme) {
+        document.documentElement.classList.add(theme);
+      } else {
+        document.documentElement.classList.remove(theme);
+      }
+    });
+    localStorage.theme = nextTheme;
+  }
+
+  function initTheme() {
+    const theme = localStorage.theme ?? '';
+    const control = document.querySelector(`#theme-form select`);
+    control.value = theme;
+    setTheme(control.value);
+  }
+</script>
 
   </body>
 </html>
