@@ -9,7 +9,7 @@
 }
 
 @media screen {
-  body {
+  .page {
     max-width: 900px;
     padding: var(--adaptive-lg) var(--adaptive-xl);
     margin: auto;
@@ -18,14 +18,14 @@
 }
 
 @media screen and (min-width: 900px) {
-  body {
+  .page {
     margin-block-end: calc(50vw - 28.125rem);
     margin-block-start: calc(50vw - 28.125rem);
   }
 }
 
 @media screen and (min-width: 964px) {
-  body {
+  .page {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
@@ -87,6 +87,9 @@ dt:last-child {
 }
 
 @media print {
+  .header {
+    display: none;
+  }
   a[href^='http']:after,
   a[href^='mailto:']:after {
     content: ' (' attr(href) ')';
