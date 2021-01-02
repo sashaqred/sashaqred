@@ -45,6 +45,14 @@ img {
   height: auto;
 }
 
+select {
+  border: none;
+  background-color: transparent;
+  color: var(--primary-color);
+  font-size: 1rem;
+  outline-color: var(--alt-accent-color);
+}
+
 .visually-hidden {
   position: absolute !important;
   overflow: hidden;
