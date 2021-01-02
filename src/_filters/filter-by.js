@@ -1,5 +1,5 @@
 module.exports = function (value, filterKey, filterValues) {
-  return value.filter((item) => filterValues.includes(getByPath(item, filterKey)));
+  return (value || []).filter((item) => filterValues.includes(getByPath(item, filterKey)));
 };
 
 function getByPath(value, path) {
