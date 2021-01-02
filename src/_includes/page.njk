@@ -31,7 +31,7 @@ pageMap:
       <ul class="lang-switcher">
         {%- for currentLang in avaliableLangs %}
         {% set tag = 'span' if currentLang === lang else 'a' %}
-        {% set href = ' href="' + currentLang | langLink(page.url, contentTranslatedTo) + '"' if tag === 'a' else '' %}
+        {% set href = ' href="' + currentLang | langLink(page.url, collections.all) + '"' if tag === 'a' else '' %}
         <li>
           <{{tag}}{{href | safe}}> {{currentLang}} </{{tag}}></li>
         {%- endfor %}

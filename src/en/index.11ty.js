@@ -6,7 +6,6 @@ class Index {
     return {
       layout: 'page',
       templateEngineOverride: '11ty.js,md',
-      contentTranslatedTo: ['en', 'ru'],
     };
   }
 
