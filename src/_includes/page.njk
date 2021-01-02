@@ -29,11 +29,11 @@ pageMap:
 
     <div class="system-switchers">
       <ul class="lang-switcher">
-        {%- for currentLang in avaliableLangs %}
-        {% set tag = 'span' if currentLang === lang else 'a' %}
-        {% set href = ' href="' + currentLang | langLink(page.url, collections.all) + '"' if tag === 'a' else '' %}
+        {%- for availableLang in availableLangs %}
+        {% set tag = 'span' if availableLang === lang else 'a' %}
+        {% set href = ' href="' + availableLang | langLink(page.url, collections.all) + '"' if tag === 'a' else '' %}
         <li>
-          <{{tag}}{{href | safe}}> {{currentLang}} </{{tag}}></li>
+          <{{tag}}{{href | safe}}> {{availableLang}} </{{tag}}></li>
         {%- endfor %}
       </ul>
 
