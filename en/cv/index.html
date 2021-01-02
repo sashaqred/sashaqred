@@ -19,6 +19,62 @@
   <link rel="stylesheet" href="/styles/cv.css"></head>
   <body>
     
+<div class="header">
+  <div class="header-wrapper">
+    <nav class="header-nav">
+      <ul>
+          
+          
+          <li>
+            <a href="/en/">
+              Home
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="/en/blog/">
+              Blog
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="/en/cv/" aria-current="page">
+              CV
+            </a>
+          </li>
+      </ul>
+    </nav>
+
+    <div class="system-switchers">
+      <ul class="lang-switcher">
+        
+        
+        <li>
+          <a href="/ru/cv/"> ru </a></li>
+        
+        
+        <li>
+          <span> en </span></li>
+      </ul>
+
+      <form class="theme-switcher" id="theme-form">
+        <label>
+          Theme
+          <select disabled="">
+            <option value="">Auto</option>
+            <option value="theme-light">Light</option>
+            <option value="theme-dark">Dark</option>
+          </select>
+        </label>
+      </form>
+    </div>
+  </div>
+</div>
+
+<main class="page">
+  
 
 <div class="intro">
   <div class="intro-pic">
@@ -213,6 +269,40 @@
     <li>HTML</li>
   </ul>
 </section>
+
+</main>
+
+<script>
+  const possibleThemes = ['theme-light', 'theme-dark'];
+
+  const control = document.querySelector('#theme-form select');
+  control.disabled = false;
+  control.addEventListener('change', changeEvent);
+
+  initTheme();
+
+  function changeEvent({ srcElement }) {
+    setTheme(srcElement.value);
+  }
+
+  function setTheme(nextTheme) {
+    possibleThemes.forEach((theme) => {
+      if (theme === nextTheme) {
+        document.documentElement.classList.add(theme);
+      } else {
+        document.documentElement.classList.remove(theme);
+      }
+    });
+    localStorage.theme = nextTheme;
+  }
+
+  function initTheme() {
+    const theme = localStorage.theme ?? '';
+    const control = document.querySelector(`#theme-form select`);
+    control.value = theme;
+    setTheme(control.value);
+  }
+</script>
 
   </body>
 </html>
