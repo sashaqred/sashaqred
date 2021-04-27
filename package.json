@@ -1,6 +1,6 @@
 {
-  "name": "immortality-project",
-  "description": "Immortality project",
+  "name": "sashaqred",
+  "description": "Personal blog by Sasha Verbilo",
   "scripts": {
     "start": "gulp serve",
     "build": "gulp build",

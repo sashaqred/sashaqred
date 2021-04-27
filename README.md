@@ -1,4 +1,4 @@
-# Immortality project
+# @sashaqred
 
 Coding, mentoring, and rarely tech-talking.
 

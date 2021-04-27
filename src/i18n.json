@@ -1,12 +1,12 @@
 {
   "menu": {
-    "home": {
-      "en": "Home",
-      "ru": "Главная"
-    },
     "blog": {
       "en": "Blog",
       "ru": "Блог"
+    },
+    "about": {
+      "en": "About",
+      "ru": "О"
     }
   },
   "blog": {
