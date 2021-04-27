@@ -71,7 +71,8 @@ select {
   margin: auto;
 }
 
-.post p {
+.post p,
+.post li {
   max-width: var(--readable-line-width);
 }
 
