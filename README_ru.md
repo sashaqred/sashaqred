@@ -12,7 +12,6 @@
 
 ## Контакты
 
-- [Email](mailto:sashaqred@ya.ru)
 - [LinkedIn](https://www.linkedin.com/in/sashaqred)
 - [GitHub](https://github.com/sashaqred)
 - [Instagram](https://www.instagram.com/sashaqred)
