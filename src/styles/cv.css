@@ -116,7 +116,7 @@ dt:last-child {
   margin-bottom: 0;
 }
 
-header {
+.intro-desc header {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -126,11 +126,11 @@ header {
   border-bottom: 1px solid var(--alt-accent-color);
 }
 
-header h1 {
+.intro-desc header h1 {
   margin-top: 0;
 }
 
-header ul {
+.intro-desc header ul {
   width: 100%;
   margin: 0;
 }
