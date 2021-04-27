@@ -7,7 +7,7 @@ title: blog.all_posts
 {% set posts = collections.post | filterBy('data.lang', lang) | reverse %}
 {% if posts.length %}
   {%- for post in posts -%}
-    <section>
+    <section class="post-preview">
       <span>
         <time datetime="{{ post.date }}">{{ post.date | date }}</time>
         •

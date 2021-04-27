@@ -143,3 +143,8 @@ select {
 .system-switchers > *:not(:last-child) {
   margin-right: 1rem;
 }
+
+.post-preview:not(:last-child) {
+  border-bottom: 2px dashed var(--alt-accent-color);
+  margin-bottom: 1rem;
+}
