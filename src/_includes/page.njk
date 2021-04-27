@@ -12,10 +12,11 @@ pageMap:
         {%- for link, title in pageMap %}
           {% set langLink = '/' + lang + '/' + link %}
           {% set blankLangLink = '/' + lang + '/' %}
+          {% set blogLangLink = '/' + lang + '/blog' %}
           <li>
             <a
               href="{{ langLink }}"
-              {% if langLink === blankLangLink and langLink === page.url or langLink !== blankLangLink and page.url.startsWith(langLink) %}
+              {% if langLink === blankLangLink and (langLink === page.url or page.url.startsWith(blogLangLink)) or langLink !== blankLangLink and page.url.startsWith(langLink) %}
                 aria-current="page"
               {% endif %}
             >
