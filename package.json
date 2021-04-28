@@ -13,6 +13,10 @@
     "format:check": "npm run format:check:files -- .",
     "format:check:files": "prettier --check"
   },
+  "engines": {
+    "node": "~14",
+    "npm": "~7"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sashaqred/sashaqred.git"
@@ -44,12 +48,12 @@
     "gulp": "~4.0",
     "gulp-clean": "~0.4",
     "gulp-postcss": "~9.0",
-    "husky": "~4.3",
+    "husky": "~6.0",
     "lint-staged": "~10.5",
     "postcss": "~8.2",
     "postcss-preset-env": "~6.7",
     "prettier": "~2.2",
-    "stylelint": "~13.12",
+    "stylelint": "~13.13",
     "stylelint-a11y": "~1.2",
     "stylelint-config-idiomatic-order": "~8.1",
     "stylelint-declaration-block-no-ignored-properties": "~2.3",
