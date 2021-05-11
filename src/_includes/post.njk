@@ -15,7 +15,9 @@ permalink: /{{ lang }}/blog/{{ page.date | date:"u-MM-d") }}-{{ page.fileSlug }}
   {% if canonical %}
     / Originaly posted at <a href="{{canonical.url}}">{{canonical.name}}</a>
   {% endif %}
-  <p>{{ description | safe }}</p>
+  {% if description %}
+    <p>{{ description | safe }}</p>
+  {% endif %}
   {{ content | toc | safe }}
   {{ content | safe }}
 </div>

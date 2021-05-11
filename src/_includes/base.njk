@@ -1,6 +1,5 @@
 ---
 title: '@sashaqred'
-description: Personal blog by Sasha Verbilo
 availableLangs: ['ru', 'en']
 ---
 
@@ -11,7 +10,7 @@ availableLangs: ['ru', 'en']
     <title>{{ title | i18n }}</title>
     <meta
       name="Description"
-      content="{{ description | striptags | truncate(120) }}"
+      content="{{ description | default('Personal blog by Sasha Verbilo') | striptags | truncate(120) }}"
     />
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
