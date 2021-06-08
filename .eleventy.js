@@ -3,6 +3,7 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const eleventyPluginToc = require('eleventy-plugin-toc');
 const eleventyPluginReadingTime = require('eleventy-plugin-reading-time');
 const i18n = require('eleventy-plugin-i18n');
+const send404 = require('./src/_browsersync/middlewares/send-404');
 const date = require('./src/_filters/date');
 const linkToSectionInstall = require('./src/_filters/link-to-section');
 const langLink = require('./src/_filters/lang-link');
@@ -28,6 +29,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('linkToSection', linkToSectionInstall(eleventyConfig));
   eleventyConfig.addFilter('langLink', langLink);
   eleventyConfig.addFilter('filterBy', filterBy);
+
+  eleventyConfig.setBrowserSyncConfig({
+    callbacks: {
+      ready: function (err, bs) {
+        bs.addMiddleware('*', send404);
+      },
+    },
+  });
 
   return {
     dir: {
