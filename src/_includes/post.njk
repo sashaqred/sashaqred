@@ -4,17 +4,11 @@ tags: post
 permalink: "/{{ lang }}/blog/{{ page.fileSlug }}/"
 ---
 
+{% import "post-info.njk" as postInfo %}
 
 <div class="post">
   <h1>{{ title }}</h1>
-  <span>
-    <time datetime="{{ page.date }}">{{ page.date | date }}</time>
-    •
-    <span>{{ content | readingTime }}</span>
-  </span>
-  {% if canonical %}
-    / Originaly posted at <a href="{{canonical.url}}">{{canonical.name}}</a>
-  {% endif %}
+  {{ postInfo.meta(page.date, content, canonical) }}
   {% if description %}
     <p>{{ description | safe }}</p>
   {% endif %}

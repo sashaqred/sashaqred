@@ -1,0 +1,10 @@
+{% macro meta(postPublishDate, postPublishContent, postCanonical) %}
+  <p>
+    <time datetime="{{ postPublishDate }}">{{ postPublishDate | date }}</time>
+    •
+    <span>{{ postPublishContent | readingTime }}</span>
+    {% if postCanonical %}
+      / Originaly posted at <a href="{{postCanonical.url}}">{{postCanonical.name}}</a>
+    {% endif %}
+  </p>
+{% endmacro %}

@@ -3,16 +3,14 @@ layout: page
 title: blog.all_posts
 ---
 
+{% import "post-info.njk" as postInfo %}
+
 <h1>{{ title | i18n }}</h1>
 {% set posts = collections.post | filterBy('data.lang', lang) | reverse %}
 {% if posts.length %}
   {%- for post in posts -%}
     <section class="post-preview">
-      <span>
-        <time datetime="{{ post.date }}">{{ post.date | date }}</time>
-        •
-        <span>{{ post.templateContent | readingTime }}</span>
-      </span>
+      {{ postInfo.meta(post.date, post.templateContent, post.data.canonical) }}
       <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
       {% if post.data.description %}
         <p>{{ post.data.description | safe }}</p>
