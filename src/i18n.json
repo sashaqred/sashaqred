@@ -18,5 +18,11 @@
       "en": "Posts will be soon...",
       "ru": "Посты скоро будут..."
     }
+  },
+  "post": {
+    "originally_posted_at": {
+      "en": "Originally posted at",
+      "ru": "Опубликован на"
+    }
   }
 }

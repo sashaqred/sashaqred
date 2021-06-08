@@ -8,7 +8,7 @@ permalink: "/{{ lang }}/blog/{{ page.fileSlug }}/"
 
 <div class="post">
   <h1>{{ title }}</h1>
-  {{ postInfo.meta(page.date, content, canonical) }}
+  {{ postInfo.meta(page.date, content, canonical, lang) }}
   {% if description %}
     <p>{{ description | safe }}</p>
   {% endif %}
