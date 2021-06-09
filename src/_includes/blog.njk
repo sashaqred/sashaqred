@@ -1,11 +1,12 @@
 ---
 layout: page
-title: blog.all_posts
+eleventyComputed:
+  title: "{{ 'blog.all_posts' | i18n }}"
 ---
 
 {% import "post-info.njk" as postInfo %}
 
-<h1>{{ title | i18n }}</h1>
+<h1>{{ title }}</h1>
 {% set posts = collections.post | filterBy('data.lang', lang) | reverse %}
 {% if posts.length %}
   {%- for post in posts -%}

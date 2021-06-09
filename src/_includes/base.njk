@@ -3,9 +3,8 @@ title: '@sashaqred'
 availableLangs: ['ru', 'en']
 ---
 
-{% set formattedTitle = title | i18n %}
-{% set translatedDefault = 'meta.default_description' | i18n %}
-{% set formattedDescription = description | default(translatedDefault) | striptags | truncate(120) %}
+{% set translatedDescriptionDefault = 'meta.default_description' | i18n %}
+{% set formattedDescription = description | default(translatedDescriptionDefault) | striptags | truncate(120) %}
 {% set fullUrl = 'https://sashaqred.com' + page.url %}
 
 <!DOCTYPE html>
@@ -13,12 +12,12 @@ availableLangs: ['ru', 'en']
   <head>
     <meta charset="utf-8" />
     <meta name="author" content="Sasha Verbilo">
-    <title>{{ formattedTitle }}</title>
+    <title>{{ title }}</title>
     <meta
       name="description"
       content="{{ formattedDescription }}"
     />
-    <meta property="og:title" content="{{ formattedTitle }}">
+    <meta property="og:title" content="{{ title }}">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="sashaqred">
     <meta property="og:description" content="{{ formattedDescription }}">
