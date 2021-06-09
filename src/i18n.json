@@ -1,4 +1,10 @@
 {
+  "meta": {
+    "default_description": {
+      "en": "Personal blog by Sasha Verbilo",
+      "ru": "Персональный блог Саши Вербило"
+    }
+  },
   "menu": {
     "blog": {
       "en": "Blog",

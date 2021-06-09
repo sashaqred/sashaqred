@@ -3,15 +3,34 @@ title: '@sashaqred'
 availableLangs: ['ru', 'en']
 ---
 
+{% set formattedTitle = title | i18n %}
+{% set translatedDefault = 'meta.default_description' | i18n %}
+{% set formattedDescription = description | default(translatedDefault) | striptags | truncate(120) %}
+{% set fullUrl = 'https://sashaqred.com' + page.url %}
+
 <!DOCTYPE html>
 <html lang="{{ lang }}" dir="{{ dir }}">
   <head>
     <meta charset="utf-8" />
-    <title>{{ title | i18n }}</title>
+    <meta name="author" content="Sasha Verbilo">
+    <title>{{ formattedTitle }}</title>
     <meta
-      name="Description"
-      content="{{ description | default('Personal blog by Sasha Verbilo') | striptags | truncate(120) }}"
+      name="description"
+      content="{{ formattedDescription }}"
     />
+    <meta property="og:title" content="{{ formattedTitle }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="sashaqred">
+    <meta property="og:description" content="{{ formattedDescription }}">
+    <meta property="og:url" content="{{ fullUrl }}">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@sashaqred" />
+
+    {% if canonical %}
+      <link rel="canonical" href="{{ canonical.url }}">
+    {% else %}
+      <link rel="canonical" href="{{ fullUrl }}">
+    {% endif %}
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/style.css" />
@@ -21,11 +40,6 @@ availableLangs: ['ru', 'en']
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#7e52a0" />
-
-    {% if canonical %}
-      <link rel="canonical" href="{{canonical.url}}">
-    {% endif %}
-
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="theme-color" content="#ffffff" />
   </head>
