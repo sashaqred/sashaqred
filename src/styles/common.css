@@ -5,11 +5,16 @@ html {
 }
 
 body {
+  /* TODO Remove after adding footer */
+  border-bottom: 1px solid transparent;
   margin: 0;
 }
 
 @media screen {
-  html {
+  /* Fix for invertion background color in FireFox */
+  /* TODO `:root` after adding footer */
+  :root,
+  body {
     background-color: var(--secondary-color);
   }
 }

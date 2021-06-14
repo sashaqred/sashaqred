@@ -3,7 +3,10 @@
 }
 
 @media screen {
-  html {
+  /* Fix for invertion background color in FireFox */
+  /* TODO `:root` after adding footer */
+  :root,
+  body {
     background-color: var(--primary-color);
   }
 }
