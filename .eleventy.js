@@ -1,5 +1,6 @@
 const eleventyHelmetPlugin = require('eleventy-plugin-helmet');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const pluginRss = require('@11ty/eleventy-plugin-rss');
 const eleventyPluginToc = require('eleventy-plugin-toc');
 const eleventyPluginReadingTime = require('eleventy-plugin-reading-time');
 const i18n = require('eleventy-plugin-i18n');
@@ -23,6 +24,7 @@ module.exports = function (eleventyConfig) {
       '*': 'en',
     },
   });
+  eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPassthroughCopy({ '_eleventy/public': '.' });
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addFilter('date', date);

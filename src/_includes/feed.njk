@@ -1,0 +1,33 @@
+---
+domain: https://sashaqred.com
+permalink: "{{ feedFor }}/feed.xml"
+eleventyComputed:
+  title: "{{ 'blog.all_posts' | i18n }}"
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>{{ title }}</title>
+    <description>{{ description }}</description>
+    <language>{{ lang }}</language>
+    <link >{{ domain }}{{ feedFor }}</link>
+
+    <atom:link href="{{ domain }}{{ page.url }}" rel="self" type="application/rss+xml"/>
+
+    {%- for post in collections.post | filterBy('data.lang', lang) | reverse %}
+      <item>
+        <title>{{ post.data.title }}</title>
+        <link>{{ domain }}{{ post.url }}</link>
+        <description>
+          <![CDATA[
+            <p>{{post.data.description | safe }}</p>
+            {{ post.templateContent | safe }}
+          ]]>
+        </description>
+        <pubDate>{{ post.date.toUTCString() }}</pubDate>
+        <guid>{{ domain }}{{ post.url }}</guid>
+      </item>
+    {%- endfor %}
+
+  </channel>
+</rss>
