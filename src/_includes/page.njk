@@ -55,6 +55,12 @@ pageMap:
   {{ content | safe }}
 </main>
 
+{% if skipFooter !== true %}
+  <footer class="page-footer">
+    {{ 'build_with' | i18n }} <a href="https://11ty.io/">Eleventy</a>
+  </footer>
+{% endif %}
+
 <script>
   const possibleThemes = ['theme-light', 'theme-dark'];
 

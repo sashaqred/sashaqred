@@ -69,13 +69,22 @@ select {
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-.page {
+.page,
+.page-footer {
   width: 100%;
   max-width: var(--page-width);
-  flex-grow: 1;
   padding-right: var(--page-horisontal-padding);
   padding-left: var(--page-horisontal-padding);
   margin: auto;
+}
+
+.page {
+  flex-grow: 1;
+}
+
+.page-footer {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .post p,
