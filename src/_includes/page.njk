@@ -58,6 +58,9 @@ pageMap:
 {% if skipFooter !== true %}
   <footer class="page-footer">
     {{ 'build_with' | i18n }} <a href="https://11ty.io/">Eleventy</a>
+    {% if connectedRssUrl %}
+    / <a href="{{ connectedRssUrl }}">RSS</a>
+    {% endif %}
   </footer>
 {% endif %}
 

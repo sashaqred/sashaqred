@@ -2,6 +2,8 @@
 layout: page
 tags: post
 permalink: "/{{ lang }}/blog/{{ page.fileSlug }}/"
+eleventyComputed:
+  connectedRssUrl: "/{{ lang }}/feed.xml"
 ---
 
 {% import "post-info.njk" as postInfo %}

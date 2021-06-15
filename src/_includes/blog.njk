@@ -2,6 +2,7 @@
 layout: page
 eleventyComputed:
   title: "{{ 'blog.all_posts' | i18n }}"
+  connectedRssUrl: "/{{ lang }}/feed.xml"
 ---
 
 {% import "post-info.njk" as postInfo %}
