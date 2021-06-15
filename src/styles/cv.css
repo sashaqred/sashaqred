@@ -3,8 +3,7 @@
 }
 
 @media screen {
-  /* Fix for invertion background color in FireFox */
-  /* TODO `:root` after adding footer */
+  /* For some reason without this double selector bg isn't inverted in Firefox */
   :root,
   body {
     background-color: var(--primary-color);

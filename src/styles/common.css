@@ -5,14 +5,14 @@ html {
 }
 
 body {
-  /* TODO Remove after adding footer */
-  border-bottom: 1px solid transparent;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   margin: 0;
 }
 
 @media screen {
-  /* Fix for invertion background color in FireFox */
-  /* TODO `:root` after adding footer */
+  /* For some reason without this double selector bg isn't inverted in Firefox */
   :root,
   body {
     background-color: var(--secondary-color);
@@ -70,7 +70,9 @@ select {
 }
 
 .page {
+  width: 100%;
   max-width: var(--page-width);
+  flex-grow: 1;
   padding-right: var(--page-horisontal-padding);
   padding-left: var(--page-horisontal-padding);
   margin: auto;
