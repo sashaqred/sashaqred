@@ -4,52 +4,53 @@ pageMap:
   '': 'menu.blog'
   'about/': 'menu.about'
 ---
+{% if skipHeader !== true %}
+  <header class="header">
+    <div class="header-wrapper">
+      <nav class="header-nav">
+        <ul>
+          {%- for link, title in pageMap %}
+            {% set langLink = '/' + lang + '/' + link %}
+            {% set blankLangLink = '/' + lang + '/' %}
+            {% set blogLangLink = '/' + lang + '/blog' %}
+            <li>
+              <a
+                href="{{ langLink }}"
+                {% if langLink === blankLangLink and (langLink === page.url or page.url.startsWith(blogLangLink)) or langLink !== blankLangLink and page.url.startsWith(langLink) %}
+                  aria-current="page"
+                {% endif %}
+              >
+                {{ title | i18n }}
+              </a>
+            </li>
+          {%- endfor %}
+        </ul>
+      </nav>
 
-<header class="header">
-  <div class="header-wrapper">
-    <nav class="header-nav">
-      <ul>
-        {%- for link, title in pageMap %}
-          {% set langLink = '/' + lang + '/' + link %}
-          {% set blankLangLink = '/' + lang + '/' %}
-          {% set blogLangLink = '/' + lang + '/blog' %}
+      <div class="system-switchers">
+        <ul class="lang-switcher">
+          {%- for availableLang in availableLangs %}
+          {% set tag = 'span' if availableLang === lang else 'a' %}
+          {% set href = ' href="' + availableLang | langLink(page.url, collections.all) + '"' if tag === 'a' else '' %}
           <li>
-            <a
-              href="{{ langLink }}"
-              {% if langLink === blankLangLink and (langLink === page.url or page.url.startsWith(blogLangLink)) or langLink !== blankLangLink and page.url.startsWith(langLink) %}
-                aria-current="page"
-              {% endif %}
-            >
-              {{ title | i18n }}
-            </a>
-          </li>
-        {%- endfor %}
-      </ul>
-    </nav>
+            <{{tag}}{{href | safe}}> {{availableLang}} </{{tag}}></li>
+          {%- endfor %}
+        </ul>
 
-    <div class="system-switchers">
-      <ul class="lang-switcher">
-        {%- for availableLang in availableLangs %}
-        {% set tag = 'span' if availableLang === lang else 'a' %}
-        {% set href = ' href="' + availableLang | langLink(page.url, collections.all) + '"' if tag === 'a' else '' %}
-        <li>
-          <{{tag}}{{href | safe}}> {{availableLang}} </{{tag}}></li>
-        {%- endfor %}
-      </ul>
-
-      <form class="theme-switcher" id="theme-form">
-        <label>
-          Theme
-          <select disabled>
-            <option value="">Auto</option>
-            <option value="theme-light">Light</option>
-            <option value="theme-dark">Dark</option>
-          </select>
-        </label>
-      </form>
+        <form class="theme-switcher" id="theme-form">
+          <label>
+            Theme
+            <select disabled>
+              <option value="">Auto</option>
+              <option value="theme-light">Light</option>
+              <option value="theme-dark">Dark</option>
+            </select>
+          </label>
+        </form>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
+{% endif %}
 
 <main class="page">
   {{ content | safe }}
@@ -64,34 +65,36 @@ pageMap:
   </footer>
 {% endif %}
 
-<script>
-  const possibleThemes = ['theme-light', 'theme-dark'];
+{% if skipHeader !== true %}
+  <script>
+    const possibleThemes = ['theme-light', 'theme-dark'];
 
-  const control = document.querySelector('#theme-form select');
-  control.disabled = false;
-  control.addEventListener('change', changeEvent);
+    const control = document.querySelector('#theme-form select');
+    control.disabled = false;
+    control.addEventListener('change', changeEvent);
 
-  initTheme();
+    initTheme();
 
-  function changeEvent({ srcElement }) {
-    setTheme(srcElement.value);
-  }
+    function changeEvent({ srcElement }) {
+      setTheme(srcElement.value);
+    }
 
-  function setTheme(nextTheme) {
-    possibleThemes.forEach((theme) => {
-      if (theme === nextTheme) {
-        document.documentElement.classList.add(theme);
-      } else {
-        document.documentElement.classList.remove(theme);
-      }
-    });
-    localStorage.theme = nextTheme;
-  }
+    function setTheme(nextTheme) {
+      possibleThemes.forEach((theme) => {
+        if (theme === nextTheme) {
+          document.documentElement.classList.add(theme);
+        } else {
+          document.documentElement.classList.remove(theme);
+        }
+      });
+      localStorage.theme = nextTheme;
+    }
 
-  function initTheme() {
-    const theme = localStorage.theme ?? '';
-    const control = document.querySelector(`#theme-form select`);
-    control.value = theme;
-    setTheme(control.value);
-  }
-</script>
+    function initTheme() {
+      const theme = localStorage.theme ?? '';
+      const control = document.querySelector(`#theme-form select`);
+      control.value = theme;
+      setTheme(control.value);
+    }
+  </script>
+{% endif %}
