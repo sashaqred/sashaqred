@@ -5,10 +5,10 @@
   --action-accent-color: #bc96e6;
   --alt-accent-color: #fe4a49;
 
-  --adaptive-sm: 0.5rem;
-  --adaptive-md: 1rem;
-  --adaptive-lg: 2rem;
-  --adaptive-xl: 3rem;
+  --adaptive-sm: 0.25rem;
+  --adaptive-md: 0.5rem;
+  --adaptive-lg: 1rem;
+  --adaptive-xl: 1.5rem;
 
   --page-width: 60rem;
   --page-horisontal-padding: 1rem;
@@ -36,21 +36,12 @@ pre code {
   filter: invert(100%);
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (min-width: 50rem) {
   :root {
-    --adaptive-sm: 0.25rem;
-    --adaptive-md: 0.5rem;
-    --adaptive-lg: 1rem;
-    --adaptive-xl: 1.5rem;
-  }
-}
-
-@media screen and (min-width: 350px) and (max-width: 900px) {
-  :root {
-    --adaptive-sm: calc(0.725vw + 0.0925rem);
-    --adaptive-md: calc(1.45vw + 0.185rem);
-    --adaptive-lg: calc(2.9vw + 0.36875rem);
-    --adaptive-xl: calc(3.35vw + 0.555rem);
+    --adaptive-sm: 0.5rem;
+    --adaptive-md: 1rem;
+    --adaptive-lg: 2rem;
+    --adaptive-xl: 3rem;
   }
 }
 
