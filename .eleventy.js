@@ -9,6 +9,7 @@ const date = require('./src/_filters/date');
 const linkToSectionInstall = require('./src/_filters/link-to-section');
 const langLink = require('./src/_filters/lang-link');
 const filterBy = require('./src/_filters/filter-by');
+const imageShortcode = require('./src/_shortcodes/image');
 const md = require('./src/_markdown-it');
 const translations = require('./src/i18n');
 
@@ -26,12 +27,12 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPassthroughCopy({ '_eleventy/public': '.' });
-  eleventyConfig.addPassthroughCopy('_eleventy/{en,ru}/**/*.{png,jpg}');
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addFilter('date', date);
   eleventyConfig.addFilter('linkToSection', linkToSectionInstall(eleventyConfig));
   eleventyConfig.addFilter('langLink', langLink);
   eleventyConfig.addFilter('filterBy', filterBy);
+  eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
 
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
