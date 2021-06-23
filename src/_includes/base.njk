@@ -5,7 +5,8 @@ availableLangs: ['ru', 'en']
 
 {% set translatedDescriptionDefault = 'meta.default_description' | i18n %}
 {% set formattedDescription = description | default(translatedDescriptionDefault) | striptags | truncate(120) %}
-{% set fullUrl = 'https://sashaqred.com' + page.url %}
+{% set baseUrl = 'https://sashaqred.com' %}
+{% set fullUrl = baseUrl + page.url %}
 
 <!DOCTYPE html>
 <html lang="{{ lang }}" dir="{{ dir }}">
@@ -29,6 +30,10 @@ availableLangs: ['ru', 'en']
       <link rel="canonical" href="{{ canonical.url }}">
     {% else %}
       <link rel="canonical" href="{{ fullUrl }}">
+    {% endif %}
+
+    {% if connectedRssUrl %}
+      <link rel="alternate" type="application/rss+xml" href="{{ baseUrl + connectedRssUrl }}">
     {% endif %}
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
