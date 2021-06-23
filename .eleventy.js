@@ -46,5 +46,8 @@ module.exports = function (eleventyConfig) {
       input: '_eleventy',
       output: 'dist',
     },
+    dataTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk',
+    htmlTemplateEngine: 'njk',
   };
 };
