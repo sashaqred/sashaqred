@@ -26,6 +26,7 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPassthroughCopy({ '_eleventy/public': '.' });
+  eleventyConfig.addPassthroughCopy('_eleventy/{en,ru}/**/*.{png,jpg}');
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addFilter('date', date);
   eleventyConfig.addFilter('linkToSection', linkToSectionInstall(eleventyConfig));
