@@ -1,6 +1,6 @@
 const Image = require('@11ty/eleventy-img');
 
-module.exports = async function imageShortcode(src, alt, sizes) {
+module.exports = async function imageShortcode(src, alt) {
   if (src.startsWith('./')) {
     src = this.page.url + src;
   }
@@ -12,11 +12,12 @@ module.exports = async function imageShortcode(src, alt, sizes) {
   const metadata = await Image(src, {
     urlPath: '/generated_images',
     outputDir: './dist/generated_images',
+    // Layout is designed that images can't be more then 600px.
+    widths: [600],
   });
 
   const imageAttributes = {
     alt,
-    sizes,
     loading: 'lazy',
     decoding: 'async',
   };
