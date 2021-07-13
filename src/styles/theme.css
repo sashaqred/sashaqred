@@ -15,24 +15,23 @@
   --readable-line-width: 32rem;
 }
 
-pre,
-code {
-  filter: invert(100%);
-}
-
 pre code {
-  filter: none;
+  filter: none !important;
 }
 
 @media screen and (prefers-color-scheme: dark) {
   :root:not(.theme-light):not(.theme-dark),
-  :root:not(.theme-light):not(.theme-dark) img {
+  :root:not(.theme-light):not(.theme-dark) img,
+  :root:not(.theme-light):not(.theme-dark) pre,
+  :root:not(.theme-light):not(.theme-dark) code {
     filter: invert(100%);
   }
 }
 
 :root.theme-dark,
-:root.theme-dark img {
+:root.theme-dark img,
+:root.theme-dark pre,
+:root.theme-dark code {
   filter: invert(100%);
 }
 

@@ -4,7 +4,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const postcssPresetEnv = require('postcss-preset-env');
 
-const cssLibsPath = [resolve(__dirname, '../node_modules/prism-themes/themes/prism-a11y-dark.css')];
+const cssLibsPath = [resolve(__dirname, '../node_modules/prism-themes/themes/prism-nord.css')];
 const cssSourcePath = resolve(__dirname, '../src/styles/**/*.css');
 const cssDistPath = resolve(__dirname, '../_eleventy/public/styles');
 
