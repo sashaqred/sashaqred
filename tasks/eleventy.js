@@ -2,7 +2,7 @@ const { spawn } = require('child_process');
 const { resolve } = require('path');
 const { src, dest, watch, series, parallel } = require('gulp');
 const clean = require('gulp-clean');
-const { processCss, watchCss } = require('./style');
+const { processStyles, watchStyles } = require('./style');
 
 const eleventySourcePath = resolve(__dirname, '../src/**/*');
 const cnamePath = resolve(__dirname, '../CNAME');
@@ -30,7 +30,7 @@ function watchEleventy() {
 
 const buildEleventy = series(
   cleanEleventy,
-  processCss,
+  processStyles,
   copyEleventy,
   () =>
     spawn('eleventy', [], {
@@ -45,7 +45,7 @@ exports.eleventyBuild = buildEleventy;
 exports.eleventyServe = series(
   cleanEleventy,
   buildEleventy,
-  parallel(watchCss, watchEleventy, () =>
+  parallel(watchStyles, watchEleventy, () =>
     spawn('eleventy', ['--serve'], {
       shell: true,
       stdio: 'inherit',

@@ -1,6 +1,6 @@
 html {
   color: var(--primary-color);
-  font-family: sans-serif;
+  font-family: var(--font-family);
   font-size: 1.125rem;
 }
 
@@ -54,6 +54,7 @@ select {
   border: none;
   background-color: transparent;
   color: var(--primary-color);
+  font-family: var(--font-family);
   font-size: 1rem;
   outline-color: var(--alt-accent-color);
 }

@@ -8,6 +8,21 @@ const cssLibsPath = [resolve(__dirname, '../node_modules/prism-themes/themes/pri
 const cssSourcePath = resolve(__dirname, '../src/styles/**/*.css');
 const cssDistPath = resolve(__dirname, '../_eleventy/public/styles');
 
+const fontsFiles = [
+  'variable.css',
+  'variable-italic.css',
+  'files/raleway-cyrillic-variable-wghtOnly-normal.woff2',
+  'files/raleway-cyrillic-ext-variable-wghtOnly-normal.woff2',
+  'files/raleway-latin-variable-wghtOnly-normal.woff2',
+  'files/raleway-latin-ext-variable-wghtOnly-normal.woff2',
+  'files/raleway-cyrillic-variable-wghtOnly-italic.woff2',
+  'files/raleway-cyrillic-ext-variable-wghtOnly-italic.woff2',
+  'files/raleway-latin-variable-wghtOnly-italic.woff2',
+  'files/raleway-latin-ext-variable-wghtOnly-italic.woff2',
+].join(',');
+const fontsPath = resolve(__dirname, `../node_modules/@fontsource/raleway/{${fontsFiles}}`);
+const fontsDistPath = resolve(cssDistPath + '/raleway');
+
 function processCss() {
   const plugins = [postcssPresetEnv, autoprefixer];
   return src([...cssLibsPath, cssSourcePath])
@@ -15,10 +30,18 @@ function processCss() {
     .pipe(dest(cssDistPath));
 }
 
-function watchCss() {
-  return watch([cssSourcePath], series(processCss));
+function processFonts() {
+  return src(fontsPath).pipe(dest(fontsDistPath));
+}
+
+const processStyles = series(processCss, processFonts);
+
+function watchStyles() {
+  return watch([cssSourcePath], series(processStyles));
 }
 
 exports.processCss = processCss;
+exports.processFonts = processFonts;
+exports.processStyles = processStyles;
 
-exports.watchCss = watchCss;
+exports.watchStyles = watchStyles;

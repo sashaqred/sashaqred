@@ -13,6 +13,8 @@
   --page-width: 60rem;
   --page-horisontal-padding: 1rem;
   --readable-line-width: 32rem;
+
+  --font-family: 'RalewayVariable', sans-serif;
 }
 
 pre code {
