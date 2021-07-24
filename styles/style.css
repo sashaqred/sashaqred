@@ -1,4 +1,6 @@
+@import './raleway/variable.css';
+@import './raleway/variable-italic.css';
 @import './theme.css';
 @import './common.css';
 @import './utils.css';
-@import './prism-a11y-dark.css';
+@import './prism-nord.css';

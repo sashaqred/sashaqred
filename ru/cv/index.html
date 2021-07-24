@@ -1,12 +1,41 @@
 
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="ru" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="author" content="Sasha Verbilo">
     <title>Вербило Александр, резюме.</title>
-    <meta name="Description" content="Резюме. Основные навыки, опыт работы, образование.">
+    <meta name="description" content="Резюме. Основные навыки, опыт работы, образование.">
+    <meta property="og:title" content="Вербило Александр, резюме.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="sashaqred">
+    <meta property="og:description" content="Резюме. Основные навыки, опыт работы, образование.">
+    <meta property="og:url" content="https://sashaqred.com/ru/cv/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@sashaqred">
+
+    
+      <link rel="canonical" href="https://sashaqred.com/ru/cv/">
+    
+
+    
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+     <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-variable-wghtOnly-normal.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-ext-variable-wghtOnly-normal.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-latin-variable-wghtOnly-normal.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-latin-ext-variable-wghtOnly-normal.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-variable-wghtOnly-italic.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-ext-variable-wghtOnly-italic.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-latin-variable-wghtOnly-italic.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-latin-ext-variable-wghtOnly-italic.woff2" as="font" type="font/woff2" crossorigin="">
+
     <link rel="stylesheet" href="/styles/style.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -19,58 +48,61 @@
   <link rel="stylesheet" href="/styles/cv.css"></head>
   <body>
     
-<header class="header">
-  <div class="header-wrapper">
-    <nav class="header-nav">
-      <ul>
+  <header class="header">
+    <div class="header-wrapper">
+      <nav class="header-nav">
+        <ul>
+            
+            
+            
+            <li>
+              <a href="/ru/">
+                Блог
+              </a>
+            </li>
+            
+            
+            
+            <li>
+              <a href="/ru/about/">
+                О
+              </a>
+            </li>
+        </ul>
+      </nav>
+
+      <div class="system-switchers">
+        <ul class="lang-switcher">
           
           
           <li>
-            <a href="/ru/">
-              Блог
-            </a>
-          </li>
+            <span> ru </span></li>
           
           
           <li>
-            <a href="/ru/about/">
-              О
-            </a>
-          </li>
-      </ul>
-    </nav>
+            <a href="/en/cv/"> en </a></li>
+        </ul>
 
-    <div class="system-switchers">
-      <ul class="lang-switcher">
-        
-        
-        <li>
-          <span> ru </span></li>
-        
-        
-        <li>
-          <a href="/en/cv/"> en </a></li>
-      </ul>
-
-      <form class="theme-switcher" id="theme-form">
-        <label>
-          Theme
-          <select disabled="">
-            <option value="">Auto</option>
-            <option value="theme-light">Light</option>
-            <option value="theme-dark">Dark</option>
-          </select>
-        </label>
-      </form>
+        <form class="theme-switcher" id="theme-form">
+          <label>
+            Theme
+            <select disabled="">
+              <option value="">Auto</option>
+              <option value="theme-light">Light</option>
+              <option value="theme-dark">Dark</option>
+            </select>
+          </label>
+        </form>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
+
 
 <main class="page">
   
 <div class="intro">
   <div class="intro-pic">
-    <img alt="Мой портрет для резюме" width="217" height="217" src="/img/pic.jpg" loading="lazy">
+    <img alt="Мой портрет для резюме" width="250" height="250" src="/img/pic.jpg" loading="lazy">
   </div>
   <div class="intro-desc">
     <header>
@@ -271,37 +303,41 @@
 
 </main>
 
-<script>
-  const possibleThemes = ['theme-light', 'theme-dark'];
 
-  const control = document.querySelector('#theme-form select');
-  control.disabled = false;
-  control.addEventListener('change', changeEvent);
 
-  initTheme();
 
-  function changeEvent({ srcElement }) {
-    setTheme(srcElement.value);
-  }
+  <script>
+    const possibleThemes = ['theme-light', 'theme-dark'];
 
-  function setTheme(nextTheme) {
-    possibleThemes.forEach((theme) => {
-      if (theme === nextTheme) {
-        document.documentElement.classList.add(theme);
-      } else {
-        document.documentElement.classList.remove(theme);
-      }
-    });
-    localStorage.theme = nextTheme;
-  }
+    const control = document.querySelector('#theme-form select');
+    control.disabled = false;
+    control.addEventListener('change', changeEvent);
 
-  function initTheme() {
-    const theme = localStorage.theme ?? '';
-    const control = document.querySelector(`#theme-form select`);
-    control.value = theme;
-    setTheme(control.value);
-  }
-</script>
+    initTheme();
+
+    function changeEvent({ srcElement }) {
+      setTheme(srcElement.value);
+    }
+
+    function setTheme(nextTheme) {
+      possibleThemes.forEach((theme) => {
+        if (theme === nextTheme) {
+          document.documentElement.classList.add(theme);
+        } else {
+          document.documentElement.classList.remove(theme);
+        }
+      });
+      localStorage.theme = nextTheme;
+    }
+
+    function initTheme() {
+      const theme = localStorage.theme ?? '';
+      const control = document.querySelector(`#theme-form select`);
+      control.value = theme;
+      setTheme(control.value);
+    }
+  </script>
+
 
   </body>
 </html>

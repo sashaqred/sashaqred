@@ -1,12 +1,43 @@
 
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="ru" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="author" content="Sasha Verbilo">
     <title>Все посты</title>
-    <meta name="Description" content="Personal blog by Sasha Verbilo">
+    <meta name="description" content="Персональный блог Саши Вербило">
+    <meta property="og:title" content="Все посты">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="sashaqred">
+    <meta property="og:description" content="Персональный блог Саши Вербило">
+    <meta property="og:url" content="https://sashaqred.com/ru/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@sashaqred">
+
+    
+      <link rel="canonical" href="https://sashaqred.com/ru/">
+    
+
+    
+      <link rel="alternate" type="application/rss+xml" href="https://sashaqred.com/ru/feed.xml">
+    
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+     <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-variable-wghtOnly-normal.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-ext-variable-wghtOnly-normal.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-latin-variable-wghtOnly-normal.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-latin-ext-variable-wghtOnly-normal.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-variable-wghtOnly-italic.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-ext-variable-wghtOnly-italic.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-latin-variable-wghtOnly-italic.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-latin-ext-variable-wghtOnly-italic.woff2" as="font" type="font/woff2" crossorigin="">
+
     <link rel="stylesheet" href="/styles/style.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -19,55 +50,60 @@
   </head>
   <body>
     
-<header class="header">
-  <div class="header-wrapper">
-    <nav class="header-nav">
-      <ul>
+  <header class="header">
+    <div class="header-wrapper">
+      <nav class="header-nav">
+        <ul>
+            
+            
+            
+            <li>
+              <a href="/ru/" aria-current="page">
+                Блог
+              </a>
+            </li>
+            
+            
+            
+            <li>
+              <a href="/ru/about/">
+                О
+              </a>
+            </li>
+        </ul>
+      </nav>
+
+      <div class="system-switchers">
+        <ul class="lang-switcher">
           
           
           <li>
-            <a href="/ru/" aria-current="page">
-              Блог
-            </a>
-          </li>
+            <span> ru </span></li>
           
           
           <li>
-            <a href="/ru/about/">
-              О
-            </a>
-          </li>
-      </ul>
-    </nav>
+            <a href="/en/"> en </a></li>
+        </ul>
 
-    <div class="system-switchers">
-      <ul class="lang-switcher">
-        
-        
-        <li>
-          <span> ru </span></li>
-        
-        
-        <li>
-          <a href="/en/"> en </a></li>
-      </ul>
-
-      <form class="theme-switcher" id="theme-form">
-        <label>
-          Theme
-          <select disabled="">
-            <option value="">Auto</option>
-            <option value="theme-light">Light</option>
-            <option value="theme-dark">Dark</option>
-          </select>
-        </label>
-      </form>
+        <form class="theme-switcher" id="theme-form">
+          <label>
+            Theme
+            <select disabled="">
+              <option value="">Auto</option>
+              <option value="theme-light">Light</option>
+              <option value="theme-dark">Dark</option>
+            </select>
+          </label>
+        </form>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
+
 
 <main class="page">
   
+
+
 <h1>Все посты</h1>
 
 
@@ -76,37 +112,48 @@
 
 </main>
 
-<script>
-  const possibleThemes = ['theme-light', 'theme-dark'];
 
-  const control = document.querySelector('#theme-form select');
-  control.disabled = false;
-  control.addEventListener('change', changeEvent);
+  <footer class="page-footer">
+    Построен на <a href="https://11ty.io/">Eleventy</a>
+    
+    / <a href="/ru/feed.xml">RSS</a>
+    
+  </footer>
 
-  initTheme();
 
-  function changeEvent({ srcElement }) {
-    setTheme(srcElement.value);
-  }
 
-  function setTheme(nextTheme) {
-    possibleThemes.forEach((theme) => {
-      if (theme === nextTheme) {
-        document.documentElement.classList.add(theme);
-      } else {
-        document.documentElement.classList.remove(theme);
-      }
-    });
-    localStorage.theme = nextTheme;
-  }
+  <script>
+    const possibleThemes = ['theme-light', 'theme-dark'];
 
-  function initTheme() {
-    const theme = localStorage.theme ?? '';
-    const control = document.querySelector(`#theme-form select`);
-    control.value = theme;
-    setTheme(control.value);
-  }
-</script>
+    const control = document.querySelector('#theme-form select');
+    control.disabled = false;
+    control.addEventListener('change', changeEvent);
+
+    initTheme();
+
+    function changeEvent({ srcElement }) {
+      setTheme(srcElement.value);
+    }
+
+    function setTheme(nextTheme) {
+      possibleThemes.forEach((theme) => {
+        if (theme === nextTheme) {
+          document.documentElement.classList.add(theme);
+        } else {
+          document.documentElement.classList.remove(theme);
+        }
+      });
+      localStorage.theme = nextTheme;
+    }
+
+    function initTheme() {
+      const theme = localStorage.theme ?? '';
+      const control = document.querySelector(`#theme-form select`);
+      control.value = theme;
+      setTheme(control.value);
+    }
+  </script>
+
 
   </body>
 </html>

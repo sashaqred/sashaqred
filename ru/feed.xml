@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Все посты</title>
+    <description>Посты sashaqred.com</description>
+    <language>ru</language>
+    <link >https://sashaqred.com/ru/</link>
+
+    <atom:link href="https://sashaqred.com/ru/feed.xml" rel="self" type="application/rss+xml"/>
+
+  </channel>
+</rss>

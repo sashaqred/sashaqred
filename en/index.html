@@ -1,12 +1,43 @@
 
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="author" content="Sasha Verbilo">
     <title>All posts</title>
-    <meta name="Description" content="Personal blog by Sasha Verbilo">
+    <meta name="description" content="Personal blog by Sasha Verbilo">
+    <meta property="og:title" content="All posts">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="sashaqred">
+    <meta property="og:description" content="Personal blog by Sasha Verbilo">
+    <meta property="og:url" content="https://sashaqred.com/en/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@sashaqred">
+
+    
+      <link rel="canonical" href="https://sashaqred.com/en/">
+    
+
+    
+      <link rel="alternate" type="application/rss+xml" href="https://sashaqred.com/en/feed.xml">
+    
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+     <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-variable-wghtOnly-normal.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-ext-variable-wghtOnly-normal.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-latin-variable-wghtOnly-normal.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-latin-ext-variable-wghtOnly-normal.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-variable-wghtOnly-italic.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-ext-variable-wghtOnly-italic.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-latin-variable-wghtOnly-italic.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-latin-ext-variable-wghtOnly-italic.woff2" as="font" type="font/woff2" crossorigin="">
+
     <link rel="stylesheet" href="/styles/style.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -19,94 +50,123 @@
   </head>
   <body>
     
-<header class="header">
-  <div class="header-wrapper">
-    <nav class="header-nav">
-      <ul>
+  <header class="header">
+    <div class="header-wrapper">
+      <nav class="header-nav">
+        <ul>
+            
+            
+            
+            <li>
+              <a href="/en/" aria-current="page">
+                Blog
+              </a>
+            </li>
+            
+            
+            
+            <li>
+              <a href="/en/about/">
+                About
+              </a>
+            </li>
+        </ul>
+      </nav>
+
+      <div class="system-switchers">
+        <ul class="lang-switcher">
           
           
           <li>
-            <a href="/en/" aria-current="page">
-              Blog
-            </a>
-          </li>
+            <a href="/ru/"> ru </a></li>
           
           
           <li>
-            <a href="/en/about/">
-              About
-            </a>
-          </li>
-      </ul>
-    </nav>
+            <span> en </span></li>
+        </ul>
 
-    <div class="system-switchers">
-      <ul class="lang-switcher">
-        
-        
-        <li>
-          <a href="/ru/"> ru </a></li>
-        
-        
-        <li>
-          <span> en </span></li>
-      </ul>
-
-      <form class="theme-switcher" id="theme-form">
-        <label>
-          Theme
-          <select disabled="">
-            <option value="">Auto</option>
-            <option value="theme-light">Light</option>
-            <option value="theme-dark">Dark</option>
-          </select>
-        </label>
-      </form>
+        <form class="theme-switcher" id="theme-form">
+          <label>
+            Theme
+            <select disabled="">
+              <option value="">Auto</option>
+              <option value="theme-light">Light</option>
+              <option value="theme-dark">Dark</option>
+            </select>
+          </label>
+        </form>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
+
 
 <main class="page">
   
+
+
 <h1>All posts</h1>
 
+<section class="post-preview">
+      <h2><a href="/en/blog/2021-07-07-dark-theme/">How to add a dark theme to a web app without begging a designer for help</a></h2>
+      
+  <p>
+    <time datetime="Wed Jul 07 2021 00:00:00 GMT+0300 (Moscow Standard Time)">7 Jul 2021</time>
+    •
+    <span>4 min</span>
+    
+      / Originally posted at <a href="https://www.akveo.com/blog/how-to-add-a-dark-theme-to-a-web-app-without-begging-a-designer-for-help">Akveo</a>
+    
+  </p>
 
-  <p>Posts will be soon...</p>
-
+      
+        <p>Have you ever been in a situation where you needed to make a dark theme for your new app, but there was no designer to help? You are on a deadline, and, seemingly, there is no hope to finish the project in time. If you find yourself in this situation now, you are in the right place to find the way out of it.</p><p>From this article, you will know how to create a dark theme for your app without a designer’s help. Without further ado, let’s dive into the process.</p><p></p>
+      
+    </section>
 
 </main>
 
-<script>
-  const possibleThemes = ['theme-light', 'theme-dark'];
 
-  const control = document.querySelector('#theme-form select');
-  control.disabled = false;
-  control.addEventListener('change', changeEvent);
+  <footer class="page-footer">
+    Build with <a href="https://11ty.io/">Eleventy</a>
+    
+    / <a href="/en/feed.xml">RSS</a>
+    
+  </footer>
 
-  initTheme();
 
-  function changeEvent({ srcElement }) {
-    setTheme(srcElement.value);
-  }
 
-  function setTheme(nextTheme) {
-    possibleThemes.forEach((theme) => {
-      if (theme === nextTheme) {
-        document.documentElement.classList.add(theme);
-      } else {
-        document.documentElement.classList.remove(theme);
-      }
-    });
-    localStorage.theme = nextTheme;
-  }
+  <script>
+    const possibleThemes = ['theme-light', 'theme-dark'];
 
-  function initTheme() {
-    const theme = localStorage.theme ?? '';
-    const control = document.querySelector(`#theme-form select`);
-    control.value = theme;
-    setTheme(control.value);
-  }
-</script>
+    const control = document.querySelector('#theme-form select');
+    control.disabled = false;
+    control.addEventListener('change', changeEvent);
+
+    initTheme();
+
+    function changeEvent({ srcElement }) {
+      setTheme(srcElement.value);
+    }
+
+    function setTheme(nextTheme) {
+      possibleThemes.forEach((theme) => {
+        if (theme === nextTheme) {
+          document.documentElement.classList.add(theme);
+        } else {
+          document.documentElement.classList.remove(theme);
+        }
+      });
+      localStorage.theme = nextTheme;
+    }
+
+    function initTheme() {
+      const theme = localStorage.theme ?? '';
+      const control = document.querySelector(`#theme-form select`);
+      control.value = theme;
+      setTheme(control.value);
+    }
+  </script>
+
 
   </body>
 </html>
