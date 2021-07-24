@@ -1,8 +1,10 @@
 const Image = require('@11ty/eleventy-img');
+const { join } = require('path');
 
 module.exports = async function imageShortcode(src, alt) {
   if (src.startsWith('./')) {
-    src = this.page.url + src;
+    const [file, ...path] = this.page.filePathStem.split('/').reverse();
+    src = join(path.reverse().join('/'), src);
   }
 
   if (src.startsWith('/')) {

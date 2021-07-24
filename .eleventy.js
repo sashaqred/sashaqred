@@ -32,6 +32,17 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('linkToSection', linkToSectionInstall(eleventyConfig));
   eleventyConfig.addFilter('langLink', langLink);
   eleventyConfig.addFilter('filterBy', filterBy);
+
+  /**
+   * If file inside of folder with creation date in name,
+   * creation date won't be removed.
+   * https://github.com/11ty/eleventy/issues/1742
+   */
+  eleventyConfig.addFilter('removeDateFromPath', (value) => {
+    console.log('removeDateFromPath');
+    console.log(value);
+    return value.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+  });
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
 
   eleventyConfig.setBrowserSyncConfig({

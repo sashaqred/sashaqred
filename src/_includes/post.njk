@@ -1,7 +1,7 @@
 ---
 layout: page
 tags: post
-permalink: "/{{ lang }}/blog/{{ page.fileSlug }}/"
+permalink: "/{{ lang }}/blog/{{ page.fileSlug | removeDateFromPath }}/"
 eleventyComputed:
   connectedRssUrl: "/{{ lang }}/feed.xml"
 ---
