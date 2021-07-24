@@ -15,7 +15,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="sashaqred">
     <meta property="og:description" content="Have you ever been in a situation where you needed to make a dark theme for your new app, but there was no designer to...">
-    <meta property="og:url" content="https://sashaqred.com/en/blog/2021-07-07-dark-theme/">
+    <meta property="og:url" content="https://sashaqred.com/en/blog/add-a-dark-theme-without-a-designer/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@sashaqred">
 
@@ -141,11 +141,11 @@ Support is practically the same as in CSS Custom Properties (<a href="https://ca
 <p>Alright, we have established how to define what theme to display. But what to do if there are no colors for the dark theme? And there is the answer to that question too. We can apply color inverse filters to the whole page. Again, support will be similar to CSS Custom Properties (<a href="https://caniuse.com/css-filters">https://caniuse.com/css-filters</a>).</p>
 <script src="https://gist.github.com/sashaqred/f3d0cf79246ab9555a187c02f7b79acb.js"></script>
 <p>Now let’s add a text on the page. Looks sharp, huh? Then we add a list, a citation, and a random text item - they look just as good as the previous one. Even so, the moment we add a picture, it turns negative.</p>
-<p><picture><source type="image/webp" srcset="/generated_images/6d2c57e-600.webp 600w"><img alt="The UI before & after we've made an inversion" loading="lazy" decoding="async" src="/generated_images/6d2c57e-600.jpeg" width="600" height="500"></picture></p>
+<p><picture><source type="image/webp" srcset="/generated_images/11e9e6ba-600.webp 600w"><img alt="The UI before & after we've made an inversion" loading="lazy" decoding="async" src="/generated_images/11e9e6ba-600.jpeg" width="600" height="500"></picture></p>
 <p>At this stage, we invert the whole page. It means that <strong>all</strong> the elements will change their color to the opposite. The inversion works well with the text, but I don’t want my photos to turn negative. To avoid that, you need to add an exception.</p>
 <script src="https://gist.github.com/sashaqred/cec073ec182970140c79d57626ea07f8.js"></script>
 <p>But in this case, it would rather be a reinversion than an exception. Now, we’ve applied “reinversion” for images only. If you have a video or iFrame, or other content that is not to be reversed, you should apply the same rule to them too.</p>
-<p><picture><source type="image/webp" srcset="/generated_images/8975b178-600.webp 600w"><img alt="The UI after the reinversion" loading="lazy" decoding="async" src="/generated_images/8975b178-600.jpeg" width="600" height="1000"></picture></p>
+<p><picture><source type="image/webp" srcset="/generated_images/ea6bb9fc-600.webp 600w"><img alt="The UI after the reinversion" loading="lazy" decoding="async" src="/generated_images/ea6bb9fc-600.jpeg" width="600" height="1000"></picture></p>
 <p>Excellent!</p>
 <p>But you will ask me: “why do we need to apply a filter to <code class="language-">:root</code> and reverse visual elements to their initial state?”. Why can’t we just write the following CSS code:</p>
 <script src="https://gist.github.com/sashaqred/fe3e051a28675a5b37e978979890d785.js"></script>
@@ -158,7 +158,7 @@ Support is practically the same as in CSS Custom Properties (<a href="https://ca
 <li>Finally, the <code class="language-">img</code> selector is not influenced by the filter, so no inversion happens. However, as the <code class="language-">img</code> is a part of the element that we have inverted, the image will be negative.</li>
 </ol>
 <p>That is how it will look like on your screen:</p>
-<p><picture><source type="image/webp" srcset="/generated_images/f4333970-600.webp 600w"><img alt="Broken invert" loading="lazy" decoding="async" src="/generated_images/f4333970-600.jpeg" width="600" height="448"></picture></p>
+<p><picture><source type="image/webp" srcset="/generated_images/d65468f4-600.webp 600w"><img alt="Broken invert" loading="lazy" decoding="async" src="/generated_images/d65468f4-600.jpeg" width="600" height="448"></picture></p>
 <p>That’s why we apply the filter to the <code class="language-">root</code> element once. Then, we invert the elements that we want to stay the same, again to bring them to the initial state.</p>
 <p>Done! The first version works just fine, and the client is happy.</p>
 <p>In the second stage of the process, we add a switch for our themes.</p>
