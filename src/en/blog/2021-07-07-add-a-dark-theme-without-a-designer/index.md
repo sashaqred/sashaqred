@@ -13,15 +13,27 @@ Adding the themes is a quite easy process that is done in 3 steps:
 
 Step 1 - choose the colors:
 
-<script src="https://gist.github.com/sashaqred/a188d7537eb69c880cf97e2a72a87a45.js"></script>
+```css
+:root {
+  --primary-color: #2e3a59;
+}
+```
 
 Step 2 - add a use case:
 
-<script src="https://gist.github.com/sashaqred/47645198b37cdaaafc2ee61fc27bc1cb.js"></script>
+```css
+html {
+  color: var(--primary-color);
+}
+```
 
 Step 3 - add a new theme:
 
-<script src="https://gist.github.com/sashaqred/7c991861a758d977c6ca454b50d14b47.js"></script>
+```css
+:root.other-theme {
+  --primary-color: #8f9bb3;
+}
+```
 
 If you cannot use [CSS Custom Properties](https://caniuse.com/css-variables), you will have to write a few cycles on SASS. You can’t call this task a piece of cake, but we’ll manage to complete it.
 
@@ -36,13 +48,22 @@ Creating the first version, we didn’t want to add complex logic and additional
 Now we need to know when to display the dark theme. There is a special CSS media inquiry for that purpose: `prefers-color-scheme`.
 Support is practically the same as in CSS Custom Properties ([https://caniuse.com/prefers-color-scheme](https://caniuse.com/prefers-color-scheme)).
 
-<script src="https://gist.github.com/sashaqred/185e632becb2aba9ca432aa80ac43d34.js"></script>
+```css
+@media (prefers-color-scheme: dark) {
+}
+```
 
 ## What about the colors?
 
 Alright, we have established how to define what theme to display. But what to do if there are no colors for the dark theme? And there is the answer to that question too. We can apply color inverse filters to the whole page. Again, support will be similar to CSS Custom Properties ([https://caniuse.com/css-filters](https://caniuse.com/css-filters)).
 
-<script src="https://gist.github.com/sashaqred/f3d0cf79246ab9555a187c02f7b79acb.js"></script>
+```css
+@media (prefers-color-scheme: dark) {
+  :root {
+    filter: invert(100%);
+  }
+}
+```
 
 Now let’s add a text on the page. Looks sharp, huh? Then we add a list, a citation, and a random text item - they look just as good as the previous one. Even so, the moment we add a picture, it turns negative.
 
@@ -50,7 +71,14 @@ Now let’s add a text on the page. Looks sharp, huh? Then we add a list, a cita
 
 At this stage, we invert the whole page. It means that **all** the elements will change their color to the opposite. The inversion works well with the text, but I don’t want my photos to turn negative. To avoid that, you need to add an exception.
 
-<script src="https://gist.github.com/sashaqred/cec073ec182970140c79d57626ea07f8.js"></script>
+```css
+@media (prefers-color-scheme: dark) {
+  :root,
+  :root img {
+    filter: invert(100%);
+  }
+}
+```
 
 But in this case, it would rather be a reinversion than an exception. Now, we’ve applied “reinversion” for images only. If you have a video or iFrame, or other content that is not to be reversed, you should apply the same rule to them too.
 
@@ -60,11 +88,24 @@ Excellent!
 
 But you will ask me: “why do we need to apply a filter to `:root` and reverse visual elements to their initial state?”. Why can’t we just write the following CSS code:
 
-<script src="https://gist.github.com/sashaqred/fe3e051a28675a5b37e978979890d785.js"></script>
+```css
+*:not(img) {
+  filter: invert(100%);
+}
+```
 
 Selector will allow us to apply the filter to all the elements except images. Although, you should consider that the filter has some peculiarities. Let’s look at them in the case of the page layout below:
 
-<script src="https://gist.github.com/sashaqred/5c14742b7cfd533f3d28f7db03142622.js"></script>
+```html
+<div>
+  <p>
+    Text in p
+    <span>and in span.</span>
+  </p>
+  With picture of me:
+  <img src="./pic.jpg" />
+</div>
+```
 
 1. So as `div` matches our selector, the filter will apply to it. As a result, everything will be negative.
 2. Since `p` is inside the `div`, it matches the selector and will change too. Thus, we will have it reinverted so that the colors get back to normal.
@@ -87,7 +128,19 @@ Therefore, the `auto` will be a default value that will allow the app to inherit
 
 After we’ve added a few classes, we will modify CSS:
 
-<script src="https://gist.github.com/sashaqred/b701017950565d391ba52b877056229f.js"></script>
+```css
+@media screen and (prefers-color-scheme: dark) {
+  :root:not(.theme-light):not(.theme-dark),
+  :root:not(.theme-light):not(.theme-dark) img {
+    filter: invert(100%);
+  }
+}
+
+:root.theme-dark,
+:root.theme-dark img {
+  filter: invert(100%);
+}
+```
 
 ## Wrap up
 
