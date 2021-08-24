@@ -10,6 +10,14 @@
 
 Разрабатываю интерфейсы в [Akveo](https://github.com/akveo). Работаю над [UI Bakery](https://uibakery.io). Интересуюсь фронтендом и его окружением. Больше в [моем резюме](https://sashaqred.com/ru/cv) (или на [английском](https://sashaqred.com/en/cv)).
 
+## Так же пишу (или [синдицирую](https://indieweb.org/POSSE)) в:
+
+- [Akveo blog](https://www.akveo.com/team/alexander-verbilo)
+- [Habr](https://habr.com/ru/users/sashaqred/)
+- [Dev.to](https://dev.to/sashaqred)
+- [Hackernoon](https://hackernoon.com/u/sashaqred)
+- [Medium](https://medium.com/@sashaqred)
+
 ## Контакты
 
 - [LinkedIn](https://www.linkedin.com/in/sashaqred)
