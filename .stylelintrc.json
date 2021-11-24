@@ -1,5 +1,6 @@
 {
   "extends": [
+    "stylelint-config-standard",
     "stylelint-config-idiomatic-order",
     "stylelint-a11y/recommended",
     "stylelint-config-prettier"
@@ -16,6 +17,7 @@
     "stylelint-a11y"
   ],
   "rules": {
+    "custom-property-empty-line-before": null,
     "plugin/no-low-performance-animation-properties": true,
     "plugin/declaration-block-no-ignored-properties": true,
     "plugin/no-browser-hacks": true,

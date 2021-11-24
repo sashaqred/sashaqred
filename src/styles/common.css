@@ -46,7 +46,7 @@ a:focus {
   outline-color: var(--alt-accent-color);
 }
 
-:target:before {
+:target::before {
   display: block;
   height: 3rem;
   margin: -3rem 0 0;
