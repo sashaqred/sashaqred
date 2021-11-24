@@ -166,3 +166,7 @@ select {
   border-bottom: 2px dashed var(--alt-accent-color);
   margin-bottom: 1rem;
 }
+
+:not(pre) > code[class*='language-'] {
+  line-height: inherit;
+}
