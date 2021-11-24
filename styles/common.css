@@ -19,8 +19,16 @@ body {
   }
 }
 
+@media print {
+  .header,
+  .page-footer {
+    display: none;
+  }
+}
+
 * {
   box-sizing: border-box;
+  font-variant-ligatures: none;
 }
 
 a {
@@ -38,7 +46,7 @@ a:focus {
   outline-color: var(--alt-accent-color);
 }
 
-:target:before {
+:target::before {
   display: block;
   height: 3rem;
   margin: -3rem 0 0;
@@ -58,6 +66,11 @@ select {
   font-size: 1rem;
   outline-color: var(--alt-accent-color);
 }
+
+option {
+  color: initial;
+}
+
 
 .visually-hidden {
   position: absolute !important;
@@ -97,7 +110,7 @@ select {
   position: sticky;
   z-index: 10;
   top: 0;
-  background-color: #e3e3e3;
+  background-color: var(--header-color);
 }
 
 .header-wrapper {
@@ -164,4 +177,8 @@ select {
 .post-preview:not(:last-child) {
   border-bottom: 2px dashed var(--alt-accent-color);
   margin-bottom: 1rem;
+}
+
+:not(pre) > code[class*='language-'] {
+  line-height: inherit;
 }

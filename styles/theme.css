@@ -5,6 +5,8 @@
   --action-accent-color: #bc96e6;
   --alt-accent-color: #fe4a49;
 
+  --header-color: #e3e3e3;
+
   --adaptive-sm: 0.25rem;
   --adaptive-md: 0.5rem;
   --adaptive-lg: 1rem;
@@ -22,19 +24,17 @@ pre code {
 }
 
 @media screen and (prefers-color-scheme: dark) {
-  :root:not(.theme-light):not(.theme-dark),
-  :root:not(.theme-light):not(.theme-dark) img,
-  :root:not(.theme-light):not(.theme-dark) pre,
-  :root:not(.theme-light):not(.theme-dark) code {
-    filter: invert(100%);
+  :root:not(.theme-light):not(.theme-dark) {
+    --primary-color: #e1e1db;
+    --secondary-color: #010101;
+    --header-color: #1b1b1b;
   }
 }
 
-:root.theme-dark,
-:root.theme-dark img,
-:root.theme-dark pre,
-:root.theme-dark code {
-  filter: invert(100%);
+:root.theme-dark {
+  --primary-color: #e1e1db;
+  --secondary-color: #010101;
+  --header-color: #1b1b1b;
 }
 
 @media screen and (min-width: 50rem) {
@@ -48,7 +48,6 @@ pre code {
 
 @media print {
   :root {
-    /* stylelint-disable-next-line plugin/stylelint-no-indistinguishable-colors */
     --secondary-color: white;
     --primary-color: black;
   }

@@ -80,8 +80,9 @@ dt:last-child {
   .header {
     display: none;
   }
-  a[href^='http']:after,
-  a[href^='mailto:']:after {
+
+  a[href^='http']::after,
+  a[href^='mailto:']::after {
     content: ' (' attr(href) ')';
   }
 }
@@ -111,7 +112,6 @@ dt:last-child {
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
-
   padding: 0.25rem var(--adaptive-md);
   border-bottom: 1px solid var(--alt-accent-color);
 }
