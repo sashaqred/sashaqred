@@ -19,6 +19,13 @@ body {
   }
 }
 
+@media print {
+  .header,
+  .page-footer {
+    display: none;
+  }
+}
+
 * {
   box-sizing: border-box;
   font-variant-ligatures: none;
