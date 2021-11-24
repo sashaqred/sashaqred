@@ -67,6 +67,11 @@ select {
   outline-color: var(--alt-accent-color);
 }
 
+option {
+  color: initial;
+}
+
+
 .visually-hidden {
   position: absolute !important;
   overflow: hidden;
@@ -105,7 +110,7 @@ select {
   position: sticky;
   z-index: 10;
   top: 0;
-  background-color: #e3e3e3;
+  background-color: var(--header-color);
 }
 
 .header-wrapper {
