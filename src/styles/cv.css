@@ -98,6 +98,38 @@ dt:last-child {
   line-height: 0;
 }
 
+.secured {
+  position: relative;
+  overflow: hidden;
+}
+
+.secured_active .secured__img {
+  filter: blur(25px) contrast(0.75) saturate(0.75) brightness(0.75);
+}
+
+.secured__description {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  padding: 1rem;
+  margin: 0;
+  background-color: color(var(--primary-color) lightness(50%));
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-align: center;
+  user-select: none;
+}
+
+/* No need of focus here casue it's only visual thing */
+/* stylelint-disable-next-line a11y/selector-pseudo-class-focus */
+.secured_active:hover .secured__description {
+  display: block;
+}
+
 .intro .intro-desc {
   flex-basis: 60%;
   flex-grow: 1;

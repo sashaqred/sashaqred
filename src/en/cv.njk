@@ -8,13 +8,21 @@ skipFooter: true
 <link rel="stylesheet" href="/styles/cv.css" data-helmet="cv-css" />
 <div class="intro">
   <div class="intro-pic">
-    <img
-      alt="My portrait for CV"
-      width="250"
-      height="250"
-      src="/img/pic.jpg"
-      loading="lazy"
-    />
+    <div class="secured secured_active">
+      <img
+        alt="My portrait for CV"
+        width="250"
+        height="250"
+        src="/img/pic.jpg"
+        loading="lazy"
+        class="secured__img"
+      />
+      <p class="secured__description">
+        Click to toggle visiblity.
+        <br>
+        Hidden by default due to possible prejudice.
+      </p>
+    </div>
   </div>
   <div class="intro-desc">
     <header>
@@ -205,3 +213,5 @@ skipFooter: true
     <li>HTML</li>
   </ul>
 </section>
+
+<script src="/script/cv.js"></script>
