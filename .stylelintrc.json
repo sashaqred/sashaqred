@@ -14,6 +14,7 @@
     "stylelint-a11y"
   ],
   "rules": {
+    "selector-class-pattern": null,
     "custom-property-empty-line-before": null,
     "plugin/no-low-performance-animation-properties": true,
     "plugin/declaration-block-no-ignored-properties": true,
