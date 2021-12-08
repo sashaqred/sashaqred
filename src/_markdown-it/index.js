@@ -1,9 +1,10 @@
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
+const slugify = require('@sindresorhus/slugify');
 
 const md = markdownIt({
   html: true,
-}).use(markdownItAnchor);
+}).use(markdownItAnchor, { slugify: s => slugify(s) });
 
 md.renderer.rules.code_inline = (tokens, idx, { langPrefix = '' }) => {
   const token = tokens[idx];
