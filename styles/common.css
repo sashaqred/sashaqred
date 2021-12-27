@@ -28,6 +28,9 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+code {
   font-variant-ligatures: none;
 }
 

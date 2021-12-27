@@ -1,19 +1,133 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-  <channel>
-    <title>Все посты</title>
-    <description>Посты sashaqred.com</description>
-    <language>ru</language>
-    <link >https://sashaqred.com/ru/</link>
 
-    <atom:link href="https://sashaqred.com/ru/feed.xml" rel="self" type="application/rss+xml"/>
-      <item>
-        <title>Порядок операторов в RxJs</title>
-        <link>https://sashaqred.com/ru/blog/rxjs-operators-order/</link>
-        <description>
-          <![CDATA[
-            <p>TL;DR: Порядок важен. Операторы довольно атомарны и зачастую очень просты, но это не мешает им объединяться в сложные последовательности, в которых легко допустить ошибку. Давайте разберемся.</p>
-            <h2 id="prostaya-posledovatelnost" tabindex="-1">Простая последовательность</h2>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta name="theme-color" content="#7e52a0">
+    <meta name="color-scheme" content="light dark">
+
+    <meta charset="utf-8">
+    <meta name="author" content="Sasha Verbilo">
+    <title>Порядок операторов в RxJs</title>
+    <meta name="description" content="TL;DR: Порядок важен. Операторы довольно атомарны и зачастую очень просты, но это не мешает им объединяться в сложные...">
+    <meta property="og:title" content="Порядок операторов в RxJs">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="sashaqred">
+    <meta property="og:description" content="TL;DR: Порядок важен. Операторы довольно атомарны и зачастую очень просты, но это не мешает им объединяться в сложные...">
+    <meta property="og:url" content="https://sashaqred.com/ru/blog/rxjs-operators-order/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@sashaqred">
+
+    
+      <link rel="canonical" href="https://habr.com/ru/post/598151/">
+    
+
+    
+      <link rel="alternate" type="application/rss+xml" href="https://sashaqred.com/ru/feed.xml">
+    
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+     <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-variable-wghtOnly-normal.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-ext-variable-wghtOnly-normal.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-latin-variable-wghtOnly-normal.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-latin-ext-variable-wghtOnly-normal.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-variable-wghtOnly-italic.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-ext-variable-wghtOnly-italic.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-latin-variable-wghtOnly-italic.woff2" as="font" type="font/woff2" crossorigin="">
+     <link rel="preload" href="/styles/raleway/files/raleway-latin-ext-variable-wghtOnly-italic.woff2" as="font" type="font/woff2" crossorigin="">
+
+    <link rel="stylesheet" href="/styles/style.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#7e52a0">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    
+  <header class="header">
+    <div class="header-wrapper">
+      <nav class="header-nav">
+        <ul>
+            
+            
+            
+            <li>
+              <a href="/ru/" aria-current="page">
+                Блог
+              </a>
+            </li>
+            
+            
+            
+            <li>
+              <a href="/ru/about/">
+                О
+              </a>
+            </li>
+        </ul>
+      </nav>
+
+      <div class="system-switchers">
+        <ul class="lang-switcher">
+          
+          
+          <li>
+            <span> ru </span></li>
+          
+          
+          <li>
+            <a href="/en/"> en </a></li>
+        </ul>
+
+        <form class="theme-switcher" id="theme-form">
+          <label>
+            Theme
+            <select disabled="">
+              <option value="">Auto</option>
+              <option value="theme-light">Light</option>
+              <option value="theme-dark">Dark</option>
+            </select>
+          </label>
+        </form>
+      </div>
+    </div>
+  </header>
+
+
+<main class="page">
+  
+
+
+<div class="post">
+  <h1>Порядок операторов в RxJs</h1>
+  
+  <p>
+    <time datetime="Mon Dec 27 2021 20:39:22 GMT+0300 (Moscow Standard Time)">27 Dec 2021</time>
+    •
+    <span>7 min</span>
+    
+      / Опубликован на <a href="https://habr.com/ru/post/598151/">Habr</a>
+    
+  </p>
+
+  
+    <p>TL;DR: Порядок важен. Операторы довольно атомарны и зачастую очень просты, но это не мешает им объединяться в сложные последовательности, в которых легко допустить ошибку. Давайте разберемся.</p>
+  
+  
+    <p>Будет очень много marble диаграмм, извините. Пара ресурсов для тех, кто не в курсе про marble диаграммы: <a href="https://www.zachgollwitzer.com/posts/2020/rxjs-marble-diagram/">How to Read an RxJS Marble Diagram</a> и <a href="https://rxjs.dev/guide/testing/marble-testing">Testing RxJS Code with Marble Diagrams</a>. В некоторых очень спорных местах я добавил подсказки: <code class="language-">↑</code> подскажет, когда конкретно произошло событие; <code class="language-">⇈</code> означает, что произошло два синхронных события подряд.</p>
+  
+  <nav class="toc">
+        <ol><li><a href="#prostaya-posledovatelnost">Простая последовательность</a></li><li><a href="#share-relay">shareRelay</a></li><li><a href="#take-until-i-avtomaticheskaya-otpiska">takeUntil и автоматическая отписка</a></li><li><a href="#bolshe-take-until">Больше takeUntil</a></li><li><a href="#mozhno-li-slomat-poryadok">Можно ли сломать порядок?</a></li><li><a href="#vmesto-vyvoda-validiruem-poryadok">Вместо вывода: валидируем порядок</a></li></ol></nav>
+  <h2 id="prostaya-posledovatelnost" tabindex="-1">Простая последовательность</h2>
 <p>Начнем с обычного интервала.</p>
 <pre class="language-ts"><code class="language-ts"><span class="token function">interval</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token builtin">console</span><span class="token punctuation">.</span>log<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>Его диаграмма будет такой:</p>
@@ -126,11 +240,52 @@
 <p>А для Angular надо включить то правило, которое соответствует вашей идеологии по автоматическим отпискам. Я предпочитаю <code class="language-">rxjs-angular/prefer-takeuntil</code>.</p>
 <p>Если вы строите свое приложение с помощью NgRx, вам поможет еще один плагин <a href="https://github.com/timdeschryver/eslint-plugin-ngrx">eslint-plugin-rxjs-ngrx</a>. В нем уже есть готовые конфигурации, советую включить <code class="language-">plugin:ngrx/recommended</code> или <code class="language-">plugin:ngrx/strict</code>, это поможет избегать типовых ошибок при использовании NgRx.</p>
 
-          ]]>
-        </description>
-        <pubDate>Mon, 27 Dec 2021 17:39:22 GMT</pubDate>
-        <guid>https://sashaqred.com/ru/blog/rxjs-operators-order/</guid>
-      </item>
+</div>
 
-  </channel>
-</rss>
+</main>
+
+
+  <footer class="page-footer">
+    Построен на <a href="https://11ty.io/">Eleventy</a>
+    
+    / <a href="/ru/feed.xml">RSS</a>
+    
+  </footer>
+
+
+
+  <script>
+    const possibleThemes = ['theme-light', 'theme-dark'];
+
+    const control = document.querySelector('#theme-form select');
+    control.disabled = false;
+    control.addEventListener('change', changeEvent);
+
+    initTheme();
+
+    function changeEvent({ srcElement }) {
+      setTheme(srcElement.value);
+    }
+
+    function setTheme(nextTheme) {
+      possibleThemes.forEach((theme) => {
+        if (theme === nextTheme) {
+          document.documentElement.classList.add(theme);
+        } else {
+          document.documentElement.classList.remove(theme);
+        }
+      });
+      localStorage.theme = nextTheme;
+    }
+
+    function initTheme() {
+      const theme = localStorage.theme ?? '';
+      const control = document.querySelector(`#theme-form select`);
+      control.value = theme;
+      setTheme(control.value);
+    }
+  </script>
+
+
+  </body>
+</html>
