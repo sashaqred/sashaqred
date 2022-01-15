@@ -5,6 +5,7 @@ class Index {
   data() {
     return {
       layout: 'page',
+      alternativeFilePath: '/README.md',
       templateEngineOverride: '11ty.js,md',
     };
   }

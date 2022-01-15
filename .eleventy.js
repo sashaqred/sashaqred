@@ -9,6 +9,7 @@ const date = require('./src/_filters/date');
 const linkToSectionInstall = require('./src/_filters/link-to-section');
 const langLink = require('./src/_filters/lang-link');
 const filterBy = require('./src/_filters/filter-by');
+const linkToGithub = require('./src/_filters/link-to-github');
 const imageShortcode = require('./src/_shortcodes/image');
 const md = require('./src/_markdown-it');
 const translations = require('./src/i18n');
@@ -32,6 +33,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('linkToSection', linkToSectionInstall(eleventyConfig));
   eleventyConfig.addFilter('langLink', langLink);
   eleventyConfig.addFilter('filterBy', filterBy);
+  eleventyConfig.addFilter('linkToGithub', linkToGithub);
 
   /**
    * If file inside of folder with creation date in name,
