@@ -2,29 +2,18 @@
   "extends": [
     "stylelint-config-standard",
     "stylelint-config-idiomatic-order",
-    "stylelint-a11y/recommended",
     "stylelint-config-prettier"
   ],
   "plugins": [
     "stylelint-high-performance-animation",
     "stylelint-declaration-block-no-ignored-properties",
-    "stylelint-selector-no-empty",
-    "stylelint-value-no-unknown-custom-properties",
-    "stylelint-no-unsupported-browser-features",
-    "stylelint-a11y"
+    "stylelint-no-unsupported-browser-features"
   ],
   "rules": {
     "selector-class-pattern": null,
     "custom-property-empty-line-before": null,
     "plugin/no-low-performance-animation-properties": true,
     "plugin/declaration-block-no-ignored-properties": true,
-    "plugin/stylelint-selector-no-empty": true,
-    "csstools/value-no-unknown-custom-properties": [
-      true,
-      {
-        "importFrom": ["src/styles/theme.css"]
-      }
-    ],
     "plugin/no-unsupported-browser-features": true
   }
 }
