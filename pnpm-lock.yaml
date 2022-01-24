@@ -4,18 +4,18 @@ specifiers:
   '@11ty/eleventy': ~1.0
   '@11ty/eleventy-img': ~1.0
   '@11ty/eleventy-plugin-rss': ~1.1
-  '@11ty/eleventy-plugin-syntaxhighlight': ~3.1
-  '@commitlint/cli': ~16.0
+  '@11ty/eleventy-plugin-syntaxhighlight': ~3.2
+  '@commitlint/cli': ~16.1
   '@commitlint/config-conventional': ~16.0
   '@fontsource/raleway': ~4.5
   '@sindresorhus/slugify': ~1.1
   '@types/markdown-it': ~12.2
-  '@types/node': ~16
+  '@types/node': ~16.11
   autoprefixer: ~10.4
   date-fns: ~2.28
   eleventy-plugin-helmet: ~0.2
   eleventy-plugin-i18n: ~0.1
-  eleventy-plugin-reading-time: 0.0.1
+  eleventy-plugin-reading-time: ~0.0
   eleventy-plugin-toc: ~1.1
   gh-pages: ~3.2
   gulp: ~4.0
@@ -23,14 +23,14 @@ specifiers:
   gulp-postcss: ~9.0
   husky: ~7.0
   is-ci: ~3.0
-  lint-staged: ~12.1
+  lint-staged: ~12.3
   markdown-it: ~12.3
   markdown-it-anchor: ~8.4
   postcss: ~8.4
   postcss-preset-env: ~7.2
   prettier: ~2.5
   prism-themes: ~1.9
-  stylelint: ~14.2
+  stylelint: ~14.3
   stylelint-config-idiomatic-order: ~8.1
   stylelint-config-prettier: ~9.0
   stylelint-config-standard: ~24.0
@@ -42,7 +42,7 @@ dependencies:
   '@11ty/eleventy': 1.0.0
   '@11ty/eleventy-img': 1.0.0
   '@11ty/eleventy-plugin-rss': 1.1.2
-  '@11ty/eleventy-plugin-syntaxhighlight': 3.1.3
+  '@11ty/eleventy-plugin-syntaxhighlight': 3.2.2
   '@fontsource/raleway': 4.5.0
   '@sindresorhus/slugify': 1.1.2
   '@types/markdown-it': 12.2.3
@@ -57,7 +57,7 @@ dependencies:
   prism-themes: 1.9.0
 
 devDependencies:
-  '@commitlint/cli': 16.0.3_@types+node@16.11.21
+  '@commitlint/cli': 16.1.0_@types+node@16.11.21
   '@commitlint/config-conventional': 16.0.0
   autoprefixer: 10.4.2_postcss@8.4.5
   gh-pages: 3.2.3
@@ -66,17 +66,17 @@ devDependencies:
   gulp-postcss: 9.0.1_postcss@8.4.5
   husky: 7.0.4
   is-ci: 3.0.1
-  lint-staged: 12.1.7
+  lint-staged: 12.3.1
   postcss: 8.4.5
   postcss-preset-env: 7.2.3_postcss@8.4.5
   prettier: 2.5.1
-  stylelint: 14.2.0
-  stylelint-config-idiomatic-order: 8.1.0_stylelint@14.2.0
-  stylelint-config-prettier: 9.0.3_stylelint@14.2.0
-  stylelint-config-standard: 24.0.0_stylelint@14.2.0
-  stylelint-declaration-block-no-ignored-properties: 2.5.0_stylelint@14.2.0
-  stylelint-high-performance-animation: 1.6.0_stylelint@14.2.0
-  stylelint-no-unsupported-browser-features: 5.0.2_stylelint@14.2.0
+  stylelint: 14.3.0
+  stylelint-config-idiomatic-order: 8.1.0_stylelint@14.3.0
+  stylelint-config-prettier: 9.0.3_stylelint@14.3.0
+  stylelint-config-standard: 24.0.0_stylelint@14.3.0
+  stylelint-declaration-block-no-ignored-properties: 2.5.0_stylelint@14.3.0
+  stylelint-high-performance-animation: 1.6.0_stylelint@14.3.0
+  stylelint-no-unsupported-browser-features: 5.0.2_stylelint@14.3.0
 
 packages:
 
@@ -122,10 +122,10 @@ packages:
       - supports-color
     dev: false
 
-  /@11ty/eleventy-plugin-syntaxhighlight/3.1.3:
-    resolution: {integrity: sha512-xUNbUl1rC6nRGwoWhTcivjWc6h45Y7QzKpjjjLAII4XxR9JsR1kOWYNOyI6ErK4I218tsBwgSgGVHsSAVFuAcQ==}
+  /@11ty/eleventy-plugin-syntaxhighlight/3.2.2:
+    resolution: {integrity: sha512-RVVNKD74+dn+3cUsZozvknRnlbGe05zlgIW22+uuhxkDYIi97xhclXLGpJqo4+IVyIpY+bSnPQ+I0wuE4GaztQ==}
     dependencies:
-      linkedom: 0.12.1
+      linkedom: 0.13.1
       prismjs: 1.26.0
     dev: false
 
@@ -206,8 +206,8 @@ packages:
       to-fast-properties: 2.0.0
     dev: false
 
-  /@commitlint/cli/16.0.3_@types+node@16.11.21:
-    resolution: {integrity: sha512-SB1od4/1ek5SShNKjKgUdpqiVNulNVgCkjkV4Zz9zLKrxn3sPcgvXMQNh/wy0/T4WPUVgHrHGcxWYOYXxrGwpg==}
+  /@commitlint/cli/16.1.0_@types+node@16.11.21:
+    resolution: {integrity: sha512-x5L1knvA3isRWBRVQx+Q6D45pA9139a2aZQYpxkljMG0dj4UHZkCnsYWpnGalxPxASI7nrI0KedKfS2YeQ55cQ==}
     engines: {node: '>=v12'}
     hasBin: true
     dependencies:
@@ -469,10 +469,6 @@ packages:
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
     dev: true
-
-  /@ungap/event-target/0.2.3:
-    resolution: {integrity: sha512-7Bz0qdvxNGV9n0f+xcMKU7wsEfK6PNzo8IdAcOiBgMNyCuU0Mk9dv0Hbd/Kgr+MFFfn4xLHFbuOt820egT5qEA==}
-    dev: false
 
   /JSONStream/1.3.5:
     resolution: {integrity: sha512-E+iruNOY8VV9s4JEbe1aNEm6MiszPRr/UfcHMz0TQh1BXSxHK+ASV1R6W4HpjBhSeS+54PIsAMCBmwD06LLsqQ==}
@@ -3703,10 +3699,9 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
 
-  /linkedom/0.12.1:
-    resolution: {integrity: sha512-kqqcUNG7RRuRFVSz5pauNBEgO/y9Cc8GIrALHfb7CwDOpx9kJh217QvJc//vAOkKaMDLoZChzGJN7QksH3dTSw==}
+  /linkedom/0.13.1:
+    resolution: {integrity: sha512-UnruQeA+elgKVOzperf/M5IHtM0OtvCyvsec+oguTCINYB2JROzwnIddNaJNsOsJIz+AIdAnSvrKoQpUhkziNg==}
     dependencies:
-      '@ungap/event-target': 0.2.3
       css-select: 4.2.1
       cssom: 0.5.0
       html-escaper: 3.0.3
@@ -3720,8 +3715,8 @@ packages:
       uc.micro: 1.0.6
     dev: false
 
-  /lint-staged/12.1.7:
-    resolution: {integrity: sha512-bltv/ejiLWtowExpjU+s5z8j1Byjg9AlmaAjMmqNbIicY69u6sYIwXGg0dCn0TlkrrY2CphtHIXAkbZ+1VoWQQ==}
+  /lint-staged/12.3.1:
+    resolution: {integrity: sha512-Ocht/eT+4/siWOZDJpNUKcKX2UeWW/pDbohJ4gRsrafAjBi79JK8kiNVk2ciIVNKdw0Q4ABptl2nr6uQAlRImw==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -3731,7 +3726,7 @@ packages:
       debug: 4.3.3_supports-color@9.2.1
       execa: 5.1.1
       lilconfig: 2.0.4
-      listr2: 3.14.0
+      listr2: 4.0.1
       micromatch: 4.0.4
       normalize-path: 3.0.0
       object-inspect: 1.12.0
@@ -3752,9 +3747,9 @@ packages:
     resolution: {integrity: sha1-yn3/ZAYGQzysdcvoRGrNhksVv28=}
     dev: false
 
-  /listr2/3.14.0:
-    resolution: {integrity: sha512-TyWI8G99GX9GjE54cJ+RrNMcIFBfwMPxc3XTFiAYGN4s10hWROGtOg7+O6u6LE3mNkyld7RSLE6nrKBvTfcs3g==}
-    engines: {node: '>=10.0.0'}
+  /listr2/4.0.1:
+    resolution: {integrity: sha512-D65Nl+zyYHL2jQBGmxtH/pU8koPZo5C8iCNE8EoB04RwPgQG1wuaKwVbeZv9LJpiH4Nxs0FCp+nNcG8OqpniiA==}
+    engines: {node: '>=12'}
     peerDependencies:
       enquirer: '>= 2.3.0 < 3'
     peerDependenciesMeta:
@@ -6148,60 +6143,60 @@ packages:
     resolution: {integrity: sha1-eVjHk+R+MuB9K1yv5cC/jhLneQI=}
     dev: true
 
-  /stylelint-config-idiomatic-order/8.1.0_stylelint@14.2.0:
+  /stylelint-config-idiomatic-order/8.1.0_stylelint@14.3.0:
     resolution: {integrity: sha512-iTPY6JjbkIdzy+21x3a1xi/tG33zKhLJb6lZl1xg6jZrXjgIYelnRZ5xVtbcEP9rElxZq/Zu1eGthfvI+ri+YQ==}
     peerDependencies:
       stylelint: '>=11'
     dependencies:
-      stylelint: 14.2.0
-      stylelint-order: 3.1.1_stylelint@14.2.0
+      stylelint: 14.3.0
+      stylelint-order: 3.1.1_stylelint@14.3.0
     dev: true
 
-  /stylelint-config-prettier/9.0.3_stylelint@14.2.0:
+  /stylelint-config-prettier/9.0.3_stylelint@14.3.0:
     resolution: {integrity: sha512-5n9gUDp/n5tTMCq1GLqSpA30w2sqWITSSEiAWQlpxkKGAUbjcemQ0nbkRvRUa0B1LgD3+hCvdL7B1eTxy1QHJg==}
     engines: {node: '>= 12'}
     hasBin: true
     peerDependencies:
       stylelint: '>=11.0.0'
     dependencies:
-      stylelint: 14.2.0
+      stylelint: 14.3.0
     dev: true
 
-  /stylelint-config-recommended/6.0.0_stylelint@14.2.0:
+  /stylelint-config-recommended/6.0.0_stylelint@14.3.0:
     resolution: {integrity: sha512-ZorSSdyMcxWpROYUvLEMm0vSZud2uB7tX1hzBZwvVY9SV/uly4AvvJPPhCcymZL3fcQhEQG5AELmrxWqtmzacw==}
     peerDependencies:
       stylelint: ^14.0.0
     dependencies:
-      stylelint: 14.2.0
+      stylelint: 14.3.0
     dev: true
 
-  /stylelint-config-standard/24.0.0_stylelint@14.2.0:
+  /stylelint-config-standard/24.0.0_stylelint@14.3.0:
     resolution: {integrity: sha512-+RtU7fbNT+VlNbdXJvnjc3USNPZRiRVp/d2DxOF/vBDDTi0kH5RX2Ny6errdtZJH3boO+bmqIYEllEmok4jiuw==}
     peerDependencies:
       stylelint: ^14.0.0
     dependencies:
-      stylelint: 14.2.0
-      stylelint-config-recommended: 6.0.0_stylelint@14.2.0
+      stylelint: 14.3.0
+      stylelint-config-recommended: 6.0.0_stylelint@14.3.0
     dev: true
 
-  /stylelint-declaration-block-no-ignored-properties/2.5.0_stylelint@14.2.0:
+  /stylelint-declaration-block-no-ignored-properties/2.5.0_stylelint@14.3.0:
     resolution: {integrity: sha512-UNz5nUC5GMgMb6GPc/pHUTC0+ydxTdj2mUn7XcKRdwQoiUzzUmWWdSf1aFv2UzrW4x8JYNReE1u5JOj7g0ThJw==}
     engines: {node: '>=6'}
     peerDependencies:
       stylelint: ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0
     dependencies:
-      stylelint: 14.2.0
+      stylelint: 14.3.0
     dev: true
 
-  /stylelint-high-performance-animation/1.6.0_stylelint@14.2.0:
+  /stylelint-high-performance-animation/1.6.0_stylelint@14.3.0:
     resolution: {integrity: sha512-RW3XbNLMoKcqY97NTNLXzfg4IGzCfaIf+s4aQem7BzN5IYqYLdYuU1WCqMCoiZHRILQIkrkNvcaQOAu7bA9qxw==}
     peerDependencies:
       stylelint: ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0
     dependencies:
-      stylelint: 14.2.0
+      stylelint: 14.3.0
     dev: true
 
-  /stylelint-no-unsupported-browser-features/5.0.2_stylelint@14.2.0:
+  /stylelint-no-unsupported-browser-features/5.0.2_stylelint@14.3.0:
     resolution: {integrity: sha512-cuttYP69r0cxRMDEEq1MVVK7rGqF2N+z1fDFx+ynX1feiuXLp0NvZDKZOGmmN/HWMEjIjv5SxXKITGTSkkNc8A==}
     engines: {node: '>=12'}
     peerDependencies:
@@ -6210,10 +6205,10 @@ packages:
       doiuse: 4.4.1
       lodash: 4.17.21
       postcss: 8.4.5
-      stylelint: 14.2.0
+      stylelint: 14.3.0
     dev: true
 
-  /stylelint-order/3.1.1_stylelint@14.2.0:
+  /stylelint-order/3.1.1_stylelint@14.3.0:
     resolution: {integrity: sha512-4gP/r8j/6JGZ/LL41b2sYtQqfwZl4VSqTp7WeIwI67v/OXNQ08dnn64BGXNwAUSgb2+YIvIOxQaMzqMyQMzoyQ==}
     engines: {node: '>=8.7.0'}
     peerDependencies:
@@ -6222,11 +6217,11 @@ packages:
       lodash: 4.17.21
       postcss: 7.0.39
       postcss-sorting: 5.0.1
-      stylelint: 14.2.0
+      stylelint: 14.3.0
     dev: true
 
-  /stylelint/14.2.0:
-    resolution: {integrity: sha512-i0DrmDXFNpDsWiwx6SPRs4/pyw4kvZgqpDGvsTslQMY7hpUl6r33aQvNSn6cnTg2wtZ9rreFElI7XAKpOWi1vQ==}
+  /stylelint/14.3.0:
+    resolution: {integrity: sha512-PZXSwtJe4f4qBPWBwAbHL0M0Qjrv8iHN+cLpUNsffaVMS3YzpDDRI73+2lsqLAYfQEzxRwpll6BDKImREbpHWA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -6265,10 +6260,11 @@ packages:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       style-search: 0.1.0
+      supports-hyperlinks: 2.2.0
       svg-tags: 1.0.0
       table: 6.8.0
       v8-compile-cache: 2.3.0
-      write-file-atomic: 3.0.3
+      write-file-atomic: 4.0.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -6293,6 +6289,14 @@ packages:
   /supports-color/9.2.1:
     resolution: {integrity: sha512-Obv7ycoCTG51N7y175StI9BlAXrmgZrFhZOb0/PyjHBher/NmsdBgbbQ1Inhq+gIhz6+7Gb+jWF2Vqi7Mf1xnQ==}
     engines: {node: '>=12'}
+    dev: true
+
+  /supports-hyperlinks/2.2.0:
+    resolution: {integrity: sha512-6sXEzV5+I5j8Bmq9/vUphGRM/RJNT9SCURJLjwfOg51heRtguGWDzcaBlgAzKhQa0EVNpPEKzQuBwZ8S8WaCeQ==}
+    engines: {node: '>=8'}
+    dependencies:
+      has-flag: 4.0.0
+      supports-color: 7.2.0
     dev: true
 
   /supports-preserve-symlinks-flag/1.0.0:
@@ -6545,10 +6549,8 @@ packages:
     resolution: {integrity: sha512-180WMDQaIMm3+7hGXWf12GtdniDEy7nYcyFMKJn/eZz/6tSLXrUN9V0wKSbMjej0I1WHWbpREDEKHtqPQa9NNw==}
     dev: true
 
-  /typedarray-to-buffer/3.1.5:
-    resolution: {integrity: sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==}
-    dependencies:
-      is-typedarray: 1.0.0
+  /typedarray-to-buffer/4.0.0:
+    resolution: {integrity: sha512-6dOYeZfS3O9RtRD1caom0sMxgK59b27+IwoNy8RDPsmslSGOyU+mpTamlaIW7aNKi90ZQZ9DFaZL3YRoiSCULQ==}
     dev: true
 
   /typedarray/0.0.6:
@@ -6838,13 +6840,14 @@ packages:
   /wrappy/1.0.2:
     resolution: {integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=}
 
-  /write-file-atomic/3.0.3:
-    resolution: {integrity: sha512-AvHcyZ5JnSfq3ioSyjrBkH9yW4m7Ayk8/9My/DD9onKeu/94fwrMocemO2QAJFAlnnDN+ZDS+ZjAR5ua1/PV/Q==}
+  /write-file-atomic/4.0.0:
+    resolution: {integrity: sha512-JhcWoKffJNF7ivO9yflBhc7tn3wKnokMUfWpBriM9yCXj4ePQnRPcWglBkkg1AHC8nsW/EfxwwhqsLtOy59djA==}
+    engines: {node: ^12.13.0 || ^14.15.0 || >=16}
     dependencies:
       imurmurhash: 0.1.4
       is-typedarray: 1.0.0
       signal-exit: 3.0.6
-      typedarray-to-buffer: 3.1.5
+      typedarray-to-buffer: 4.0.0
     dev: true
 
   /ws/7.4.6:
