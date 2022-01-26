@@ -41,8 +41,6 @@ module.exports = function (eleventyConfig) {
    * https://github.com/11ty/eleventy/issues/1742
    */
   eleventyConfig.addFilter('removeDateFromPath', (value) => {
-    console.log('removeDateFromPath');
-    console.log(value);
     return value.replace(/^\d{4}-\d{2}-\d{2}-/, '');
   });
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
