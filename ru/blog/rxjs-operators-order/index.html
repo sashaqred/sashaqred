@@ -126,7 +126,8 @@
     <p>Будет очень много marble диаграмм, извините. Пара ресурсов для тех, кто не в курсе про marble диаграммы: <a href="https://www.zachgollwitzer.com/posts/2020/rxjs-marble-diagram/">How to Read an RxJS Marble Diagram</a> и <a href="https://rxjs.dev/guide/testing/marble-testing">Testing RxJS Code with Marble Diagrams</a>. В некоторых очень спорных местах я добавил подсказки: <code class="language-">↑</code> подскажет, когда конкретно произошло событие; <code class="language-">⇈</code> означает, что произошло два синхронных события подряд.</p>
   
   <nav class="toc">
-        <ol><li><a href="#prostaya-posledovatelnost">Простая последовательность</a></li><li><a href="#share-replay">shareReplay</a></li><li><a href="#take-until-i-avtomaticheskaya-otpiska">takeUntil и автоматическая отписка</a></li><li><a href="#bolshe-take-until">Больше takeUntil</a></li><li><a href="#mozhno-li-slomat-poryadok">Можно ли сломать порядок?</a></li><li><a href="#vmesto-vyvoda-validiruem-poryadok">Вместо вывода: валидируем порядок</a></li></ol></nav>
+        <ol><li><a href="#prostaya-posledovatelnost">Простая последовательность</a></li><li><a href="#share-replay">shareReplay</a></li><li><a href="#take-until-i-avtomaticheskaya-otpiska">takeUntil и автоматическая отписка</a></li><li><a href="#bolshe-take-until">Больше takeUntil</a></li><li><a href="#mozhno-li-slomat-poryadok">Можно ли сломать порядок?</a></li><li><a href="#vmesto-vyvoda-validiruem-poryadok">Вместо вывода: валидируем порядок</a></li></ol>
+      </nav>
   <h2 id="prostaya-posledovatelnost" tabindex="-1">Простая последовательность</h2>
 <p>Начнем с обычного интервала.</p>
 <pre class="language-ts"><code class="language-ts"><span class="token function">interval</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token builtin">console</span><span class="token punctuation">.</span>log<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
@@ -247,6 +248,7 @@
 
   <footer class="page-footer">
     Построен на <a href="https://11ty.io/">Eleventy</a>
+    / <a href="https://github.com/sashaqred/sashaqred/blob/master/src/ru/blog/rxjs-operators-order/index.md">Посмотреть на Github</a>
     
     / <a href="/ru/feed.xml">RSS</a>
     

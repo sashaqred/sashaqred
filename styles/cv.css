@@ -81,9 +81,13 @@ dt:last-child {
     display: none;
   }
 
-  a[href^='http']::after,
-  a[href^='mailto:']::after {
+  a[href^='http']:not([data-better-print-text])::after,
+  a[href^='mailto:']:not([data-better-print-text])::after {
     content: ' (' attr(href) ')';
+  }
+
+  [data-better-print-text]::after {
+    content: ' (' attr(data-better-print-text) ')';
   }
 }
 
@@ -124,8 +128,6 @@ dt:last-child {
   user-select: none;
 }
 
-/* No need of focus here casue it's only visual thing */
-/* stylelint-disable-next-line a11y/selector-pseudo-class-focus */
 .secured_active:hover .secured__description {
   display: block;
 }
