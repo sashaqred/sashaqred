@@ -128,8 +128,6 @@ dt:last-child {
   user-select: none;
 }
 
-/* No need of focus here casue it's only visual thing */
-/* stylelint-disable-next-line a11y/selector-pseudo-class-focus */
 .secured_active:hover .secured__description {
   display: block;
 }
