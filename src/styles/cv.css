@@ -81,9 +81,13 @@ dt:last-child {
     display: none;
   }
 
-  a[href^='http']::after,
-  a[href^='mailto:']::after {
+  a[href^='http']:not([data-better-print-text])::after,
+  a[href^='mailto:']:not([data-better-print-text])::after {
     content: ' (' attr(href) ')';
+  }
+
+  [data-better-print-text]::after {
+    content: ' (' attr(data-better-print-text) ')';
   }
 }
 
