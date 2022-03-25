@@ -2,7 +2,7 @@ const eleventyHelmetPlugin = require('eleventy-plugin-helmet');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const eleventyPluginToc = require('eleventy-plugin-toc');
-const eleventyPluginReadingTime = require('eleventy-plugin-reading-time');
+const eleventyPluginTimeToRead = require('eleventy-plugin-time-to-read');
 const i18n = require('eleventy-plugin-i18n');
 const send404 = require('./src/_browsersync/middlewares/send-404');
 const date = require('./src/_filters/date');
@@ -19,7 +19,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyHelmetPlugin);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(eleventyPluginToc);
-  eleventyConfig.addPlugin(eleventyPluginReadingTime);
+  eleventyConfig.addPlugin(eleventyPluginTimeToRead, {
+    speed: '275 words a minute',
+  });
   eleventyConfig.addPlugin(i18n, {
     translations,
     fallbackLocales: {

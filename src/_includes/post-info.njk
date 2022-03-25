@@ -2,7 +2,7 @@
   <p>
     <time datetime="{{ postPublishDate }}">{{ postPublishDate | date }}</time>
     •
-    <span>{{ postPublishContent | readingTime }}</span>
+    <span>{{ postPublishContent | timeToRead(lang) }}</span>
     {% if postCanonical %}
       / {{ 'post.originally_posted_at' | i18n({}, lang) }} <a href="{{postCanonical.url}}">{{postCanonical.name}}</a>
     {% endif %}
