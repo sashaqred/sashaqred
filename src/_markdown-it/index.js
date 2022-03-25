@@ -4,7 +4,7 @@ const slugify = require('@sindresorhus/slugify');
 
 const md = markdownIt({
   html: true,
-}).use(markdownItAnchor, { slugify: s => slugify(s) });
+}).use(markdownItAnchor, { slugify: (s) => slugify(s) });
 
 md.renderer.rules.code_inline = (tokens, idx, { langPrefix = '' }) => {
   const token = tokens[idx];
