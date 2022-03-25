@@ -52,7 +52,7 @@ availableLangs: ['ru', 'en']
 
     <link rel="stylesheet" href="/styles/style.css" />
 
-    {% favicon './_eleventy/favicon/favicon.svg' %}
+    {% favicon '/favicon/favicon.svg' | toPath %}
   </head>
   <body>
     {{ content | safe }}

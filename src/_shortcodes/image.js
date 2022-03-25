@@ -1,15 +1,8 @@
 const Image = require('@11ty/eleventy-img');
-const { join } = require('path');
+const { toPath } = require('../_filters/to-path');
 
 module.exports = async function imageShortcode(src, alt) {
-  if (src.startsWith('./')) {
-    const [file, ...path] = this.page.filePathStem.split('/').reverse();
-    src = join(path.reverse().join('/'), src);
-  }
-
-  if (src.startsWith('/')) {
-    src = './_eleventy' + src;
-  }
+  src = toPath(src, this.page.filePathStem);
 
   // Layout is designed that images can't be more then 600px.
   const widths = [600];
