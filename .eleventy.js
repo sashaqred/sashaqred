@@ -4,6 +4,7 @@ const pluginRss = require('@11ty/eleventy-plugin-rss');
 const eleventyPluginToc = require('eleventy-plugin-toc');
 const eleventyPluginTimeToRead = require('eleventy-plugin-time-to-read');
 const i18n = require('eleventy-plugin-i18n');
+const faviconPlugin = require('eleventy-favicon');
 const send404 = require('./src/_browsersync/middlewares/send-404');
 const date = require('./src/_filters/date');
 const linkToSectionInstall = require('./src/_filters/link-to-section');
@@ -29,6 +30,7 @@ module.exports = function (eleventyConfig) {
     },
   });
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(faviconPlugin, { destination: './_eleventy/public' });
   eleventyConfig.addPassthroughCopy({ '_eleventy/public': '.' });
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addFilter('date', date);
