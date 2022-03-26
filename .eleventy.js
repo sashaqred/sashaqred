@@ -5,7 +5,6 @@ const eleventyPluginToc = require('eleventy-plugin-toc');
 const eleventyPluginTimeToRead = require('eleventy-plugin-time-to-read');
 const i18n = require('eleventy-plugin-i18n');
 const faviconPlugin = require('eleventy-favicon');
-const send404 = require('./src/_browsersync/middlewares/send-404');
 const date = require('./src/_filters/date');
 const linkToSectionInstall = require('./src/_filters/link-to-section');
 const langLink = require('./src/_filters/lang-link');
@@ -50,14 +49,6 @@ module.exports = function (eleventyConfig) {
     return value.replace(/^\d{4}-\d{2}-\d{2}-/, '');
   });
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
-
-  eleventyConfig.setBrowserSyncConfig({
-    callbacks: {
-      ready: function (err, bs) {
-        bs.addMiddleware('*', send404);
-      },
-    },
-  });
 
   return {
     dir: {
