@@ -1,6 +1,8 @@
 const { format } = require('date-fns');
+const locales = require('date-fns/locale');
 
-module.exports = function (value, dateFormat = 'd MMM u') {
-  const formatted = format(value, dateFormat);
+module.exports = function (value, lang, dateFormat = 'd MMM u') {
+  const locale = lang !== 'en' ? locales[lang] : undefined;
+  const formatted = format(value, dateFormat, { locale });
   return formatted;
 };

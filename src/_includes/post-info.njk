@@ -1,6 +1,6 @@
 {% macro meta(postPublishDate, postPublishContent, postCanonical, lang) %}
   <p>
-    <time datetime="{{ postPublishDate }}">{{ postPublishDate | date }}</time>
+    <time datetime="{{ postPublishDate }}">{{ postPublishDate | date(lang) }}</time>
     •
     <span>{{ postPublishContent | timeToRead(lang) }}</span>
     {% if postCanonical %}
