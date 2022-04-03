@@ -5,13 +5,13 @@
     "prepare": "is-ci || husky install",
     "start": "gulp serve",
     "build": "gulp build",
-    "predeploy": "rm -rd dist && npm run build",
+    "predeploy": "rm -rd dist && pnpm build",
     "deploy": "gh-pages -d dist",
     "format": "prettier --write .",
-    "lint": "npm run lint:styles",
-    "lint:styles": "npm run lint:styles:files -- \"**/*.css\"",
+    "lint": "pnpm lint:styles",
+    "lint:styles": "pnpm lint:styles:files -- \"**/*.css\"",
     "lint:styles:files": "stylelint",
-    "format:check": "npm run format:check:files -- .",
+    "format:check": "pnpm format:check:files -- .",
     "format:check:files": "prettier --check"
   },
   "engines": {
