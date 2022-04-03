@@ -38,5 +38,23 @@
   "view_on": {
     "en": "View on",
     "ru": "Посмотреть на"
+  },
+  "theming": {
+    "theme": {
+      "en": "Theme",
+      "ru": "Тема"
+    },
+    "auto": {
+      "en": "Auto",
+      "ru": "Авто"
+    },
+    "light": {
+      "en": "Light",
+      "ru": "Светлая"
+    },
+    "dark": {
+      "en": "Dark",
+      "ru": "Темная"
+    }
   }
 }

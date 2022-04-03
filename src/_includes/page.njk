@@ -39,11 +39,11 @@ pageMap:
 
         <form class="theme-switcher" id="theme-form">
           <label>
-            Theme
+            {{ 'theming.theme' | i18n }}
             <select disabled>
-              <option value="">Auto</option>
-              <option value="theme-light">Light</option>
-              <option value="theme-dark">Dark</option>
+              <option value="">{{ 'theming.auto' | i18n }}</option>
+              <option value="theme-light">{{ 'theming.light' | i18n }}</option>
+              <option value="theme-dark">{{ 'theming.dark' | i18n }}</option>
             </select>
           </label>
         </form>
