@@ -42,3 +42,9 @@
   opacity: 0.05;
   user-select: none;
 }
+
+@media print {
+  .almost-invisible {
+    display: none;
+  }
+}
