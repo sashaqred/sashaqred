@@ -5,7 +5,7 @@
     "prepare": "is-ci || husky install",
     "start": "gulp serve",
     "build": "gulp build",
-    "deploy": "rm -rd dist && pnpm build && gh-pages -d dist",
+    "deploy": "rm -rdf dist && pnpm build && gh-pages -d dist",
     "format": "prettier --write .",
     "lint": "pnpm lint:styles",
     "lint:styles": "pnpm lint:styles:files -- \"**/*.css\"",
