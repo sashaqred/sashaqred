@@ -30,7 +30,7 @@ module.exports = function (eleventyConfig) {
     },
   });
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(faviconPlugin, { destination: './_eleventy/public' });
+  eleventyConfig.addPlugin(faviconPlugin, { destination: './dist' });
   eleventyConfig.addPassthroughCopy({ '_eleventy/public': '.' });
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addFilter('date', date);
