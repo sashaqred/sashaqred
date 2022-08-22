@@ -80,15 +80,6 @@ dt:last-child {
   .header {
     display: none;
   }
-
-  a[href^='http']:not([data-better-print-text])::after,
-  a[href^='mailto:']:not([data-better-print-text])::after {
-    content: ' (' attr(href) ')';
-  }
-
-  [data-better-print-text]::after {
-    content: ' (' attr(data-better-print-text) ')';
-  }
 }
 
 .intro {

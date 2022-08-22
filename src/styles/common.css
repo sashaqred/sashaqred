@@ -184,3 +184,14 @@ option {
 :not(pre) > code[class*='language-'] {
   line-height: inherit;
 }
+
+@media print {
+  .print-link[href^='http']:not([data-better-print-text])::after,
+  .print-link[href^='mailto:']:not([data-better-print-text])::after {
+    content: ': ' attr(href);
+  }
+
+  .print-link[data-better-print-text]::after {
+    content: ': ' attr(data-better-print-text);
+  }
+}
