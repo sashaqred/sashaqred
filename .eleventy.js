@@ -6,6 +6,7 @@ const eleventyPluginToc = require('eleventy-plugin-toc');
 const eleventyPluginTimeToRead = require('eleventy-plugin-time-to-read');
 const i18n = require('eleventy-plugin-i18n');
 const faviconPlugin = require('eleventy-favicon');
+const autoprefixer = require('autoprefixer');
 const date = require('./src/_filters/date');
 const linkToSectionInstall = require('./src/_filters/link-to-section');
 const langLink = require('./src/_filters/lang-link');
@@ -18,7 +19,15 @@ const translations = require('./src/i18n');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary('md', md);
-  eleventyConfig.addPlugin(eleventyVitePlugin);
+  eleventyConfig.addPlugin(eleventyVitePlugin, {
+    viteOptions: {
+      css: {
+        postcss: {
+          plugins: [autoprefixer],
+        },
+      },
+    },
+  });
   eleventyConfig.addPlugin(eleventyHelmetPlugin);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(eleventyPluginToc);
