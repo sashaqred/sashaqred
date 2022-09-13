@@ -41,13 +41,12 @@ module.exports = function (eleventyConfig) {
     },
   });
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(faviconPlugin, { destination: './dist' });
+  eleventyConfig.addPlugin(faviconPlugin, { destination: './dist/public' });
   eleventyConfig.addPassthroughCopy({
-    './CNAME': './CNAME',
-    './src/public': '.',
-    './src/styles': './styles',
+    './src/public': './public',
+    './CNAME': './public/CNAME',
 
-    './node_modules/prism-themes/themes/prism-nord.css': './styles/prism-nord.css',
+    './node_modules/prism-themes/themes/prism-nord.css': './public/styles/prism-nord.css',
     ...getFontGlobs(),
   });
 
@@ -95,7 +94,7 @@ function getFontGlobs() {
     'raleway-latin-ext-variable-wghtOnly-italic.woff2',
   ];
 
-  const fontFolderDist = './styles/raleway';
+  const fontFolderDist = './public/styles/raleway';
 
   return {
     [fontFolderPath + '{' + rootFiles + '}']: fontFolderDist,
