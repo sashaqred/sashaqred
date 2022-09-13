@@ -3,9 +3,9 @@
   "description": "Personal blog by Sasha Verbilo",
   "scripts": {
     "prepare": "is-ci || husky install",
-    "start": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy",
-    "deploy": "rm -rdf dist && pnpm build && gh-pages -d dist",
+    "start": "rm -rdf dist && npx @11ty/eleventy --serve",
+    "build": "rm -rdf dist && npx @11ty/eleventy",
+    "deploy": "pnpm build && gh-pages -d dist",
     "format": "prettier --write .",
     "lint": "pnpm lint:styles",
     "lint:styles": "pnpm lint:styles:files -- \"**/*.css\"",
