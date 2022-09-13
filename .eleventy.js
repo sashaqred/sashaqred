@@ -39,25 +39,7 @@ module.exports = function (eleventyConfig) {
     './src/styles': './styles',
 
     './node_modules/prism-themes/themes/prism-nord.css': './styles/prism-nord.css',
-    './node_modules/@fontsource/raleway/variable.css': './styles/raleway/variable.css',
-    './node_modules/@fontsource/raleway/variable-italic.css':
-      './styles/raleway/variable-italic.css',
-    './node_modules/@fontsource/raleway/files/raleway-cyrillic-variable-wghtOnly-normal.woff2':
-      './styles/raleway/files/raleway-cyrillic-variable-wghtOnly-normal.woff2',
-    './node_modules/@fontsource/raleway/files/raleway-cyrillic-ext-variable-wghtOnly-normal.woff2':
-      './styles/raleway/files/raleway-cyrillic-ext-variable-wghtOnly-normal.woff2',
-    './node_modules/@fontsource/raleway/files/raleway-latin-variable-wghtOnly-normal.woff2':
-      './styles/raleway/files/raleway-latin-variable-wghtOnly-normal.woff2',
-    './node_modules/@fontsource/raleway/files/raleway-latin-ext-variable-wghtOnly-normal.woff2':
-      './styles/raleway/files/raleway-latin-ext-variable-wghtOnly-normal.woff2',
-    './node_modules/@fontsource/raleway/files/raleway-cyrillic-variable-wghtOnly-italic.woff2':
-      './styles/raleway/files/raleway-cyrillic-variable-wghtOnly-italic.woff2',
-    './node_modules/@fontsource/raleway/files/raleway-cyrillic-ext-variable-wghtOnly-italic.woff2':
-      './styles/raleway/files/raleway-cyrillic-ext-variable-wghtOnly-italic.woff2',
-    './node_modules/@fontsource/raleway/files/raleway-latin-variable-wghtOnly-italic.woff2':
-      './styles/raleway/files/raleway-latin-variable-wghtOnly-italic.woff2',
-    './node_modules/@fontsource/raleway/files/raleway-latin-ext-variable-wghtOnly-italic.woff2':
-      './styles/raleway/files/raleway-latin-ext-variable-wghtOnly-italic.woff2',
+    ...getFontGlobs(),
   });
 
   eleventyConfig.addFilter('date', date);
@@ -87,3 +69,28 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: 'njk',
   };
 };
+
+function getFontGlobs() {
+  const fontFolderPath = './node_modules/@fontsource/raleway/';
+  const rootFiles = ['variable.css', 'variable-italic.css'];
+
+  const childFolder = 'files';
+  const childFiles = [
+    'raleway-cyrillic-variable-wghtOnly-normal.woff2',
+    'raleway-cyrillic-ext-variable-wghtOnly-normal.woff2',
+    'raleway-latin-variable-wghtOnly-normal.woff2',
+    'raleway-latin-ext-variable-wghtOnly-normal.woff2',
+    'raleway-cyrillic-variable-wghtOnly-italic.woff2',
+    'raleway-cyrillic-ext-variable-wghtOnly-italic.woff2',
+    'raleway-latin-variable-wghtOnly-italic.woff2',
+    'raleway-latin-ext-variable-wghtOnly-italic.woff2',
+  ];
+
+  const fontFolderDist = './styles/raleway';
+
+  return {
+    [fontFolderPath + '{' + rootFiles + '}']: fontFolderDist,
+    [fontFolderPath + childFolder + '/' + '{' + childFiles + '}']:
+      fontFolderDist + '/' + childFolder,
+  };
+}
