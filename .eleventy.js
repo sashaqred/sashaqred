@@ -1,6 +1,7 @@
 const eleventyHelmetPlugin = require('eleventy-plugin-helmet');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
+const eleventyVitePlugin = require('@11ty/eleventy-plugin-vite');
 const eleventyPluginToc = require('eleventy-plugin-toc');
 const eleventyPluginTimeToRead = require('eleventy-plugin-time-to-read');
 const i18n = require('eleventy-plugin-i18n');
@@ -17,6 +18,7 @@ const translations = require('./src/i18n');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary('md', md);
+  eleventyConfig.addPlugin(eleventyVitePlugin);
   eleventyConfig.addPlugin(eleventyHelmetPlugin);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(eleventyPluginToc);
@@ -31,8 +33,33 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(faviconPlugin, { destination: './dist' });
-  eleventyConfig.addPassthroughCopy({ '_eleventy/public': '.' });
-  eleventyConfig.setUseGitIgnore(false);
+  eleventyConfig.addPassthroughCopy({
+    './CNAME': './CNAME',
+    './src/public': '.',
+    './src/styles': './styles',
+
+    './node_modules/prism-themes/themes/prism-nord.css': './styles/prism-nord.css',
+    './node_modules/@fontsource/raleway/variable.css': './styles/raleway/variable.css',
+    './node_modules/@fontsource/raleway/variable-italic.css':
+      './styles/raleway/variable-italic.css',
+    './node_modules/@fontsource/raleway/files/raleway-cyrillic-variable-wghtOnly-normal.woff2':
+      './styles/raleway/files/raleway-cyrillic-variable-wghtOnly-normal.woff2',
+    './node_modules/@fontsource/raleway/files/raleway-cyrillic-ext-variable-wghtOnly-normal.woff2':
+      './styles/raleway/files/raleway-cyrillic-ext-variable-wghtOnly-normal.woff2',
+    './node_modules/@fontsource/raleway/files/raleway-latin-variable-wghtOnly-normal.woff2':
+      './styles/raleway/files/raleway-latin-variable-wghtOnly-normal.woff2',
+    './node_modules/@fontsource/raleway/files/raleway-latin-ext-variable-wghtOnly-normal.woff2':
+      './styles/raleway/files/raleway-latin-ext-variable-wghtOnly-normal.woff2',
+    './node_modules/@fontsource/raleway/files/raleway-cyrillic-variable-wghtOnly-italic.woff2':
+      './styles/raleway/files/raleway-cyrillic-variable-wghtOnly-italic.woff2',
+    './node_modules/@fontsource/raleway/files/raleway-cyrillic-ext-variable-wghtOnly-italic.woff2':
+      './styles/raleway/files/raleway-cyrillic-ext-variable-wghtOnly-italic.woff2',
+    './node_modules/@fontsource/raleway/files/raleway-latin-variable-wghtOnly-italic.woff2':
+      './styles/raleway/files/raleway-latin-variable-wghtOnly-italic.woff2',
+    './node_modules/@fontsource/raleway/files/raleway-latin-ext-variable-wghtOnly-italic.woff2':
+      './styles/raleway/files/raleway-latin-ext-variable-wghtOnly-italic.woff2',
+  });
+
   eleventyConfig.addFilter('date', date);
   eleventyConfig.addFilter('linkToSection', linkToSectionInstall(eleventyConfig));
   eleventyConfig.addFilter('langLink', langLink);
@@ -52,7 +79,7 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: {
-      input: '_eleventy',
+      input: 'src',
       output: 'dist',
     },
     dataTemplateEngine: 'njk',

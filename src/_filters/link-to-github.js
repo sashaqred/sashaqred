@@ -1,6 +1,5 @@
 module.exports = function linkToGithub(fileInput, alternativeFileInput) {
   let fileLink = alternativeFileInput ?? fileInput;
-  fileLink = fileLink.replace('./_eleventy', '/src');
   if (!fileLink.startsWith('/')) {
     fileLink = `/${fileLink}`;
   }

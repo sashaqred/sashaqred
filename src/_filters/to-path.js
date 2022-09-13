@@ -7,7 +7,7 @@ function toPath(relativeTargetPath, sourceFilePath) {
   }
 
   if (relativeTargetPath.startsWith('/')) {
-    relativeTargetPath = './_eleventy' + relativeTargetPath;
+    relativeTargetPath = './src' + relativeTargetPath;
   }
 
   return relativeTargetPath;
