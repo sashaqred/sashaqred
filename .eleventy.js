@@ -19,6 +19,7 @@ const translations = require('./src/i18n');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary('md', md);
+  eleventyConfig.setServerPassthroughCopyBehavior('copy');
   eleventyConfig.addPlugin(eleventyVitePlugin, {
     viteOptions: {
       css: {
