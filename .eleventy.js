@@ -7,6 +7,7 @@ const eleventyPluginTimeToRead = require('eleventy-plugin-time-to-read');
 const i18n = require('eleventy-plugin-i18n');
 const faviconPlugin = require('eleventy-favicon');
 const autoprefixer = require('autoprefixer');
+const { ViteMinifyPlugin } = require('vite-plugin-minify');
 const date = require('./src/_filters/date');
 const linkToSectionInstall = require('./src/_filters/link-to-section');
 const langLink = require('./src/_filters/lang-link');
@@ -22,6 +23,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setServerPassthroughCopyBehavior('copy');
   eleventyConfig.addPlugin(eleventyVitePlugin, {
     viteOptions: {
+      plugins: [ViteMinifyPlugin()],
       css: {
         postcss: {
           plugins: [autoprefixer],
