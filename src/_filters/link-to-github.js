@@ -3,6 +3,6 @@ module.exports = function linkToGithub(fileInput, alternativeFileInput) {
   if (!fileLink.startsWith('/')) {
     fileLink = `/${fileLink}`;
   }
-  fileLink = 'https://github.com/sashaqred/sashaqred/blob/master' + fileLink;
+  fileLink = 'https://github.com/sashaqred/sashaqred/blob/main' + fileLink;
   return fileLink;
 };
