@@ -48,10 +48,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     './src/public': './public',
     './CNAME': './public/CNAME',
-
-    './node_modules/prism-themes/themes/prism-nord.css': './public/styles/prism-nord.css',
-    ...getFontGlobs(),
   });
+  eleventyConfig.addPassthroughCopy('./src/styles');
 
   eleventyConfig.addFilter('date', date);
   eleventyConfig.addFilter('linkToSection', linkToSectionInstall(eleventyConfig));
@@ -80,28 +78,3 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: 'njk',
   };
 };
-
-function getFontGlobs() {
-  const fontFolderPath = './node_modules/@fontsource/raleway/';
-  const rootFiles = ['variable.css', 'variable-italic.css'];
-
-  const childFolder = 'files';
-  const childFiles = [
-    'raleway-cyrillic-variable-wghtOnly-normal.woff2',
-    'raleway-cyrillic-ext-variable-wghtOnly-normal.woff2',
-    'raleway-latin-variable-wghtOnly-normal.woff2',
-    'raleway-latin-ext-variable-wghtOnly-normal.woff2',
-    'raleway-cyrillic-variable-wghtOnly-italic.woff2',
-    'raleway-cyrillic-ext-variable-wghtOnly-italic.woff2',
-    'raleway-latin-variable-wghtOnly-italic.woff2',
-    'raleway-latin-ext-variable-wghtOnly-italic.woff2',
-  ];
-
-  const fontFolderDist = './public/styles/raleway';
-
-  return {
-    [fontFolderPath + '{' + rootFiles + '}']: fontFolderDist,
-    [fontFolderPath + childFolder + '/' + '{' + childFiles + '}']:
-      fontFolderDist + '/' + childFolder,
-  };
-}
