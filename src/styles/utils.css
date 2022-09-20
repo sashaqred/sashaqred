@@ -8,6 +8,7 @@
 }
 
 .linear-list > li::after {
+  padding-right: 0.5ch;
   content: ',';
 }
 

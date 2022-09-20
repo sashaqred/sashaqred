@@ -30,10 +30,9 @@ pageMap:
       <div class="system-switchers">
         <ul class="lang-switcher">
           {%- for availableLang in availableLangs %}
-          {% set tag = 'span' if availableLang === lang else 'a' %}
-          {% set href = ' href="' + availableLang | langLink(page.url, collections.all) + '"' if tag === 'a' else '' %}
-          <li>
-            <{{tag}}{{href | safe}}> {{availableLang}} </{{tag}}></li>
+            {% set tag = 'span' if availableLang === lang else 'a' %}
+            {% set href = ' href="' + availableLang | langLink(page.url, collections.all) + '"' if tag === 'a' else '' %}
+            <li><{{tag}}{{href | safe}}>{{availableLang}}</{{tag}}></li>
           {%- endfor %}
         </ul>
 
