@@ -54,7 +54,7 @@ availableLangs: ['ru', 'en']
 
     {% favicon '/favicon/favicon.svg' | toPath %}
   </head>
-  <body>
+  <body class="{{pageClass}}">
     {{ content | safe }}
   </body>
 </html>
