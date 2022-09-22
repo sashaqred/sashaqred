@@ -165,9 +165,7 @@ option {
 }
 
 .lang-switcher li:not(:last-child)::after {
-  padding-right: 0.5ch;
-  padding-left: 0.5ch;
-  content: '|';
+  content: ' | ';
 }
 
 .system-switchers {

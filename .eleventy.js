@@ -23,7 +23,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setServerPassthroughCopyBehavior('copy');
   eleventyConfig.addPlugin(eleventyVitePlugin, {
     viteOptions: {
-      plugins: [ViteMinifyPlugin()],
+      plugins: [
+        ViteMinifyPlugin({
+          conservativeCollapse: true,
+        }),
+      ],
       css: {
         postcss: {
           plugins: [autoprefixer],

@@ -8,12 +8,11 @@
 }
 
 .linear-list > li::after {
-  padding-right: 0.5ch;
-  content: ',';
+  content: ', ';
 }
 
 .linear-list > li:last-child::after {
-  content: '.';
+  content: '';
 }
 
 .block-list {
