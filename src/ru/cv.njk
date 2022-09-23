@@ -1,81 +1,79 @@
 ---
 layout: page
-title: Вербило Александр, резюме.
+title: Вербило Александр, резюме
 description: Резюме. Основные навыки, опыт работы, образование.
 skipFooter: true
 pageClass: cv-page
 ---
 <link rel="stylesheet" href="/styles/cv.css" data-helmet="cv-css" />
-<div class="intro">
-  <div class="intro-pic">
-    <div class="secured secured_active">
-      <img
-        alt="Мой портрет для резюме"
-        width="250"
-        height="250"
-        src="/img/pic.jpg"
-        loading="lazy"
-        class="secured__img"
-      />
-      <p class="secured__description">
-        Нажмите, чтобы переключить видимость.
-        <br>
-        Скрыто по умолчанию из-за возможной предвзятости.
-      </p>
-    </div>
-  </div>
-  <div class="intro-desc">
-    <header>
-      <h1>Вербило Александр</h1>
-      <address>Тбилиси, Грузия</address>
-      <ul class="linear-list">
-        <li>
-          <a href="https://linkedin.com/in/sashaqred" class="print-link">LinkedIn</a>
-        </li>
-        <li>
-          <a href="https://github.com/sashaqred" class="print-link">GitHub</a>
-        </li>
-        <li>
-          <a href="mailto:sashaqred@gmail.com" class="print-link" data-better-print-text="sashaqred@gmail.com">email</a>
-        </li>
-      </ul>
-    </header>
+<header class="intro">
+  <h1>Вербило Александр</h1>
+  <address>Тбилиси, Грузия</address>
+  <ul class="linear-list contacts">
+    <li>
+      <a href="https://linkedin.com/in/sashaqred" class="print-link">LinkedIn</a>
+    </li>
+    <li>
+      <a href="https://github.com/sashaqred" class="print-link">GitHub</a>
+    </li>
+    <li>
+      <a href="mailto:sashaqred@gmail.com" class="print-link" data-better-print-text="sashaqred@gmail.com">email</a>
+    </li>
+  </ul>
+</header>
 
-    <section class="about">
-      <h2>О себе</h2>
-      <p>
-        Пишу код, менторю, иногда рассказываю о технологиях.
-      </p>
-      <p>
-        Люблю Angular. Запустил React-приложение в продакшн.
-      </p>
-      <p>
-        В свободное время занимаюсь аналоговой фотографией и иногда играю в
-        баскетбол.
-      </p>
-    </section>
-  </div>
-</div>
+<section class="about">
+  <h2>О себе</h2>
+  <p class="section-content">
+    Фронтенд-инженер.
+    Помимо бизнес-задач думаю о команде и DX.
+    Не привязан к конкретной технологии, но предпочитаю Angular.
+    Нравится заниматься менторингом и платформенными задачами.
+  </p>
+  <p class="section-content">
+    В свободное время воспитываю двух собак, занимаюсь аналоговой фотографией и иногда играю в баскетбол.
+  </p>
+</section>
 
 <section class="core-skills">
   <h2>Основные навыки</h2>
-  <ul class="linear-list">
+  <ul class="linear-list section-content">
     <li>JavaScript</li>
     <li>TypeScript</li>
     <li>Angular</li>
-    <li>Git</li>
     <li>RxJs</li>
     <li>NgRx</li>
+    <li>Git</li>
+  </ul>
+</section>
+
+<section class="skills">
+  <h2>Дополнительно умею</h2>
+  <ul class="linear-list section-content">
     <li>CSS</li>
+    <li>SCSS</li>
+    <li>CI / CD</li>
+    <li>Azure</li>
+    <li>Docker</li>
+    <li>Gulp</li>
+    <li>Vite</li>
+    <li>Webpack</li>
+    <li>React</li>
+    <li>Redux</li>
+    <li>HTML</li>
+    <li>11ty</li>
+    <li>Java</li>
+    <li>NodeJS</li>
+    <li>ExpressJS</li>
+    <li>bash / zsh</li>
   </ul>
 </section>
 
 <section class="languages">
   <h2>Языки</h2>
-  <ul class="linear-list">
+  <ul class="linear-list section-content">
     <li>Русский</li>
-    <li>Английский (B1)</li>
-    <li>Немецкий (A1)</li>
+    <li>Английский</li>
   </ul>
 </section>
 
@@ -83,131 +81,81 @@ pageClass: cv-page
   <h2>Опыт</h2>
   <ul class="block-list">
     <li>
-      <h3>
-        <a href="https://uibakery.io/">UI Bakery</a>
-      </h3>
-      <p><time datetime="2020-04">Апрель 2020</time> – Сейчас.</p>
+      <div class="inline-text mb-sm">
+        <h3>
+          Ведущий фронтенд-инженер @ <a href="https://uibakery.io/">UI Bakery</a>.
+        </h3>
+        <p><time datetime="2020-04">Апрель 2020</time> – Сейчас</p>
+      </div>
       <p>
-        Фронтенд инженер. Продукт и только продукт.
-      </p>
-      <p>
-        Думаю над архитектурой и занимаюсь разработкой функциональностей.
-        Не пропускаю плохой код на код-ревью.
-        Улучшаю производительность.
-        Провожу рефакторинг.
-        Стараюсь упростить работу разработчикам.
-      </p>
-    </li>
-    <li>
-      <h3>
-        <a href="https://www.akveo.com/">Akveo</a>
-      </h3>
-      <p><time datetime="2020-04">Апрель 2020</time> – Сейчас.</p>
-      <p>
-        Фронтенд активист. Ни строчки кода.
-      </p>
-      <p>
-        Участвовую в команде технического координирования.
-        Занимаюсь унификацией код-стайла и лучших практик на проектах.
-      </p>
-      <p>
-        Пишу статьи для внутреннего обмена знаниями и в корпоративный блог.
-      </p>
-      <p>
-        Участвовал в организации внутреннего обмена знаниями.
-        Сделал перезапуск заброшенного процесса в компании.
-        Был в основной команде организаторов первого сезона:
-        искал участников, формировал расписание, выступал.
+        Дизайн и разработка основополагающих для продукта фич.
+        Улучшение процессов и DX.
+        Поддержка Angular в обновленном состоянии.
+        Сокращение количества команд и времени, необходимых для релиза, на 30%.
+        Повышение стабильности релизов.
       </p>
     </li>
     <li>
-      <h3>
-        <a href="https://vrpconsulting.com/">VRP Consulting</a>
-      </h3>
-      <p><time datetime="2017-09">Сентябрь 2017</time> – <time datetime="2020-02">Февраль 2020</time>.</p>
+      <div class="inline-text mb-sm">
+        <h3>
+          Фронтенд-активист @ <a href="https://akveo.com/">Akveo</a>.
+        </h3>
+        <p><time datetime="2020-04">Апрель 2020</time> – <time datetime="2021-12">Декабрь 2021</time></p>
+      </div>
       <p>
-        Руководитель группы. In
-        <span class="accent">❤</span>
-        with Angular.
-      </p>
-      <p>
-        Помощь в организации процессов, связанных с ростом и развитием
-        команды: проведение собеседований и проф. ревью, организация и
-        участие во внутренних митапах, помогаю людям расти.<br />
-      </p>
-      <p>
-        Написание кода, проведение кодревью и его автоматизация, оценка
-        задач, планирование.<br />
-      </p>
-      <p>Некоторые из проектов:<br /></p>
-      <dl>
-        <dt>VoIP</dt>
-        <dd>
-          <p>
-            Технологии: Angular, TypeScript, RxJs, SCSS, TSLint, Stylelint,
-            Prettier, Husky, NgRx, SIP.js, OpenCTI, WebSocket.
-          </p>
-          <p>
-            Отвечал за архитектуру и качество кода. Все приложение построено
-            на NgRx. Коммуникация с сервером построена на WebSocket.
-          </p>
-        </dd>
-        <dt>Ed-tech</dt>
-        <dd>
-          <p>
-            Технологии: Angular, TypeScript, RxJs, SCSS, TSLint, Stylelint,
-            Prettier, Husky, NgRx, Docker, Storybook, Jest.
-          </p>
-          <p>
-            Отвечал за архитектуру и качество кода. Активно использовали
-            RxJS. Настроил регрессионное тестирование с помощью Jest,
-            Storybook и Docker.
-          </p>
-        </dd>
-        <dt>Digital retail</dt>
-        <dd>
-          <p>Технологии: Angular, TypeScript, SCSS, Karma, Jasmine.</p>
-          <p>
-            Большой CRUD с небольшой динамикой.
-          </p>
-        </dd>
-        <dt>Digital marketing</dt>
-        <dd>
-          <p>
-            Технологии: React, Redux, Redux-saga, Styled-components, PM2.
-          </p>
-          <p>
-            Виджет для взаимодействия стороннего сервиса с Marketing Cloud.
-          </p>
-        </dd>
-      </dl>
-    </li>
-    <li>
-      <h3><a href="http://itictory.com/">Itictory</a></h3>
-      <p><time datetime="2016-10">Октябрь 2016</time> – <time datetime="2017-09">Сентябрь 2017</time>.</p>
-      <p>
-        Фротенд разработчик. Подготовка большой Angular любви.
-      </p>
-      <p>
-        Проектирование и разработка frontend составляющей веб приложений.
-        Организация структуры проекта и настройка его сборки.
-      </p>
-      <p>
-        Создание гибридных мобильных приложений. Использовалась связка
-        Apache Cordova и Angular. В качестве сборщика проекта использовался
-        Gulp.
+        Унификация код-стайла и применение лучших практик для корпоративого гайдлайна.
+        Поддержка библиотеки компонентов <a href="https://github.com/akveo/nebular/">Nebular</a>.
+        Написание статей для внутреннего обмена знаниями и в <a href="https://akveo.com/team/alexander-verbilo">корпоративный блог</a>.
+        Организация перезапуска митапов для внутреннего обмена знаниями: поиск участников, формирование расписаний и выступления.
       </p>
     </li>
     <li>
-      <h3><a href="https://3soft.by/">3Soft</a></h3>
-      <p><time datetime="2015-06">Июнь 2015</time> – <time datetime="2016-08">Август 2016</time>.</p>
-      <p>Веб-разработчик. Drupal наше все.</p>
+      <div class="inline-text mb-sm">
+        <h3>
+          Фронтенд-инженер @ <a href="https://vrpconsulting.com/">VRP Consulting</a>.
+        </h3>
+        <p><time datetime="2017-09">Сентябрь 2017</time> – <time datetime="2020-02">Февраль 2020</time></p>
+      </div>
       <p>
-        Кроссбраузерная и адаптивная верстка, организация структуры сайта,
-        создание модулей и тем для Drupal.
-        <span class="almost-invisible">
-          Поигрывал в Hearthstone. Однажды почти взял легенду.
-        </span>
+        Проектирование и разработка клиентской части веб приложений.
+        Улучшение DX команды:
+        унификация кодстайла с применением линтеров,
+        упрощение процесса разработки и повышение переиспольземости компонентов при помощи Storybook,
+        снижение регрессий скриншот-тестированием,
+        автоматизация и упрощение код-ревью с использованием CI.
+      </p>
+      <div class="inline-text mb-sm">
+        <h3>
+          Руководитель группы.
+        </h3>
+        <p><time datetime="2017-09">Июль 2019</time> – <time datetime="2020-02">Февраль 2020</time></p>
+      </div>
+       <p>
+        Помощь в организации процессов, связанных с ростом и развитием фронтенд департамента:
+        проведение собеседований и проф. ревью,
+        организация и участие во внутренних митапах.
+        Руководитель и ментор группы из 6 человек: вырастил миддлов из джунов.
+      </p>
+    </li>
+    <li>
+      <div class="inline-text mb-sm">
+        <h3>Фронтенд-разработчик @ <a href="http://itictory.com/">Itictory</a>.</h3>
+        <p><time datetime="2016-10">Октябрь 2016</time> – <time datetime="2017-09">Сентябрь 2017</time></p>
+      </div>
+      <p>
+        Проектирование и разработка клиентской части веб и гибридных приложений с использованием Apache Cordova с Angular.
+      </p>
+    </li>
+    <li>
+      <div class="inline-text mb-sm">
+        <h3>Веб-разработчик @ <a href="https://3soft.by/">3Soft</a>.</h3>
+        <p><time datetime="2015-06">Июнь 2015</time> – <time datetime="2016-08">Август 2016</time></p>
+      </div>
+      <p>
+        Упрощение и ускорение процесса разработки при внедрении SCSS,
+        сборка сайтов на Drupal,
+        кастомизация тем,
+        написание плагинов.
       </p>
     </li>
   </ul>
@@ -217,37 +165,26 @@ pageClass: cv-page
   <h2>Образование</h2>
   <ul class="block-list">
     <li>
-      <h3>Институт информационных технологий БГУИР, Минск</h3>
-      <p><time datetime="2015">2015</time> – <time datetime="2020">2020</time>.</p>
+      <div class="inline-text mb-sm">
+        <h3>Институт информационных технологий БГУИР</h3>.
+        <p><time datetime="2015">2015</time> – <time datetime="2020">2020</time></p>
+      </div>
       <p>
-        Факультет компьютерных технологий, Программное обеспечение
-        информационных технологий.
+        Инженер-программист,
+        Программное обеспечение информационных технологий
       </p>
     </li>
     <li>
-      <h3>
-        Минский государственный высший радиотехнический колледж, Минск
-      </h3>
-      <p><time datetime="2011">2011</time> – <time datetime="2015">2015</time>.</p>
+      <div class="inline-text mb-sm">
+        <h3>
+          Минский государственный высший радиотехнический колледж.
+        </h3>
+        <p><time datetime="2011">2011</time> – <time datetime="2015">2015</time></p>
+      </div>
       <p>
-        Факультет программирования, Программное обеспечение информационных
-        технологий.
+        Техник-программист,
+        Программное обеспечение информационных технологий
       </p>
     </li>
   </ul>
 </section>
-
-<section class="skills">
-  <h2>Дополнительно умею</h2>
-  <ul class="linear-list">
-    <li>SCSS</li>
-    <li>CI / CD</li>
-    <li>Docker</li>
-    <li>Gulp</li>
-    <li>Webpack</li>
-    <li>React / Redux</li>
-    <li>HTML</li>
-  </ul>
-</section>
-
-<script type="module" src="/script/cv.js"></script>
