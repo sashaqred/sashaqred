@@ -11,7 +11,7 @@ canonical:
 
 Adding the themes is a quite easy process that is done in 3 steps:
 
-Step 1 - choose the colors:
+Step 1 — choose the colors:
 
 ```css
 :root {
@@ -19,7 +19,7 @@ Step 1 - choose the colors:
 }
 ```
 
-Step 2 - add a use case:
+Step 2 — add a use case:
 
 ```css
 html {
@@ -27,7 +27,7 @@ html {
 }
 ```
 
-Step 3 - add a new theme:
+Step 3 — add a new theme:
 
 ```css
 :root.other-theme {
@@ -37,7 +37,7 @@ Step 3 - add a new theme:
 
 If you cannot use [CSS Custom Properties](https://caniuse.com/css-variables), you will have to write a few cycles on SASS. You can’t call this task a piece of cake, but we’ll manage to complete it.
 
-But there’s a catch - you can have a few themes only if a designer made it for you first. Although you don’t always have one by hand, you want to add a dark theme to a default one. Accessibility matters.
+But there’s a catch — you can have a few themes only if a designer made it for you first. Although you don’t always have one by hand, you want to add a dark theme to a default one. Accessibility matters.
 
 Once, I participated in a project where a designer worked only at an early stage. All the designers were busy, so we couldn’t count on them after they finished their part. But at the end of the project came an idea to make it better by adding a dark theme.
 
@@ -65,7 +65,7 @@ Alright, we have established how to define what theme to display. But what to do
 }
 ```
 
-Now let’s add a text on the page. Looks sharp, huh? Then we add a list, a citation, and a random text item - they look just as good as the previous one. Even so, the moment we add a picture, it turns negative.
+Now let’s add a text on the page. Looks sharp, huh? Then we add a list, a citation, and a random text item — they look just as good as the previous one. Even so, the moment we add a picture, it turns negative.
 
 {% image './filter-compare.jpg', 'The UI before & after we\'ve made an inversion' %}
 
@@ -148,9 +148,9 @@ That’s it! You are ready to add the dark theme to your app without a designer�
 
 We have the following process logic:
 
-- If the light theme is chosen - do nothing;
-- If the dark one - always invert;
-- If neither a dark nor light theme is chosen - invert depending on the system's settings.
+- If the light theme is chosen — do nothing;
+- If the dark one — always invert;
+- If neither a dark nor light theme is chosen — invert depending on the system's settings.
 
 “Generating” a dark theme by applying a filter is quite easy and quick.
 
