@@ -8,7 +8,7 @@ const md = markdownIt({
 
 md.renderer.rules.code_inline = (tokens, idx, { langPrefix = '' }) => {
   const token = tokens[idx];
-  return `<code class="${langPrefix}">${token.content}</code>`;
+  return `<code class="${langPrefix}">${md.utils.escapeHtml(token.content)}</code>`;
 };
 
 module.exports = md;
