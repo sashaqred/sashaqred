@@ -12,7 +12,7 @@
   }
 }
 
-@media screen and (min-width: 50rem) {
+@media screen and (width >= 50rem) {
   .cv-page .page {
     margin-top: 2rem;
     margin-bottom: 2rem;

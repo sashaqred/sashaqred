@@ -24,7 +24,7 @@ pre code {
 }
 
 @media screen and (prefers-color-scheme: dark) {
-  :root:not(.theme-light):not(.theme-dark) {
+  :root:not(.theme-light, .theme-dark) {
     --primary-color: #e1e1db;
     --secondary-color: #010101;
     --header-color: #1b1b1b;
@@ -37,7 +37,7 @@ pre code {
   --header-color: #1b1b1b;
 }
 
-@media screen and (min-width: 50rem) {
+@media screen and (width >= 50rem) {
   :root {
     --adaptive-sm: 0.5rem;
     --adaptive-md: 1rem;
