@@ -8,7 +8,7 @@ Do analog photography 📸 and time to time play basketball 🏀.
 
 ## About
 
-Developing interfaces at [Akveo](https://github.com/akveo). Working on [UI Bakery](https://uibakery.io). The core interest is frontend and its infrastructure. More in [my cv](https://sashaqred.com/en/cv) (or in [Russian](https://sashaqred.com/ru/cv)).
+Developing interfaces, improving DX, updating dependencies for [UI Bakery](https://uibakery.io). The core interest is frontend and its infrastructure. More in [my cv](https://sashaqred.com/en/cv) (or in [Russian](https://sashaqred.com/ru/cv)).
 
 ## Also write (or [syndicate](https://indieweb.org/POSSE)) at:
 
