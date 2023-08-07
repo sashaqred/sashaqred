@@ -1,6 +1,6 @@
-@import url('../../node_modules/@fontsource/raleway/variable.css');
-@import url('../../node_modules/@fontsource/raleway/variable-italic.css');
-@import url('../../node_modules/prism-themes/themes/prism-nord.css');
+@import url('/node_modules/@fontsource/raleway/variable.css');
+@import url('/node_modules/@fontsource/raleway/variable-italic.css');
+@import url('/node_modules/prism-themes/themes/prism-nord.css');
 @import url('./theme.css');
 @import url('./common.css');
 @import url('./utils.css');
