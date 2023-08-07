@@ -23,6 +23,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setServerPassthroughCopyBehavior('copy');
   eleventyConfig.addPlugin(eleventyVitePlugin, {
     viteOptions: {
+      appType: 'mpa',
       plugins: [
         ViteMinifyPlugin({
           conservativeCollapse: true,
