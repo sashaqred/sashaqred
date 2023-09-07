@@ -14,8 +14,8 @@
     "format:check:files": "prettier --check"
   },
   "engines": {
-    "node": "~18",
-    "pnpm": "~8"
+    "node": "~20.6",
+    "pnpm": "~8.7"
   },
   "repository": {
     "type": "git",
@@ -37,7 +37,7 @@
     "@fontsource/raleway": "4.5.12",
     "@sindresorhus/slugify": "1.1.2",
     "@types/markdown-it": "13.0.1",
-    "@types/node": "18.16.1",
+    "@types/node": "20.5.9",
     "autoprefixer": "10.4.15",
     "browserslist": "4.21.10",
     "caniuse-lite": "1.0.30001528",
