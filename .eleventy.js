@@ -70,19 +70,19 @@ module.exports = function (eleventyConfig) {
 };
 
 function getFontGlobs() {
-  const fontFolderPath = './node_modules/@fontsource/raleway/';
-  const rootFiles = ['variable.css', 'variable-italic.css'];
+  const fontFolderPath = './node_modules/@fontsource-variable/raleway/';
+  const rootFiles = ['wght.css', 'wght-italic.css'];
   const childFolder = 'files';
 
   const childFiles = [
-    'raleway-cyrillic-variable-wghtOnly-normal.woff2',
-    'raleway-cyrillic-ext-variable-wghtOnly-normal.woff2',
-    'raleway-latin-variable-wghtOnly-normal.woff2',
-    'raleway-latin-ext-variable-wghtOnly-normal.woff2',
-    'raleway-cyrillic-variable-wghtOnly-italic.woff2',
-    'raleway-cyrillic-ext-variable-wghtOnly-italic.woff2',
-    'raleway-latin-variable-wghtOnly-italic.woff2',
-    'raleway-latin-ext-variable-wghtOnly-italic.woff2',
+    'raleway-cyrillic-wght-normal.woff2',
+    'raleway-cyrillic-ext-wght-normal.woff2',
+    'raleway-latin-wght-normal.woff2',
+    'raleway-latin-ext-wght-normal.woff2',
+    'raleway-cyrillic-wght-italic.woff2',
+    'raleway-cyrillic-ext-wght-italic.woff2',
+    'raleway-latin-wght-italic.woff2',
+    'raleway-latin-ext-wght-italic.woff2',
   ];
 
   const fontFolderDist = './styles/raleway';

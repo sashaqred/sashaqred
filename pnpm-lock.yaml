@@ -20,9 +20,12 @@ importers:
       '@11ty/eleventy-plugin-syntaxhighlight':
         specifier: ~5.0
         version: 5.0.2
+      '@fontsource-variable/raleway':
+        specifier: ~5.2
+        version: 5.2.8
       '@fontsource/raleway':
-        specifier: 4.5.12
-        version: 4.5.12
+        specifier: ~5.2
+        version: 5.2.8
       '@sindresorhus/slugify':
         specifier: 1.1.2
         version: 1.1.2
@@ -448,8 +451,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@fontsource/raleway@4.5.12':
-    resolution: {integrity: sha512-uKs13d6NFWU4vf5LSDHK/cbaAw+UXkzz03fKjyvkKq8Nop+CeB6o8STEDkZD9/uOo3v3sgm59Wyw8uGWvxoCiA==}
+  '@fontsource-variable/raleway@5.2.8':
+    resolution: {integrity: sha512-PahqGI7bkz4a80m91Jt65DRsuFQmRip5vGDbI9sChVSKjLrdDfXbeGIwnTPi/ZVCOoQrbLnqzBOLQpLohnz+WA==}
+
+  '@fontsource/raleway@5.2.8':
+    resolution: {integrity: sha512-OATNM+J4XniKQRlI1e67v3euOnCUiXwpqgMofomKc5JNYOq0JPE6E5uTXMnFaZejKN1Z7s05JrHpmYB7/tg1Fw==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -3265,7 +3271,9 @@ snapshots:
   '@esbuild/win32-x64@0.25.12':
     optional: true
 
-  '@fontsource/raleway@4.5.12': {}
+  '@fontsource-variable/raleway@5.2.8': {}
+
+  '@fontsource/raleway@5.2.8': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
