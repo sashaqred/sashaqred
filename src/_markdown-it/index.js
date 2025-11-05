@@ -1,6 +1,6 @@
-const markdownIt = require('markdown-it');
-const markdownItAnchor = require('markdown-it-anchor');
-const slugify = require('@sindresorhus/slugify');
+import markdownIt from 'markdown-it';
+import markdownItAnchor from 'markdown-it-anchor';
+import slugify from '@sindresorhus/slugify';
 
 const md = markdownIt({
   html: true,
@@ -11,4 +11,4 @@ md.renderer.rules.code_inline = (tokens, idx, { langPrefix = '' }) => {
   return `<code class="${langPrefix}">${md.utils.escapeHtml(token.content)}</code>`;
 };
 
-module.exports = md;
+export default md;

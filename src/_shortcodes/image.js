@@ -1,7 +1,7 @@
-const Image = require('@11ty/eleventy-img');
-const { toPath } = require('../_filters/to-path');
+import Image from '@11ty/eleventy-img';
+import { toPath } from '../_filters/to-path.js';
 
-module.exports = async function imageShortcode(src, alt) {
+export default async function imageShortcode(src, alt) {
   src = toPath(src, this.page.filePathStem);
 
   // Layout is designed that images can't be more then 600px.
@@ -35,4 +35,4 @@ module.exports = async function imageShortcode(src, alt) {
   };
 
   return Image.generateHTML(metadata, imageAttributes);
-};
+}

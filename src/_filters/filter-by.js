@@ -1,6 +1,6 @@
-module.exports = function (value, filterKey, filterValues) {
+export default function filterBy(value, filterKey, filterValues) {
   return (value || []).filter((item) => filterValues.includes(getByPath(item, filterKey)));
-};
+}
 
 function getByPath(value, path) {
   let result = value;

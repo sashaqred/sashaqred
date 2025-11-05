@@ -1,6 +1,6 @@
-const { join } = require('path');
+import { join } from 'node:path';
 
-function toPath(relativeTargetPath, sourceFilePath) {
+export function toPath(relativeTargetPath, sourceFilePath) {
   if (relativeTargetPath.startsWith('./')) {
     const [sourceFileName, ...segmentsToSourceFile] = sourceFilePath.split('/').reverse();
     relativeTargetPath = join(segmentsToSourceFile.reverse().join('/'), relativeTargetPath);
@@ -13,11 +13,6 @@ function toPath(relativeTargetPath, sourceFilePath) {
   return relativeTargetPath;
 }
 
-function toPathFilter(relativeTargetPath) {
+export function toPathFilter(relativeTargetPath) {
   return toPath(relativeTargetPath, this.ctx.page.filePathStem);
 }
-
-module.exports = {
-  toPath,
-  toPathFilter,
-};

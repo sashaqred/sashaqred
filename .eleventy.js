@@ -1,22 +1,22 @@
-const eleventyHelmetPlugin = require('eleventy-plugin-helmet');
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const pluginRss = require('@11ty/eleventy-plugin-rss');
-const PostCSSPlugin = require('eleventy-plugin-postcss').default;
-const eleventyPluginToc = require('eleventy-plugin-toc');
-const eleventyPluginTimeToRead = require('eleventy-plugin-time-to-read');
-const i18n = require('eleventy-plugin-i18n');
-const faviconPlugin = require('eleventy-favicon');
-const date = require('./src/_filters/date');
-const linkToSectionInstall = require('./src/_filters/link-to-section');
-const langLink = require('./src/_filters/lang-link');
-const filterBy = require('./src/_filters/filter-by');
-const linkToGithub = require('./src/_filters/link-to-github');
-const { toPathFilter } = require('./src/_filters/to-path');
-const imageShortcode = require('./src/_shortcodes/image');
-const md = require('./src/_markdown-it');
-const translations = require('./src/i18n');
+import eleventyHelmetPlugin from 'eleventy-plugin-helmet';
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
+import pluginRss from '@11ty/eleventy-plugin-rss';
+import PostCSSPlugin from 'eleventy-plugin-postcss';
+import eleventyPluginToc from 'eleventy-plugin-toc';
+import eleventyPluginTimeToRead from 'eleventy-plugin-time-to-read';
+import i18n from 'eleventy-plugin-i18n';
+import faviconPlugin from 'eleventy-favicon';
+import date from './src/_filters/date.js';
+import linkToSectionInstall from './src/_filters/link-to-section.js';
+import langLink from './src/_filters/lang-link.js';
+import filterBy from './src/_filters/filter-by.js';
+import linkToGithub from './src/_filters/link-to-github.js';
+import { toPathFilter } from './src/_filters/to-path.js';
+import imageShortcode from './src/_shortcodes/image.js';
+import md from './src/_markdown-it/index.js';
+import translations from './src/i18n.json' with { type: 'json' };
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig.setLibrary('md', md);
   eleventyConfig.setServerPassthroughCopyBehavior('copy');
   eleventyConfig.addPlugin(PostCSSPlugin);
@@ -67,7 +67,7 @@ module.exports = function (eleventyConfig) {
     markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
   };
-};
+}
 
 function getFontGlobs() {
   const fontFolderPath = './node_modules/@fontsource-variable/raleway/';
