@@ -6,12 +6,12 @@
     "start": "rm -rdf dist && npx @11ty/eleventy --serve",
     "build": "rm -rdf dist && npx @11ty/eleventy",
     "deploy": "pnpm build && gh-pages -d dist",
-    "format": "prettier --write .",
+    "format": "prettier --write . --ignore-unknown",
     "lint": "pnpm lint:styles",
     "lint:styles": "pnpm lint:styles:files -- \"**/*.css\"",
     "lint:styles:files": "stylelint",
     "format:check": "pnpm format:check:files -- .",
-    "format:check:files": "prettier --check"
+    "format:check:files": "prettier --check --ignore-unknown"
   },
   "engines": {
     "node": "24.11.0",
@@ -61,12 +61,12 @@
     "@commitlint/config-conventional": "~20.0",
     "husky": "~9.1",
     "lint-staged": "~16.2",
-    "prettier": "3.0.3",
-    "stylelint": "15.10.3",
-    "stylelint-config-idiomatic-order": "9.0.0",
-    "stylelint-config-standard": "34.0.0",
-    "stylelint-declaration-block-no-ignored-properties": "2.7.0",
-    "stylelint-high-performance-animation": "1.9.0",
-    "stylelint-no-unsupported-browser-features": "7.0.0"
+    "prettier": "~3.6",
+    "stylelint": "~16.25",
+    "stylelint-config-idiomatic-order": "~10.0",
+    "stylelint-config-standard": "~39.0",
+    "stylelint-declaration-block-no-ignored-properties": "~2.8",
+    "stylelint-high-performance-animation": "~1.11",
+    "stylelint-no-unsupported-browser-features": "~8.0"
   }
 }
