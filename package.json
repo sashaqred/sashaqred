@@ -14,8 +14,8 @@
     "format:check:files": "prettier --check"
   },
   "engines": {
-    "node": "~20.6",
-    "pnpm": "~8.7"
+    "node": "24.11.0",
+    "pnpm": "10.20.0"
   },
   "repository": {
     "type": "git",
