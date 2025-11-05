@@ -2,7 +2,7 @@
   "name": "sashaqred",
   "description": "Personal blog by Sasha Verbilo",
   "scripts": {
-    "prepare": "is-ci || husky install",
+    "prepare": "is-ci || husky",
     "start": "rm -rdf dist && npx @11ty/eleventy --serve",
     "build": "rm -rdf dist && npx @11ty/eleventy",
     "deploy": "pnpm build && gh-pages -d dist",
@@ -57,10 +57,10 @@
     "vite-plugin-minify": "~2.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.7.1",
-    "@commitlint/config-conventional": "17.7.0",
-    "husky": "8.0.3",
-    "lint-staged": "14.0.1",
+    "@commitlint/cli": "~20.1",
+    "@commitlint/config-conventional": "~20.0",
+    "husky": "~9.1",
+    "lint-staged": "~16.2",
     "prettier": "3.0.3",
     "stylelint": "15.10.3",
     "stylelint-config-idiomatic-order": "9.0.0",
