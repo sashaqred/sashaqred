@@ -1,13 +1,11 @@
 const eleventyHelmetPlugin = require('eleventy-plugin-helmet');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
-const eleventyVitePlugin = require('@11ty/eleventy-plugin-vite').default;
+const PostCSSPlugin = require('eleventy-plugin-postcss').default;
 const eleventyPluginToc = require('eleventy-plugin-toc');
 const eleventyPluginTimeToRead = require('eleventy-plugin-time-to-read');
 const i18n = require('eleventy-plugin-i18n');
 const faviconPlugin = require('eleventy-favicon');
-const autoprefixer = require('autoprefixer');
-const { ViteMinifyPlugin } = require('vite-plugin-minify');
 const date = require('./src/_filters/date');
 const linkToSectionInstall = require('./src/_filters/link-to-section');
 const langLink = require('./src/_filters/lang-link');
@@ -21,21 +19,7 @@ const translations = require('./src/i18n');
 module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary('md', md);
   eleventyConfig.setServerPassthroughCopyBehavior('copy');
-  eleventyConfig.addPlugin(eleventyVitePlugin, {
-    viteOptions: {
-      appType: 'mpa',
-      plugins: [
-        ViteMinifyPlugin({
-          conservativeCollapse: true,
-        }),
-      ],
-      css: {
-        postcss: {
-          plugins: [autoprefixer],
-        },
-      },
-    },
-  });
+  eleventyConfig.addPlugin(PostCSSPlugin);
   eleventyConfig.addPlugin(eleventyHelmetPlugin);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(eleventyPluginToc);
@@ -49,12 +33,13 @@ module.exports = function (eleventyConfig) {
     },
   });
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(faviconPlugin, { destination: './dist/public' });
+  eleventyConfig.addPlugin(faviconPlugin, { destination: './dist' });
   eleventyConfig.addPassthroughCopy({
-    './src/public': './public',
-    './CNAME': './public/CNAME',
+    './src/public': './',
+    './CNAME': './CNAME',
+    './node_modules/prism-themes/themes/prism-nord.css': './styles/prism-nord.css',
+    ...getFontGlobs(),
   });
-  eleventyConfig.addPassthroughCopy('./src/styles');
 
   eleventyConfig.addFilter('date', date);
   eleventyConfig.addFilter('linkToSection', linkToSectionInstall(eleventyConfig));
@@ -83,3 +68,28 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: 'njk',
   };
 };
+
+function getFontGlobs() {
+  const fontFolderPath = './node_modules/@fontsource/raleway/';
+  const rootFiles = ['variable.css', 'variable-italic.css'];
+  const childFolder = 'files';
+
+  const childFiles = [
+    'raleway-cyrillic-variable-wghtOnly-normal.woff2',
+    'raleway-cyrillic-ext-variable-wghtOnly-normal.woff2',
+    'raleway-latin-variable-wghtOnly-normal.woff2',
+    'raleway-latin-ext-variable-wghtOnly-normal.woff2',
+    'raleway-cyrillic-variable-wghtOnly-italic.woff2',
+    'raleway-cyrillic-ext-variable-wghtOnly-italic.woff2',
+    'raleway-latin-variable-wghtOnly-italic.woff2',
+    'raleway-latin-ext-variable-wghtOnly-italic.woff2',
+  ];
+
+  const fontFolderDist = './styles/raleway';
+
+  return {
+    [fontFolderPath + '{' + rootFiles + '}']: fontFolderDist,
+    [fontFolderPath + childFolder + '/' + '{' + childFiles + '}']:
+      fontFolderDist + '/' + childFolder,
+  };
+}

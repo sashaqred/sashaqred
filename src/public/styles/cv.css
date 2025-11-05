@@ -1,11 +1,11 @@
 @media screen {
-  .cv-page {
+  body {
     background-color: var(--primary-color);
   }
 }
 
 @media screen {
-  .cv-page .page {
+  .page {
     max-width: 56.25rem;
     padding: var(--adaptive-lg) var(--adaptive-xl);
     background-color: var(--secondary-color);
@@ -13,82 +13,82 @@
 }
 
 @media screen and (width >= 50rem) {
-  .cv-page .page {
+  .page {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
 }
 
-.cv-page .page section {
+section {
   padding: 0 var(--adaptive-md);
   margin: var(--adaptive-lg) auto;
 }
 
-.cv-page .section-content {
+.section-content {
   padding-left: var(--adaptive-lg);
 }
 
-.cv-page .page h1,
-.cv-page .page h2,
-.cv-page .page h3 {
+h1,
+h2,
+h3 {
   margin: var(--adaptive-sm) 0;
   font-weight: normal;
 }
 
-.cv-page .page h1 {
+h1 {
   font-size: 1.6rem;
 }
 
-.cv-page .page h2 {
+h2 {
   margin: var(--adaptive-sm) 0;
   font-size: 1.4rem;
 }
 
-.cv-page .page h3 {
+h3 {
   margin: 0;
   margin-bottom: var(--adaptive-sm);
   font-size: 1.2rem;
 }
 
-.cv-page .page ul,
-.cv-page .page p,
-.cv-page .page dl {
+ul,
+p,
+dl {
   margin-right: 0;
   margin-left: 0;
 }
 
-.cv-page .page dd {
+dd {
   margin-left: var(--adaptive-lg);
 }
 
-.cv-page .page ul,
-.cv-page .page p,
-.cv-page .page dl,
-.cv-page .page dd,
-.cv-page .page dt {
+ul,
+p,
+dl,
+dd,
+dt {
   margin-top: 0.3rem;
   margin-bottom: 0.3rem;
 }
 
-.cv-page .page ul:last-child,
-.cv-page .page p:last-child,
-.cv-page .page dl:last-child,
-.cv-page .page dd:last-child,
-.cv-page .page dt:last-child {
+ul:last-child,
+p:last-child,
+dl:last-child,
+dd:last-child,
+dt:last-child {
   margin-bottom: 0;
 }
 
-.cv-page .mb-sm {
+.mb-sm {
   margin-bottom: var(--adaptive-sm);
 }
 
 @media print {
-  .cv-page .header {
+  .header {
     display: none;
   }
 }
 
-.cv-page .page .intro {
+.intro {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -97,11 +97,11 @@
   border-bottom: 1px solid var(--alt-accent-color);
 }
 
-.cv-page .page .intro h1 {
+.intro h1 {
   margin-top: 0;
 }
 
-.cv-page .page .intro .contacts {
+.intro .contacts {
   width: 100%;
   margin: 0;
 }
