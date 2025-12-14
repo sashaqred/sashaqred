@@ -1,0 +1,197 @@
+html {
+  color: var(--primary-color);
+  font-family: var(--font-family);
+  font-size: 1.125rem;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
+}
+
+@media screen {
+  /* For some reason without this double selector bg isn't inverted in Firefox */
+  :root,
+  body {
+    background-color: var(--secondary-color);
+  }
+}
+
+@media print {
+  .header,
+  .page-footer {
+    display: none;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+code {
+  font-variant-ligatures: none;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus {
+  color: var(--action-accent-color);
+}
+
+a:focus {
+  outline-color: var(--alt-accent-color);
+}
+
+:target::before {
+  display: block;
+  height: 3rem;
+  margin: -3rem 0 0;
+  content: '';
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+select {
+  border: none;
+  background-color: transparent;
+  color: var(--primary-color);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  outline-color: var(--alt-accent-color);
+}
+
+option {
+  color: initial;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.page,
+.page-footer {
+  width: 100%;
+  max-width: var(--page-width);
+  padding-right: var(--page-horisontal-padding);
+  padding-left: var(--page-horisontal-padding);
+  margin: auto;
+}
+
+.page {
+  flex-grow: 1;
+}
+
+.page-footer {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.post p,
+.post li {
+  max-width: var(--readable-line-width);
+}
+
+.header {
+  /* `position: sticky` is not functional feature here */
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  background-color: var(--header-color);
+}
+
+.header-wrapper {
+  display: flex;
+  width: var(--page-width);
+  max-width: 100%;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.header ul {
+  padding: 0;
+  margin: 0;
+}
+
+.header li {
+  display: inline-block;
+}
+
+.header-nav a {
+  display: inline-block;
+  padding: 0.5rem var(--page-horisontal-padding);
+}
+
+.header-nav a[aria-current='page'] {
+  background-color: var(--secondary-color);
+}
+
+.toc ol {
+  padding-left: 0;
+  counter-reset: section;
+  list-style-type: none;
+}
+
+.toc ol ol {
+  padding-left: 0.835rem;
+}
+
+.toc li::before {
+  content: counters(section, '.') ' ';
+  counter-increment: section;
+}
+
+.lang-switcher li {
+  text-transform: uppercase;
+}
+
+.lang-switcher li:not(:last-child)::after {
+  content: ' | ';
+}
+
+.system-switchers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.system-switchers > *:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.post-preview:not(:last-child) {
+  border-bottom: 2px dashed var(--alt-accent-color);
+  margin-bottom: 1rem;
+}
+
+:not(pre) > code[class*='language-'] {
+  line-height: inherit;
+}
+
+@media print {
+  .print-link[href^='http']:not([data-better-print-text])::after,
+  .print-link[href^='mailto:']:not([data-better-print-text])::after {
+    content: ': ' attr(href);
+  }
+
+  .print-link[data-better-print-text]::after {
+    content: ': ' attr(data-better-print-text);
+  }
+}

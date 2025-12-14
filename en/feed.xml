@@ -1,128 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>All posts</title>
+    <description>Posts from sashaqred.com</description>
+    <language>en</language>
+    <link >https://sashaqred.com/en/</link>
 
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta name="theme-color" content="#7e52a0">
-    <meta name="color-scheme" content="light dark">
-
-    <meta charset="utf-8">
-    <meta name="author" content="Sasha Verbilo">
-    <title>How to add a dark theme to a web app without begging a designer for help</title>
-    <meta name="description" content="Have you ever been in a situation where you needed to make a dark theme for your new app, but there was no designer to...">
-    <meta property="og:title" content="How to add a dark theme to a web app without begging a designer for help">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="sashaqred">
-    <meta property="og:description" content="Have you ever been in a situation where you needed to make a dark theme for your new app, but there was no designer to...">
-    <meta property="og:url" content="https://sashaqred.com/en/blog/add-a-dark-theme-without-a-designer/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:creator" content="@sashaqred">
-
-    
-      <link rel="canonical" href="https://www.akveo.com/blog/how-to-add-a-dark-theme-to-a-web-app-without-begging-a-designer-for-help">
-    
-
-    
-      <link rel="alternate" type="application/rss+xml" href="https://sashaqred.com/en/feed.xml">
-    
-
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-    <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin="">
-    <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin="">
-    <link rel="preload" href="/styles/raleway/files/raleway-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin="">
-    <link rel="preload" href="/styles/raleway/files/raleway-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin="">
-    <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-wght-italic.woff2" as="font" type="font/woff2" crossorigin="">
-    <link rel="preload" href="/styles/raleway/files/raleway-cyrillic-ext-wght-italic.woff2" as="font" type="font/woff2" crossorigin="">
-    <link rel="preload" href="/styles/raleway/files/raleway-latin-wght-italic.woff2" as="font" type="font/woff2" crossorigin="">
-    <link rel="preload" href="/styles/raleway/files/raleway-latin-ext-wght-italic.woff2" as="font" type="font/woff2" crossorigin="">
-
-    <link rel="stylesheet" href="/styles/style.css">
-
-    
-<link rel="icon" href="/favicon.ico">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    
-  </head>
-  <body>
-    
-  <header class="header">
-    <div class="header-wrapper">
-      <nav class="header-nav">
-        <ul>
-            
-            
-            
-            <li>
-              <a href="/en/" aria-current="page">
-                Blog
-              </a>
-            </li>
-            
-            
-            
-            <li>
-              <a href="/en/about/">
-                About
-              </a>
-            </li>
-        </ul>
-      </nav>
-
-      <div class="system-switchers">
-        <ul class="lang-switcher">
-            
-            
-            <li><a href="/ru/">ru</a></li>
-            
-            
-            <li><span>en</span></li>
-        </ul>
-
-        <form class="theme-switcher" id="theme-form">
-          <label>
-            Theme
-            <select disabled="">
-              <option value="">Auto</option>
-              <option value="theme-light">Light</option>
-              <option value="theme-dark">Dark</option>
-            </select>
-          </label>
-        </form>
-      </div>
-    </div>
-  </header>
-
-
-<main class="page">
-  
-
-
-<div class="post">
-  <h1>How to add a dark theme to a web app without begging a designer for help</h1>
-  
-  <p>
-    <time datetime="Mon Jun 07 2021 02:00:00 GMT+0200 (Central European Summer Time)">7 June 2021</time>
-    •
-    <span>4 minutes</span>
-    
-      / Originally posted at <a href="https://www.akveo.com/blog/how-to-add-a-dark-theme-to-a-web-app-without-begging-a-designer-for-help">Akveo</a>
-    
-  </p>
-
-  
-    <p>Have you ever been in a situation where you needed to make a dark theme for your new app, but there was no designer to help? You are on a deadline, and, seemingly, there is no hope to finish the project in time. If you find yourself in this situation now, you are in the right place to find the way out of it.</p><p>From this article, you will know how to create a dark theme for your app without a designer’s help. Without further ado, let’s dive into the process.</p><p></p>
-  
-  
-  <nav class="toc">
-        <ol><li><a href="#add-a-dark-theme">Add a Dark Theme</a></li><li><a href="#define-the-rules-for-the-dark-theme">Define the rules for the Dark Theme</a></li><li><a href="#what-about-the-colors">What about the colors?</a></li><li><a href="#wrap-up">Wrap up</a></li></ol>
-      </nav>
-  <h2 id="add-a-dark-theme" tabindex="-1">Add a Dark Theme</h2>
+    <atom:link href="https://sashaqred.com/en/feed.xml" rel="self" type="application/rss+xml"/>
+      <item>
+        <title>How to add a dark theme to a web app without begging a designer for help</title>
+        <link>https://sashaqred.com/en/blog/add-a-dark-theme-without-a-designer/</link>
+        <description>
+          <![CDATA[
+            <p>Have you ever been in a situation where you needed to make a dark theme for your new app, but there was no designer to help? You are on a deadline, and, seemingly, there is no hope to finish the project in time. If you find yourself in this situation now, you are in the right place to find the way out of it.<p>From this article, you will know how to create a dark theme for your app without a designer’s help. Without further ado, let’s dive into the process.</p></p>
+            <h2 id="add-a-dark-theme" tabindex="-1">Add a Dark Theme</h2>
 <p>Adding the themes is a quite easy process that is done in 3 steps:</p>
 <p>Step 1 — choose the colors:</p>
 <pre class="language-css"><code class="language-css"><span class="token selector">:root</span> <span class="token punctuation">{</span>
@@ -220,53 +111,11 @@ Support is practically the same as in CSS Custom Properties (<a href="https://ca
 </ul>
 <p>Regardless of all the drawbacks, it is still a credible and fast way to add a dark theme to your app. Besides, it can be helpful when you want to experiment with different themes, make PoC (Proof of concept), and see if it suits your application.</p>
 
-</div>
+          ]]>
+        </description>
+        <pubDate>Mon, 07 Jun 2021 00:00:00 GMT</pubDate>
+        <guid>https://sashaqred.com/en/blog/add-a-dark-theme-without-a-designer/</guid>
+      </item>
 
-</main>
-
-
-  <footer class="page-footer">
-    Build with <a href="https://11ty.io/">Eleventy</a>
-    / <a href="https://github.com/sashaqred/sashaqred/blob/main/./src/en/blog/2021-06-07-add-a-dark-theme-without-a-designer/index.md">View on GitHub</a>
-    
-    / <a href="/en/feed.xml">RSS</a>
-    
-  </footer>
-
-
-
-  <script>
-    const possibleThemes = ['theme-light', 'theme-dark'];
-
-    const control = document.querySelector('#theme-form select');
-    control.disabled = false;
-    control.addEventListener('change', changeEvent);
-
-    initTheme();
-
-    function changeEvent({ srcElement }) {
-      setTheme(srcElement.value);
-    }
-
-    function setTheme(nextTheme) {
-      possibleThemes.forEach((theme) => {
-        if (theme === nextTheme) {
-          document.documentElement.classList.add(theme);
-        } else {
-          document.documentElement.classList.remove(theme);
-        }
-      });
-      localStorage.theme = nextTheme;
-    }
-
-    function initTheme() {
-      const theme = localStorage.theme ?? '';
-      const control = document.querySelector(`#theme-form select`);
-      control.value = theme;
-      setTheme(control.value);
-    }
-  </script>
-
-
-  </body>
-</html>
+  </channel>
+</rss>
