@@ -5,6 +5,7 @@ export function htmlMinTransformer(content) {
   if ((this.page.outputPath || '').endsWith('.html')) {
     let minified = htmlmin.minify(content, {
       collapseWhitespace: true,
+      conservativeCollapse: true,
       minifyJS: true,
       removeComments: true,
     });
