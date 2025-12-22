@@ -20,6 +20,9 @@ importers:
       '@11ty/eleventy-plugin-syntaxhighlight':
         specifier: ~5.0
         version: 5.0.2
+      '@csstools/postcss-minify':
+        specifier: ~2.0
+        version: 2.0.4(postcss@8.5.6)
       '@fontsource-variable/raleway':
         specifier: ~5.2
         version: 5.2.8
@@ -282,6 +285,12 @@ packages:
     peerDependencies:
       '@csstools/css-parser-algorithms': ^3.0.5
       '@csstools/css-tokenizer': ^3.0.4
+
+  '@csstools/postcss-minify@2.0.4':
+    resolution: {integrity: sha512-L/+Kd/MRjJlUqdRxQynoGb4I7GsqdpgT9YqW3y1hv7hAoW/qP0slKBmbv6OHa8w0Qp3HosKCv6wA9ooyCSJTIw==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      postcss: ^8.4
 
   '@csstools/selector-specificity@5.0.0':
     resolution: {integrity: sha512-PCqQV3c4CoVm3kdPhyeZ07VmBRdH2EpMFA/pd9OASpOEC3aXNGoqPDAZ80D0cLpMBxnmk0+yNhGsEx31hq7Gtw==}
@@ -3183,6 +3192,11 @@ snapshots:
     dependencies:
       '@csstools/css-parser-algorithms': 3.0.5(@csstools/css-tokenizer@3.0.4)
       '@csstools/css-tokenizer': 3.0.4
+
+  '@csstools/postcss-minify@2.0.4(postcss@8.5.6)':
+    dependencies:
+      '@csstools/css-tokenizer': 3.0.4
+      postcss: 8.5.6
 
   '@csstools/selector-specificity@5.0.0(postcss-selector-parser@7.1.1)':
     dependencies:
