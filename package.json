@@ -54,6 +54,7 @@
     "markdown-it": "~14.1",
     "markdown-it-anchor": "~9.2",
     "postcss": "~8.5",
+    "postcss-import": "~16.1",
     "prism-themes": "~1.9",
     "vite": "~7.2",
     "vite-plugin-minify": "~2.1"

@@ -37,7 +37,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     './src/public': './',
     './CNAME': './CNAME',
-    './node_modules/prism-themes/themes/prism-nord.css': './styles/prism-nord.css',
     ...getFontGlobs(),
   });
 
@@ -70,9 +69,7 @@ export default function (eleventyConfig) {
 }
 
 function getFontGlobs() {
-  const fontFolderPath = './node_modules/@fontsource-variable/raleway/';
-  const rootFiles = ['wght.css', 'wght-italic.css'];
-  const childFolder = 'files';
+  const fontFolderPath = './node_modules/@fontsource-variable/raleway/files/';
 
   const childFiles = [
     'raleway-cyrillic-wght-normal.woff2',
@@ -85,11 +82,9 @@ function getFontGlobs() {
     'raleway-latin-ext-wght-italic.woff2',
   ];
 
-  const fontFolderDist = './styles/raleway';
+  const fontFolderDist = './styles/files/';
 
   return {
-    [fontFolderPath + '{' + rootFiles + '}']: fontFolderDist,
-    [fontFolderPath + childFolder + '/' + '{' + childFiles + '}']:
-      fontFolderDist + '/' + childFolder,
+    [fontFolderPath + '{' + childFiles.join(',') + '}']: fontFolderDist,
   };
 }

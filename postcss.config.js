@@ -1,5 +1,6 @@
 import autoprefixer from 'autoprefixer';
+import atImport from 'postcss-import';
 
 export default {
-  plugins: [autoprefixer()],
+  plugins: [atImport({ filter: (path) => path?.includes('/node_modules/') }), autoprefixer()],
 };
