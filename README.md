@@ -12,7 +12,6 @@ Developing interfaces, improving DX, updating dependencies for [UI Bakery](https
 
 ## Also write (or [syndicate](https://indieweb.org/POSSE)) at:
 
-- [Akveo blog](https://www.akveo.com/team/alexander-verbilo)
 - [Dev.to](https://dev.to/sashaqred)
 - [Hackernoon](https://hackernoon.com/u/sashaqred)
 - [Habr](https://habr.com/ru/users/sashaqred/)

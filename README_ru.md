@@ -12,7 +12,6 @@
 
 ## Так же пишу (или [синдицирую](https://indieweb.org/POSSE)) в:
 
-- [Akveo blog](https://www.akveo.com/team/alexander-verbilo)
 - [Habr](https://habr.com/ru/users/sashaqred/)
 - [Dev.to](https://dev.to/sashaqred)
 - [Hackernoon](https://hackernoon.com/u/sashaqred)
