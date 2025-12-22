@@ -1,6 +1,6 @@
 import htmlmin from 'html-minifier-terser';
 
-export function htmlMin(content) {
+export function htmlMinTransformer(content) {
   // String conversion to handle `permalink: false`
   if ((this.page.outputPath || '').endsWith('.html')) {
     let minified = htmlmin.minify(content, {

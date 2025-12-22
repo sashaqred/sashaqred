@@ -1,4 +1,4 @@
-export default function linkToGithub(fileInput, alternativeFileInput) {
+export function linkToGithub(fileInput, alternativeFileInput) {
   let fileLink = alternativeFileInput ?? fileInput;
   if (!fileLink.startsWith('/')) {
     fileLink = `/${fileLink}`;

@@ -1,4 +1,4 @@
-export default function filterBy(value, filterKey, filterValues) {
+export function filterBy(value, filterKey, filterValues) {
   return (value || []).filter((item) => filterValues.includes(getByPath(item, filterKey)));
 }
 

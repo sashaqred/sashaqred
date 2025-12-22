@@ -11,4 +11,4 @@ md.renderer.rules.code_inline = (tokens, idx, { langPrefix = '' }) => {
   return `<code class="${langPrefix}">${md.utils.escapeHtml(token.content)}</code>`;
 };
 
-export default md;
+export { md };

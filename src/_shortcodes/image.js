@@ -1,7 +1,7 @@
 import Image from '@11ty/eleventy-img';
 import { toPath } from '../_filters/to-path.js';
 
-export default async function imageShortcode(src, alt) {
+export async function imageShortcode(src, alt) {
   src = toPath(src, this.page.filePathStem);
 
   // Layout is designed that images can't be more then 600px.

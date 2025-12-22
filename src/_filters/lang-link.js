@@ -1,4 +1,4 @@
-export default function langLink(lang, link, allCollections = []) {
+export function langLink(lang, link, allCollections = []) {
   const urls = allCollections
     .filter((item) => item.url !== '/' && item.data.lang === lang)
     .map((item) => item.url);

@@ -6,16 +6,16 @@ import eleventyPluginToc from 'eleventy-plugin-toc';
 import eleventyPluginTimeToRead from 'eleventy-plugin-time-to-read';
 import i18n from 'eleventy-plugin-i18n';
 import faviconPlugin from 'eleventy-favicon';
-import date from './src/_filters/date.js';
-import linkToSectionInstall from './src/_filters/link-to-section.js';
-import langLink from './src/_filters/lang-link.js';
-import filterBy from './src/_filters/filter-by.js';
-import linkToGithub from './src/_filters/link-to-github.js';
+import { dateFilter } from './src/_filters/date.js';
+import { linkToSectionInstall } from './src/_filters/link-to-section.js';
+import { langLink } from './src/_filters/lang-link.js';
+import { filterBy } from './src/_filters/filter-by.js';
+import { linkToGithub } from './src/_filters/link-to-github.js';
 import { toPathFilter } from './src/_filters/to-path.js';
-import imageShortcode from './src/_shortcodes/image.js';
-import md from './src/_markdown-it/index.js';
+import { imageShortcode } from './src/_shortcodes/image.js';
+import { md } from './src/_markdown-it/index.js';
 import translations from './src/i18n.json' with { type: 'json' };
-import { htmlMin } from './src/_transformers/html-min.js';
+import { htmlMinTransformer } from './src/_transformers/html-min.js';
 
 export default function (eleventyConfig) {
   eleventyConfig.setLibrary('md', md);
@@ -35,14 +35,14 @@ export default function (eleventyConfig) {
   });
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(faviconPlugin, { destination: './dist' });
-  eleventyConfig.addTransform('htmlmin', htmlMin);
+  eleventyConfig.addTransform('htmlmin', htmlMinTransformer);
   eleventyConfig.addPassthroughCopy({
     './src/public': './',
     './CNAME': './CNAME',
     ...getFontGlobs(),
   });
 
-  eleventyConfig.addFilter('date', date);
+  eleventyConfig.addFilter('date', dateFilter);
   eleventyConfig.addFilter('linkToSection', linkToSectionInstall(eleventyConfig));
   eleventyConfig.addFilter('langLink', langLink);
   eleventyConfig.addFilter('filterBy', filterBy);
