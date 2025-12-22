@@ -71,6 +71,9 @@ importers:
       gh-pages:
         specifier: ~6.3
         version: 6.3.0
+      html-minifier-terser:
+        specifier: ~7.2
+        version: 7.2.0
       is-ci:
         specifier: ~4.1
         version: 4.1.0

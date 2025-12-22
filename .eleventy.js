@@ -15,6 +15,7 @@ import { toPathFilter } from './src/_filters/to-path.js';
 import imageShortcode from './src/_shortcodes/image.js';
 import md from './src/_markdown-it/index.js';
 import translations from './src/i18n.json' with { type: 'json' };
+import { htmlMin } from './src/_transformers/html-min.js';
 
 export default function (eleventyConfig) {
   eleventyConfig.setLibrary('md', md);
@@ -34,6 +35,7 @@ export default function (eleventyConfig) {
   });
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(faviconPlugin, { destination: './dist' });
+  eleventyConfig.addTransform('htmlmin', htmlMin);
   eleventyConfig.addPassthroughCopy({
     './src/public': './',
     './CNAME': './CNAME',
