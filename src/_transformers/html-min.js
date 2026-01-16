@@ -1,16 +1,14 @@
-import htmlmin from 'html-minifier-terser';
+import { minify } from 'html-minifier-terser';
 
 export function htmlMinTransformer(content) {
   // String conversion to handle `permalink: false`
   if ((this.page.outputPath || '').endsWith('.html')) {
-    let minified = htmlmin.minify(content, {
+    return minify(content, {
       collapseWhitespace: true,
       conservativeCollapse: true,
       minifyJS: true,
       removeComments: true,
     });
-
-    return minified;
   }
 
   // If not an HTML output, return content as-is
