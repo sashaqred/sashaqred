@@ -4,7 +4,7 @@ Coding, mentoring, and rarely tech-talking.
 
 In love with Angular. Launched a React app in production.
 
-Do analog photography 📸 and time to time play basketball 🏀.
+Play on drums 🥁, do analog photography 📸, and sometimes play basketball 🏀.
 
 ## About
 
