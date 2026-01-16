@@ -56,7 +56,8 @@
     "markdown-it-anchor": "~9.2",
     "postcss": "~8.5",
     "postcss-import": "~16.1",
-    "prism-themes": "~1.9"
+    "prism-themes": "~1.9",
+    "terser": "~5.46"
   },
   "devDependencies": {
     "@commitlint/cli": "~20.2",
