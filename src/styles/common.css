@@ -192,6 +192,10 @@ option {
   }
 
   .print-link[data-better-print-text]::after {
-    content: ': ' attr(data-better-print-text);
+    content: attr(data-better-print-text);
+  }
+
+  .print-link[data-better-print-text] [data-better-print-text_replace] {
+    display: none;
   }
 }

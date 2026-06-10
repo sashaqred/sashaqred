@@ -57,6 +57,11 @@ dl {
   margin-left: 0;
 }
 
+ul {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
 dd {
   margin-left: var(--adaptive-lg);
 }
@@ -83,8 +88,27 @@ dt:last-child {
 }
 
 @media print {
+  :root {
+    font-size: 15px;
+  }
+
   .header {
     display: none;
+  }
+
+  .page {
+    /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+    orphans: 2;
+    /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+    widows: 2;
+  }
+
+  /* Keeps a job heading glued to its first paragraph so the heading is never
+     left orphaned at the bottom of a page. Works in Firefox too (unlike
+     break-after: avoid / orphans / widows, which Firefox ignores in print). */
+  .keep-with-next {
+    /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+    break-inside: avoid;
   }
 }
 
@@ -108,4 +132,34 @@ dt:last-child {
 
 .inline-text > * {
   display: inline;
+}
+
+.skills ul {
+  list-style-type: none;
+}
+
+.skill-type {
+  display: inline-block;
+  width: 15.5rem;
+}
+
+@media screen and (width <= 40rem) {
+  .skill-type {
+    width: auto;
+  }
+
+  .skill-type::after {
+    content: ':';
+  }
+}
+
+.consent {
+  padding-top: var(--adaptive-md);
+  border-top: 1px solid lightgray;
+  margin-bottom: 0;
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+  break-inside: avoid;
+  color: gray;
+  font-size: 0.75rem;
+  text-align: center;
 }
