@@ -110,14 +110,6 @@ dt:last-child {
     /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
     widows: 2;
   }
-
-  /* Keeps a job heading glued to its first paragraph so the heading is never
-     left orphaned at the bottom of a page. Works in Firefox too (unlike
-     break-after: avoid / orphans / widows, which Firefox ignores in print). */
-  .keep-with-next {
-    /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
-    break-inside: avoid;
-  }
 }
 
 .intro {
@@ -154,7 +146,7 @@ dt:last-child {
 
 .skill-type {
   display: inline-block;
-  width: 15.5rem;
+  width: 16rem;
 }
 
 @media screen and (width <= 40rem) {
