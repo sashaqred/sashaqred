@@ -1,3 +1,7 @@
+:root {
+  --page-horisontal-padding: 0;
+}
+
 @media screen {
   body {
     background-color: var(--primary-color);
@@ -21,7 +25,7 @@
 
 section {
   padding: 0 var(--adaptive-md);
-  margin: var(--adaptive-lg) auto;
+  margin: var(--adaptive-md) auto;
 }
 
 .section-content {
@@ -89,7 +93,11 @@ dt:last-child {
 
 @media print {
   :root {
-    font-size: 15px;
+    font-size: 14px;
+  }
+
+  * {
+    line-height: 1.25;
   }
 
   .header {
@@ -119,6 +127,12 @@ dt:last-child {
   justify-content: space-between;
   padding: 0.25rem var(--adaptive-md);
   border-bottom: 1px solid var(--alt-accent-color);
+}
+
+@media print {
+  .intro {
+    padding-top: 0;
+  }
 }
 
 .intro h1 {
@@ -153,13 +167,25 @@ dt:last-child {
   }
 }
 
+.education {
+  margin-bottom: 0;
+}
+
 .consent {
-  padding-top: var(--adaptive-md);
+  padding-top: var(--adaptive-sm);
+  padding-right: 0;
+  padding-left: 0;
   border-top: 1px solid lightgray;
+  margin-top: var(--adaptive-sm);
   margin-bottom: 0;
   /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
   break-inside: avoid;
   color: gray;
-  font-size: 0.75rem;
+  font-size: 0.625rem;
+  line-height: 1.1;
   text-align: center;
+}
+
+.consent p {
+  margin: 0;
 }
